@@ -71,9 +71,13 @@ export function Projects() {
                 className="group p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-lg hover:shadow-2xl transition-all hover:scale-105"
               >
                 {/* Icon with gradient background */}
-                <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-r ${project.gradient} mb-4`}>
+                <motion.div
+                  className={`inline-flex p-3 rounded-2xl bg-gradient-to-r ${project.gradient} mb-4`}
+                  whileHover={{ rotate: 360, scale: 1.1 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <project.icon className="w-6 h-6 text-white" />
-                </div>
+                </motion.div>
 
                 <h3 className="text-xl font-bold mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                   {project.title}

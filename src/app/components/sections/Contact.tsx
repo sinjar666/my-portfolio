@@ -69,9 +69,13 @@ export function Contact() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="flex items-center gap-4 p-4 rounded-2xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 hover:shadow-lg transition-all"
                 >
-                  <div className="p-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500">
+                  <motion.div
+                    className="p-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <item.icon className="w-5 h-5 text-white" />
-                  </div>
+                  </motion.div>
                   <div>
                     <p className="text-sm text-gray-600 dark:text-gray-400">{item.label}</p>
                     {item.href ? (

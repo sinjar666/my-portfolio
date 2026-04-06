@@ -12,7 +12,17 @@ export function Hero() {
           transition={{ duration: 0.8 }}
         >
           {/* Profile Image */}
-          <div className="mb-8 inline-block">
+          <motion.div
+            className="mb-8 inline-block"
+            animate={{
+              y: [0, -10, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
             <div className="w-40 h-40 rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-1 shadow-2xl">
               <img 
                 src={profileImage} 
@@ -20,7 +30,7 @@ export function Hero() {
                 className="w-full h-full rounded-full object-cover border-4 border-white dark:border-gray-900"
               />
             </div>
-          </div>
+          </motion.div>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
             Srijan Mukherjee
@@ -44,51 +54,96 @@ export function Hero() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
-            <a
+          <motion.div 
+            className="flex flex-wrap items-center justify-center gap-4 mb-12"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.2
+                }
+              }
+            }}
+          >
+            <motion.a
               href="#contact"
               className="px-8 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium hover:shadow-lg hover:scale-105 transition-all"
+              variants={{
+                hidden: { opacity: 0, scale: 0.8 },
+                visible: { opacity: 1, scale: 1 }
+              }}
             >
               Get In Touch
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="/src/imports/resume-srijan-director-txt-mar2026.pdf"
               download
               className="px-8 py-3 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 font-medium hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all flex items-center gap-2"
+              variants={{
+                hidden: { opacity: 0, scale: 0.8 },
+                visible: { opacity: 1, scale: 1 }
+              }}
             >
               <Download className="w-4 h-4" />
               Resume
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
 
           {/* Social Links */}
-          <div className="flex items-center justify-center gap-4">
-            <a
+          <motion.div 
+            className="flex items-center justify-center gap-4"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.1,
+                  delayChildren: 0.3
+                }
+              }
+            }}
+          >
+            <motion.a
               href="https://github.com/sinjar666"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all hover:scale-110"
               aria-label="GitHub"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
             >
               <Github className="w-5 h-5" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="https://linkedin.com/in/sinjar666"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all hover:scale-110"
               aria-label="LinkedIn"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
             >
               <Linkedin className="w-5 h-5" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="mailto:srijmukh070@gmail.com"
               className="p-3 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all hover:scale-110"
               aria-label="Email"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
             >
               <Mail className="w-5 h-5" />
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
         </motion.div>
 
         {/* Scroll Indicator */}
