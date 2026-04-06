@@ -87,9 +87,9 @@ export function Contact() {
               ))}
 
               {/* Social Links */}
-              <div className="pt-6">
+              <div className={`pt-6 ${!config.showContactForm ? 'flex flex-col items-center' : ''}`}>
                 <h4 className="text-xl font-bold mb-4">Connect on Social</h4>
-                <div className="flex gap-4">
+                <div className={`flex gap-4 ${!config.showContactForm ? 'max-w-md w-full' : ''}`}>
                   {socialLinks.map((social, index) => (
                     <motion.a
                       key={social.label}
@@ -100,7 +100,7 @@ export function Contact() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
-                      className={`flex-1 p-4 rounded-2xl bg-gradient-to-r ${social.color} text-white hover:shadow-lg hover:scale-105 transition-all text-center`}
+                      className={`${config.showContactForm ? 'flex-1' : ''} p-4 rounded-2xl bg-gradient-to-r ${social.color} text-white hover:shadow-lg hover:scale-105 transition-all text-center`}
                     >
                       <social.icon className="w-6 h-6 mx-auto mb-2" />
                       <p className="font-medium">{social.label}</p>
