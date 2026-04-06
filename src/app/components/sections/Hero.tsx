@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Github, Linkedin, Mail, Download } from "lucide-react";
-import profileImage from "figma:asset/50f47f68ea4e1ee31ab59828bfc1977ab31560ab.png";
+import profileImage from "../../../assets/profile.png";
 
 export function Hero() {
   return (
