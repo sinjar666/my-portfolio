@@ -6,6 +6,6 @@ export const config = {
   showContactForm: false,
 
   // Other config options can be added here
-  siteTitle: "Srijan Mukherjee - Portfolio",
+  siteTitle: import.meta.env.VITE_SITE_TITLE || "Srijan Mukherjee - Portfolio",
   // Add more config as needed
 };
