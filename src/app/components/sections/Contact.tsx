@@ -87,28 +87,29 @@ export function Contact() {
               ))}
 
               {/* Social Links */}
-              
-                <h3 className="text-2xl font-bold mb-6">Connect on Social</h3>
-                <div className={`mb-12 ${config.showContactForm ? 'grid md:grid-cols-2 gap-8' : 'flex flex-col'}`}>
-                  <div className={`flex gap-4 ${!config.showContactForm ? 'max-w-md w-full' : ''}`}>
-                    {socialLinks.map((social, index) => (
-                      <motion.a
-                        key={social.label}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: index * 0.1 }}
-                        className={`${config.showContactForm ? 'flex-1' : ''} p-4 rounded-2xl bg-gradient-to-r ${social.color} text-white hover:shadow-lg hover:scale-105 transition-all text-center`}
-                      >
-                        <social.icon className="w-6 h-6 mx-auto mb-2" />
-                        <p className="font-medium">{social.label}</p>
-                      </motion.a>
-                    ))}
-                  </div>
+              <div className={`mt-12 ${!config.showContactForm ? 'w-full max-w-md flex flex-col' : ''}`}>
+                <h3 className={`text-2xl font-bold mb-6`}>
+                  Connect on Social
+                </h3>
+                <div className={`flex gap-4`}>
+                  {socialLinks.map((social, index) => (
+                    <motion.a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      className={`${config.showContactForm ? 'flex-1' : ''} p-4 rounded-2xl bg-gradient-to-r ${social.color} text-white hover:shadow-lg hover:scale-105 transition-all text-center`}
+                    >
+                      <social.icon className="w-6 h-6 mx-auto mb-2" />
+                      <p className="font-medium">{social.label}</p>
+                    </motion.a>
+                  ))}
                 </div>
+              </div>
             </div>
 
             {/* Contact Form */}
