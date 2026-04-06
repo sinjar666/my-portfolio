@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Mail, Phone, MapPin, Linkedin, Github, Send } from "lucide-react";
+import { config } from "../../../config";
 
 export function Contact() {
   const contactInfo = [
@@ -8,12 +9,6 @@ export function Contact() {
       label: "Email",
       value: "srijmukh070@gmail.com",
       href: "mailto:srijmukh070@gmail.com",
-    },
-    {
-      icon: Phone,
-      label: "Phone",
-      value: "+91-8660685187",
-      href: "tel:+918660685187",
     },
     {
       icon: MapPin,
@@ -52,13 +47,12 @@ export function Contact() {
           </h2>
 
           <p className="text-lg text-center text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-12">
-            Open to conversations around <span className="font-semibold text-indigo-600 dark:text-indigo-400">Senior Director / VP Engineering roles</span> focused 
-            on platform engineering, cloud infrastructure, and AI-driven systems.
+            Open to conversations around platform engineering, cloud infrastructure, and AI-driven systems.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className={`mb-12 ${config.showContactForm ? 'grid md:grid-cols-2 gap-8' : 'flex flex-col items-center'}`}>
             {/* Contact Information */}
-            <div className="space-y-4">
+            <div className={`space-y-4 ${!config.showContactForm ? 'w-full max-w-lg' : ''}`}>
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
               {contactInfo.map((item, index) => (
                 <motion.div
@@ -69,9 +63,13 @@ export function Contact() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="flex items-center gap-4 p-4 rounded-2xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 hover:shadow-lg transition-all"
                 >
-                  <div className="p-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500">
+                  <motion.div
+                    className="p-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <item.icon className="w-5 h-5 text-white" />
-                  </div>
+                  </motion.div>
                   <div>
                     <p className="text-sm text-gray-600 dark:text-gray-400">{item.label}</p>
                     {item.href ? (
@@ -89,9 +87,11 @@ export function Contact() {
               ))}
 
               {/* Social Links */}
-              <div className="pt-6">
-                <h4 className="text-xl font-bold mb-4">Connect on Social</h4>
-                <div className="flex gap-4">
+              <div className={`mt-12 ${!config.showContactForm ? 'w-full max-w-md flex flex-col' : ''}`}>
+                <h3 className={`text-2xl font-bold mb-6`}>
+                  Connect on Social
+                </h3>
+                <div className={`flex gap-4`}>
                   {socialLinks.map((social, index) => (
                     <motion.a
                       key={social.label}
@@ -102,7 +102,7 @@ export function Contact() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
-                      className={`flex-1 p-4 rounded-2xl bg-gradient-to-r ${social.color} text-white hover:shadow-lg hover:scale-105 transition-all text-center`}
+                      className={`${config.showContactForm ? 'flex-1' : ''} p-4 rounded-2xl bg-gradient-to-r ${social.color} text-white hover:shadow-lg hover:scale-105 transition-all text-center`}
                     >
                       <social.icon className="w-6 h-6 mx-auto mb-2" />
                       <p className="font-medium">{social.label}</p>
@@ -113,72 +113,76 @@ export function Contact() {
             </div>
 
             {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="p-8 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-xl"
-            >
-              <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
-              <form className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full px-4 py-3 rounded-xl bg-white/50 dark:bg-gray-800/50 border border-white/20 dark:border-gray-700/50 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-3 rounded-xl bg-white/50 dark:bg-gray-800/50 border border-white/20 dark:border-gray-700/50 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={4}
-                    className="w-full px-4 py-3 rounded-xl bg-white/50 dark:bg-gray-800/50 border border-white/20 dark:border-gray-700/50 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all resize-none"
-                    placeholder="Your message..."
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium hover:shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-2"
-                >
-                  <Send className="w-4 h-4" />
-                  Send Message
-                </button>
-              </form>
-            </motion.div>
+            {config.showContactForm && (
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="p-8 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-xl"
+              >
+                <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
+                <form className="space-y-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium mb-2">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      className="w-full px-4 py-3 rounded-xl bg-white/50 dark:bg-gray-800/50 border border-white/20 dark:border-gray-700/50 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                      placeholder="Your name"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium mb-2">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      className="w-full px-4 py-3 rounded-xl bg-white/50 dark:bg-gray-800/50 border border-white/20 dark:border-gray-700/50 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                      placeholder="your.email@example.com"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium mb-2">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      rows={4}
+                      className="w-full px-4 py-3 rounded-xl bg-white/50 dark:bg-gray-800/50 border border-white/20 dark:border-gray-700/50 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all resize-none"
+                      placeholder="Your message..."
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium hover:shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-2"
+                  >
+                    <Send className="w-4 h-4" />
+                    Send Message
+                  </button>
+                </form>
+              </motion.div>
+            )}
           </div>
 
           {/* Additional CTA */}
           <div className="p-8 rounded-3xl bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 dark:from-indigo-500/5 dark:via-purple-500/5 dark:to-pink-500/5 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 text-center">
-            <h3 className="text-2xl font-bold mb-4">Looking for Leadership Talent?</h3>
+            <h3 className="text-2xl font-bold mb-4">Want to buy me a coffee?</h3>
             <p className="text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-              I'm passionate about building high-performing teams, driving technical excellence, and delivering 
+              I'm passionate about building high-performing teams, driving technical excellence, and delivering
               business impact through scalable platform engineering and AI-powered infrastructure.
             </p>
             <a
-              href="mailto:srijmukh070@gmail.com"
+              href="https://calendly.com/srijmukh070"
+              target="_blank"
               className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium hover:shadow-lg hover:scale-105 transition-all"
             >
               Let's Talk
             </a>
+
           </div>
         </motion.div>
       </div>

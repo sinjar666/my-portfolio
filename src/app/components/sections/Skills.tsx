@@ -143,9 +143,13 @@ export function Skills() {
                 className="p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-lg hover:shadow-xl transition-all"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className={`p-2 rounded-xl bg-gradient-to-r ${category.color}`}>
+                  <motion.div
+                    className={`p-2 rounded-xl bg-gradient-to-r ${category.color}`}
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <category.icon className="w-5 h-5 text-white" />
-                  </div>
+                  </motion.div>
                   <h3 className="text-xl font-bold">{category.title}</h3>
                 </div>
 

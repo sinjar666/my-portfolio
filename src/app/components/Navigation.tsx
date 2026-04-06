@@ -1,12 +1,14 @@
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 import { useState } from "react";
+import { motion } from "motion/react";
 
 interface NavigationProps {
   scrolled: boolean;
+  isVisible: boolean;
 }
 
-export function Navigation({ scrolled }: NavigationProps) {
+export function Navigation({ scrolled, isVisible }: NavigationProps) {
   const { theme, setTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -25,7 +27,9 @@ export function Navigation({ scrolled }: NavigationProps) {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 transform ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      } ${
         scrolled
           ? "bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg shadow-lg border-b border-white/20 dark:border-gray-800/50"
           : "bg-transparent"
@@ -39,17 +43,33 @@ export function Navigation({ scrolled }: NavigationProps) {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <motion.div 
+            className="hidden md:flex items-center gap-8"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+          >
             {navItems.map((item) => (
-              <a
+              <motion.a
                 key={item.label}
                 href={item.href}
                 className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                variants={{
+                  hidden: { opacity: 0, y: -10 },
+                  visible: { opacity: 1, y: 0 }
+                }}
               >
                 {item.label}
-              </a>
+              </motion.a>
             ))}
-          </div>
+          </motion.div>
 
           {/* Theme Toggle */}
           <button

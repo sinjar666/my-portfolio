@@ -55,26 +55,57 @@ export function About() {
           {/* Philosophy */}
           <div className="p-8 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/5 dark:to-purple-500/5 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 mb-12">
             <h3 className="text-2xl font-bold mb-6 text-center">Leadership Philosophy</h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center">
+            <motion.div 
+              className="grid md:grid-cols-3 gap-6"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: {
+                    staggerChildren: 0.2
+                  }
+                }
+              }}
+            >
+              <motion.div 
+                className="text-center"
+                variants={{
+                  hidden: { opacity: 0, scale: 0.8 },
+                  visible: { opacity: 1, scale: 1 }
+                }}
+              >
                 <div className="text-4xl mb-3">🏗️</div>
                 <p className="text-gray-700 dark:text-gray-300">
                   Build systems that scale without fragility
                 </p>
-              </div>
-              <div className="text-center">
+              </motion.div>
+              <motion.div 
+                className="text-center"
+                variants={{
+                  hidden: { opacity: 0, scale: 0.8 },
+                  visible: { opacity: 1, scale: 1 }
+                }}
+              >
                 <div className="text-4xl mb-3">👥</div>
                 <p className="text-gray-700 dark:text-gray-300">
                   Build teams that operate with ownership and clarity
                 </p>
-              </div>
-              <div className="text-center">
+              </motion.div>
+              <motion.div 
+                className="text-center"
+                variants={{
+                  hidden: { opacity: 0, scale: 0.8 },
+                  visible: { opacity: 1, scale: 1 }
+                }}
+              >
                 <div className="text-4xl mb-3">🤖</div>
                 <p className="text-gray-700 dark:text-gray-300">
                   Use automation and AI to eliminate operational toil
                 </p>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
 
           {/* Highlights */}

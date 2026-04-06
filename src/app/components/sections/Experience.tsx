@@ -96,7 +96,11 @@ export function Experience() {
                 {/* Timeline dot */}
                 <div className={`absolute top-6 ${index % 2 === 0 ? "md:right-0" : "left-0 md:left-0"} md:transform md:-translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 border-4 border-white dark:border-gray-900 z-10`} style={{ left: index % 2 === 0 ? 'auto' : '-8px', right: index % 2 === 0 ? '-8px' : 'auto' }} />
 
-                <div className="ml-8 md:ml-0 p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-lg hover:shadow-xl transition-all">
+                <motion.div
+                  className="ml-8 md:ml-0 p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-lg hover:shadow-xl transition-all"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
                   <div className="flex items-center gap-2 mb-2 justify-start md:justify-inherit">
                     <Briefcase className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
                     <h3 className="text-xl font-bold">{exp.title}</h3>
@@ -118,7 +122,7 @@ export function Experience() {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </motion.div>
               </motion.div>
             ))}
           </div>
