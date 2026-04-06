@@ -1,13 +1,13 @@
 import { motion } from "motion/react";
-import { 
-  Brain, 
-  Cloud, 
-  Code, 
-  Database, 
-  Globe, 
-  Layout, 
+import {
+  Brain,
+  Cloud,
+  Code,
+  Database,
+  Globe,
+  Layout,
   Cpu,
-  Users
+  Users,
 } from "lucide-react";
 
 export function Skills() {
@@ -24,7 +24,7 @@ export function Skills() {
         "Strategic Thinking",
         "Conflict Resolution",
       ],
-      color: "from-blue-500 to-cyan-500",
+      colorClass: "gradient-blue-cyan",
     },
     {
       icon: Brain,
@@ -37,7 +37,7 @@ export function Skills() {
         "Knowledge Graphs",
         "Agentic Workflows",
       ],
-      color: "from-purple-500 to-pink-500",
+      colorClass: "gradient-purple-pink",
     },
     {
       icon: Cloud,
@@ -50,7 +50,7 @@ export function Skills() {
         "ElasticSearch",
         "Hazelcast",
       ],
-      color: "from-green-500 to-emerald-500",
+      colorClass: "gradient-green-emerald",
     },
     {
       icon: Code,
@@ -65,7 +65,7 @@ export function Skills() {
         "Python",
         "Multithreading",
       ],
-      color: "from-orange-500 to-red-500",
+      colorClass: "gradient-orange-red",
     },
     {
       icon: Layout,
@@ -79,7 +79,7 @@ export function Skills() {
         "RxJS",
         "Micro-frontends",
       ],
-      color: "from-indigo-500 to-blue-500",
+      colorClass: "gradient-indigo-blue",
     },
     {
       icon: Database,
@@ -91,7 +91,7 @@ export function Skills() {
         "Redis",
         "Data Architecture",
       ],
-      color: "from-violet-500 to-purple-500",
+      colorClass: "gradient-violet-purple",
     },
     {
       icon: Globe,
@@ -103,7 +103,7 @@ export function Skills() {
         "WebSockets",
         "gRPC",
       ],
-      color: "from-pink-500 to-rose-500",
+      colorClass: "gradient-pink-rose",
     },
     {
       icon: Cpu,
@@ -115,24 +115,22 @@ export function Skills() {
         "Software Architecture",
         "Design Patterns",
       ],
-      color: "from-teal-500 to-cyan-500",
+      colorClass: "gradient-teal-cyan",
     },
   ];
 
   return (
-    <section id="skills" className="relative py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="section skills">
+      <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-            Skills & Expertise
-          </h2>
+          <h2 className="section__title">Skills & Expertise</h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="skills__grid">
             {skillCategories.map((category, index) => (
               <motion.div
                 key={category.title}
@@ -140,21 +138,18 @@ export function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-lg hover:shadow-xl transition-all"
+                className="skill-card glass-card"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className={`p-2 rounded-xl bg-gradient-to-r ${category.color}`}>
-                    <category.icon className="w-5 h-5 text-white" />
+                <div className="skill-card__top">
+                  <div className={`skill-card__icon ${category.colorClass}`}>
+                    <category.icon size={20} />
                   </div>
-                  <h3 className="text-xl font-bold">{category.title}</h3>
+                  <h3 className="skill-card__title">{category.title}</h3>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="skills__chips">
                   {category.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1.5 text-sm rounded-full bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover:scale-105 transition-transform"
-                    >
+                    <span key={skill} className="skill-chip">
                       {skill}
                     </span>
                   ))}
@@ -163,17 +158,16 @@ export function Skills() {
             ))}
           </div>
 
-          {/* Additional Highlights */}
-          <div className="mt-12 grid md:grid-cols-3 gap-6">
+          <div className="skills__stats">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="p-6 rounded-3xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 dark:from-blue-500/5 dark:to-cyan-500/5 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 text-center"
+              className="skills__stat gradient-blue-cyan"
             >
-              <div className="text-4xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">14+</div>
-              <p className="text-gray-700 dark:text-gray-300 font-medium">Years of Experience</p>
+              <div className="project-card__title">14+</div>
+              <p className="skill-card__text">Years of Experience</p>
             </motion.div>
 
             <motion.div
@@ -181,10 +175,10 @@ export function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="p-6 rounded-3xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 dark:from-purple-500/5 dark:to-pink-500/5 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 text-center"
+              className="skills__stat gradient-purple-pink"
             >
-              <div className="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">18</div>
-              <p className="text-gray-700 dark:text-gray-300 font-medium">Team Members Led</p>
+              <div className="project-card__title">18</div>
+              <p className="skill-card__text">Team Members Led</p>
             </motion.div>
 
             <motion.div
@@ -192,10 +186,10 @@ export function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="p-6 rounded-3xl bg-gradient-to-br from-green-500/10 to-emerald-500/10 dark:from-green-500/5 dark:to-emerald-500/5 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 text-center"
+              className="skills__stat gradient-green-emerald"
             >
-              <div className="text-4xl font-bold text-green-600 dark:text-green-400 mb-2">$200M+</div>
-              <p className="text-gray-700 dark:text-gray-300 font-medium">Annual Cost Savings</p>
+              <div className="project-card__title">$200M+</div>
+              <p className="skill-card__text">Annual Cost Savings</p>
             </motion.div>
           </div>
         </motion.div>

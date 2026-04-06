@@ -66,21 +66,18 @@ export function Experience() {
   ];
 
   return (
-    <section id="experience" className="relative py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="experience" className="section experience">
+      <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-            Experience
-          </h2>
+          <h2 className="section__title">Experience</h2>
 
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500 to-purple-500 transform md:-translate-x-1/2" />
+          <div className="experience__timeline">
+            <div className="experience__line" />
 
             {experiences.map((exp, index) => (
               <motion.div
@@ -89,35 +86,27 @@ export function Experience() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`relative mb-12 ${
-                  index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8 md:ml-auto md:text-left"
-                } md:w-1/2`}
+                className={`timeline-entry ${index % 2 === 0 ? "timeline-entry--left" : "timeline-entry--right"}`}
               >
-                {/* Timeline dot */}
-                <div className={`absolute top-6 ${index % 2 === 0 ? "md:right-0" : "left-0 md:left-0"} md:transform md:-translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 border-4 border-white dark:border-gray-900 z-10`} style={{ left: index % 2 === 0 ? 'auto' : '-8px', right: index % 2 === 0 ? '-8px' : 'auto' }} />
+                <div className="timeline-dot" />
 
-                <div className="ml-8 md:ml-0 p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-lg hover:shadow-xl transition-all">
-                  <div className="flex items-center gap-2 mb-2 justify-start md:justify-inherit">
-                    <Briefcase className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-                    <h3 className="text-xl font-bold">{exp.title}</h3>
+                <div className="experience__card glass-card">
+                  <div className="experience__header">
+                    <Briefcase size={20} />
+                    <h3>{exp.title}</h3>
                   </div>
-                  <p className="text-lg text-purple-600 dark:text-purple-400 font-medium mb-2">
-                    {exp.company}
-                  </p>
-                  <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mb-4 justify-start md:justify-inherit">
-                    <Calendar className="w-4 h-4" />
+                  <p className="project-card__title">{exp.company}</p>
+                  <div className="experience__meta">
+                    <Calendar size={16} />
                     <span>{exp.period}</span>
                     <span>•</span>
                     <span>{exp.location}</span>
                   </div>
-                  <ul className="space-y-2 text-left">
+                  <div className="experience__highlights">
                     {exp.highlights.map((highlight, idx) => (
-                      <li key={idx} className="text-gray-700 dark:text-gray-300 flex items-start gap-2">
-                        <span className="text-indigo-600 dark:text-indigo-400 mt-1.5">▹</span>
-                        <span>{highlight}</span>
-                      </li>
+                      <p key={idx}>{highlight}</p>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               </motion.div>
             ))}

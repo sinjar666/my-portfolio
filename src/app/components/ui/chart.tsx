@@ -3,7 +3,7 @@
 import * as React from "react";
 import * as RechartsPrimitive from "recharts";
 
-import { cn } from "./utils";
+import { cn, ensureGlobalStyleRule } from "./utils";
 
 // Format: { THEME_NAME: CSS_SELECTOR }
 const THEMES = { light: "", dark: ".dark" } as const;
@@ -32,6 +32,43 @@ function useChart() {
   }
 
   return context;
+}
+
+const chartStyleCache = new Set<string>();
+
+function hashString(value: string) {
+  let hash = 0;
+
+  for (let i = 0; i < value.length; i += 1) {
+    hash = (hash << 5) - hash + value.charCodeAt(i);
+    hash |= 0;
+  }
+
+  return Math.abs(hash).toString(36);
+}
+
+function getDynamicChartColorClass(color: string) {
+  const className = `chart-tooltip-color-${hashString(color)}`;
+
+  if (!chartStyleCache.has(className)) {
+    chartStyleCache.add(className);
+    ensureGlobalStyleRule(
+      `.${className} { --color-bg: ${color}; --color-border: ${color}; }`,
+    );
+  }
+
+  return className;
+}
+
+function getDynamicLegendDotClass(color: string) {
+  const className = `chart-legend-dot-color-${hashString(color)}`;
+
+  if (!chartStyleCache.has(className)) {
+    chartStyleCache.add(className);
+    ensureGlobalStyleRule(`.${className} { background-color: ${color}; }`);
+  }
+
+  return className;
 }
 
 function ChartContainer({
@@ -210,13 +247,8 @@ function ChartTooltipContent({
                               indicator === "dashed",
                             "my-0.5": nestLabel && indicator === "dashed",
                           },
+                          indicatorColor ? getDynamicChartColorClass(indicatorColor) : undefined,
                         )}
-                        style={
-                          {
-                            "--color-bg": indicatorColor,
-                            "--color-border": indicatorColor,
-                          } as React.CSSProperties
-                        }
                       />
                     )
                   )}
@@ -290,10 +322,10 @@ function ChartLegendContent({
               <itemConfig.icon />
             ) : (
               <div
-                className="h-2 w-2 shrink-0 rounded-[2px]"
-                style={{
-                  backgroundColor: item.color,
-                }}
+                className={cn(
+                  "h-2 w-2 shrink-0 rounded-[2px]",
+                  item.color ? getDynamicLegendDotClass(item.color) : undefined,
+                )}
               />
             )}
             {itemConfig?.label}

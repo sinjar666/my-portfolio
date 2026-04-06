@@ -1,0 +1,37 @@
+.portfolio__background-delay {
+  animation-delay: 1s;
+}
+
+.timeline-dot {
+  left: auto;
+  right: auto;
+}
+
+.timeline-dot[data-side="left"] {
+  left: -8px;
+  right: auto;
+}
+
+.timeline-dot[data-side="right"] {
+  right: -8px;
+  left: auto;
+}
+
+.sidebar-wrapper {
+  --sidebar-width: 16rem;
+  --sidebar-width-icon: 3rem;
+}
+
+.sidebar-mobile-sheet {
+  --sidebar-width: 18rem;
+}
+
+.sonner-toaster {
+  --normal-bg: var(--popover);
+  --normal-text: var(--popover-foreground);
+  --normal-border: var(--border);
+}
+
+.progress-indicator {
+  transition: transform 0.2s ease;
+}

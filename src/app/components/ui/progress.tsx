@@ -3,13 +3,31 @@
 import * as React from "react";
 import * as ProgressPrimitive from "@radix-ui/react-progress";
 
-import { cn } from "./utils";
+import { cn, ensureGlobalStyleRule } from "./utils";
+
+const progressRuleCache = new Set<string>();
+
+function getProgressValueClass(value?: number) {
+  const normalized = Math.max(0, Math.min(100, Math.round(value ?? 0)));
+  const className = `progress-value-${normalized}`;
+
+  if (!progressRuleCache.has(className)) {
+    progressRuleCache.add(className);
+    ensureGlobalStyleRule(
+      `.${className} { transform: translateX(-${100 - normalized}%); }`,
+    );
+  }
+
+  return className;
+}
 
 function Progress({
   className,
   value,
   ...props
 }: React.ComponentProps<typeof ProgressPrimitive.Root>) {
+  const indicatorClass = getProgressValueClass(value);
+
   return (
     <ProgressPrimitive.Root
       data-slot="progress"
@@ -21,8 +39,10 @@ function Progress({
     >
       <ProgressPrimitive.Indicator
         data-slot="progress-indicator"
-        className="bg-primary h-full w-full flex-1 transition-all"
-        style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
+        className={cn(
+          "bg-primary h-full w-full flex-1 transition-all progress-indicator",
+          indicatorClass,
+        )}
       />
     </ProgressPrimitive.Root>
   );
