@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Github, Linkedin, Mail, Download } from "lucide-react";
+import profileImage from "figma:asset/50f47f68ea4e1ee31ab59828bfc1977ab31560ab.png";
 
 export function Hero() {
   return (
@@ -10,14 +11,14 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Profile Image Placeholder */}
+          {/* Profile Image */}
           <div className="mb-8 inline-block">
-            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 p-1">
-              <div className="w-full h-full rounded-full bg-white dark:bg-gray-900 flex items-center justify-center">
-                <span className="text-5xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                  SM
-                </span>
-              </div>
+            <div className="w-40 h-40 rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-1 shadow-2xl">
+              <img 
+                src={profileImage} 
+                alt="Srijan Mukherjee" 
+                className="w-full h-full rounded-full object-cover border-4 border-white dark:border-gray-900"
+              />
             </div>
           </div>
 
