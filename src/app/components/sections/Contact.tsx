@@ -50,9 +50,9 @@ export function Contact() {
             Open to conversations around platform engineering, cloud infrastructure, and AI-driven systems.
           </p>
 
-          <div className={`grid ${config.showContactForm ? 'md:grid-cols-2' : ''} gap-8 mb-12`}>
+          <div className={`mb-12 ${config.showContactForm ? 'grid md:grid-cols-2 gap-8' : 'flex flex-col items-center'}`}>
             {/* Contact Information */}
-            <div className="space-y-4">
+            <div className={`space-y-4 ${!config.showContactForm ? 'w-full max-w-lg' : ''}`}>
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
               {contactInfo.map((item, index) => (
                 <motion.div
@@ -87,27 +87,28 @@ export function Contact() {
               ))}
 
               {/* Social Links */}
-              <div className={`pt-6 ${!config.showContactForm ? 'flex flex-col items-center' : ''}`}>
-                <h4 className="text-xl font-bold mb-4">Connect on Social</h4>
-                <div className={`flex gap-4 ${!config.showContactForm ? 'max-w-md w-full' : ''}`}>
-                  {socialLinks.map((social, index) => (
-                    <motion.a
-                      key={social.label}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
-                      className={`${config.showContactForm ? 'flex-1' : ''} p-4 rounded-2xl bg-gradient-to-r ${social.color} text-white hover:shadow-lg hover:scale-105 transition-all text-center`}
-                    >
-                      <social.icon className="w-6 h-6 mx-auto mb-2" />
-                      <p className="font-medium">{social.label}</p>
-                    </motion.a>
-                  ))}
+              
+                <h3 className="text-2xl font-bold mb-6">Connect on Social</h3>
+                <div className={`mb-12 ${config.showContactForm ? 'grid md:grid-cols-2 gap-8' : 'flex flex-col'}`}>
+                  <div className={`flex gap-4 ${!config.showContactForm ? 'max-w-md w-full' : ''}`}>
+                    {socialLinks.map((social, index) => (
+                      <motion.a
+                        key={social.label}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                        className={`${config.showContactForm ? 'flex-1' : ''} p-4 rounded-2xl bg-gradient-to-r ${social.color} text-white hover:shadow-lg hover:scale-105 transition-all text-center`}
+                      >
+                        <social.icon className="w-6 h-6 mx-auto mb-2" />
+                        <p className="font-medium">{social.label}</p>
+                      </motion.a>
+                    ))}
+                  </div>
                 </div>
-              </div>
             </div>
 
             {/* Contact Form */}
@@ -170,7 +171,7 @@ export function Contact() {
           <div className="p-8 rounded-3xl bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 dark:from-indigo-500/5 dark:via-purple-500/5 dark:to-pink-500/5 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 text-center">
             <h3 className="text-2xl font-bold mb-4">Want to buy me a coffee?</h3>
             <p className="text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-              I'm passionate about building high-performing teams, driving technical excellence, and delivering 
+              I'm passionate about building high-performing teams, driving technical excellence, and delivering
               business impact through scalable platform engineering and AI-powered infrastructure.
             </p>
             <a
@@ -180,7 +181,7 @@ export function Contact() {
             >
               Let's Talk
             </a>
-            
+
           </div>
         </motion.div>
       </div>
