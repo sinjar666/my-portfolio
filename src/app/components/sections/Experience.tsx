@@ -52,7 +52,7 @@ export function Experience() {
       ],
     },
     {
-      title: "Project Trainee ... Senior Engineer",
+      title: "Senior Engineer",
       company: "Honeywell Technology Solutions",
       period: "December 2012 – January 2017",
       location: "Bengaluru, IN",
