@@ -3,12 +3,14 @@ import { About } from "./sections/About";
 import { Experience } from "./sections/Experience";
 import { Projects } from "./sections/Projects";
 import { Skills } from "./sections/Skills";
+import { SkillHighlights } from "./sections/AdditionalHighlights";
 import { Contact } from "./sections/Contact";
 import { Navigation } from "./Navigation";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { AboutDetails } from "./sections/AboutDetails";
 import { useIsMobile } from "./ui/use-mobile";
+import { AdditionalHighlights } from "./sections/AdditionalHighlights";
 
 export function Portfolio() {
   const isMobile = useIsMobile();
@@ -81,6 +83,7 @@ export function Portfolio() {
       <main className="relative">
         <Hero isMobile={isMobile} />
         <About isMobile={isMobile} />
+        <AdditionalHighlights isMobile={isMobile} />
         <Projects isMobile={isMobile} />
         <Experience isMobile={isMobile} />
         <AboutDetails isMobile={isMobile} />
