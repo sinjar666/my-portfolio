@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 
 export function AdditionalHighlights() {
     return (
+        <section id="highlights" className="relative py-24 px-6">
         <div className="max-w-6xl mx-auto">
             <div className="mt-12 grid md:grid-cols-3 gap-6">
                 <motion.div
@@ -38,5 +39,6 @@ export function AdditionalHighlights() {
                 </motion.div>
             </div>
         </div>
+        </section>
     );
 }

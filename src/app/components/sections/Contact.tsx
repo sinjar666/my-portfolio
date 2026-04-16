@@ -53,7 +53,7 @@ export function Contact() {
           <div className={`mb-12 ${config.showContactForm ? 'grid md:grid-cols-2 gap-8' : 'flex flex-col items-center'}`}>
             {/* Contact Information */}
             <div className={`space-y-4 ${!config.showContactForm ? 'w-full max-w-lg' : ''}`}>
-              <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-bold mb-6 text-center">Contact Information</h3>
               {contactInfo.map((item, index) => (
                 <motion.div
                   key={item.label}
@@ -88,10 +88,11 @@ export function Contact() {
 
               {/* Social Links */}
               <div className={`mt-12 ${!config.showContactForm ? 'w-full max-w-md flex flex-col' : ''}`}>
-                <h3 className={`text-2xl font-bold mb-6`}>
+                <h3 className={`text-2xl font-bold mb-6 text-center`}>
                   Connect on Social
                 </h3>
-                <div className={`flex gap-4`}>
+                {/* Align Center */}
+                <div className={`flex gap-4 justify-center`}>
                   {socialLinks.map((social, index) => (
                     <motion.a
                       key={social.label}
