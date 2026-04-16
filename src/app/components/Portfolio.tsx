@@ -3,6 +3,7 @@ import { About } from "./sections/About";
 import { Experience } from "./sections/Experience";
 import { Projects } from "./sections/Projects";
 import { Skills } from "./sections/Skills";
+import { AdditionalHighlights } from "./sections/AdditionalHighlights";
 import { Contact } from "./sections/Contact";
 import { Navigation } from "./Navigation";
 import { useEffect, useState } from "react";
@@ -72,6 +73,7 @@ export function Portfolio() {
       <main className="relative">
         <Hero />
         <About />
+        <AdditionalHighlights />
         <Projects />
         <Experience />
         <AboutDetails />
