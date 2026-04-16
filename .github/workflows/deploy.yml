@@ -31,10 +31,10 @@ jobs:
           repository: sinjar666/sinjar666.github.io
           token: ${{ secrets.PAGES_DEPLOY_TOKEN }}
           path: gh-pages-repo
-
       - name: Copy dist contents to GitHub Pages repo
         run: |
-          rm -rf gh-pages-repo/*
+          shopt -s extglob
+          rm -rf gh-pages-repo/!(CNAME)
           cp -r dist/* gh-pages-repo/
           cp dist/.nojekyll gh-pages-repo/ 2>/dev/null || true
 
