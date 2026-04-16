@@ -78,7 +78,7 @@ export function Hero() {
               Get In Touch
             </motion.a>
             <motion.a
-              href="/src/imports/resume-srijan-director-txt-mar2026.pdf"
+              href="https://github.com/sinjar666/my-resume/releases/download/v20260405-141321/resume.pdf"
               download
               className="px-8 py-3 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 font-medium hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all flex items-center gap-2"
               variants={{
