@@ -2,7 +2,11 @@ import { motion } from "motion/react";
 import { Mail, Phone, MapPin, Linkedin, Github, Send } from "lucide-react";
 import { config } from "../../../config";
 
-export function Contact() {
+interface ContactProps {
+  isMobile?: boolean;
+}
+
+export function Contact({ isMobile }: ContactProps) {
   const contactInfo = [
     {
       icon: Mail,
@@ -37,10 +41,10 @@ export function Contact() {
     <section id="contact" className="relative py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={isMobile ? undefined : { opacity: 0, y: 30 }}
+          whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={isMobile ? undefined : { duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
             Get In Touch
@@ -57,16 +61,16 @@ export function Contact() {
               {contactInfo.map((item, index) => (
                 <motion.div
                   key={item.label}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={isMobile ? undefined : { opacity: 0, x: -20 }}
+                  whileInView={isMobile ? undefined : { opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 hover:shadow-lg transition-all"
+                  transition={isMobile ? undefined : { duration: 0.6, delay: index * 0.1 }}
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-white/40 dark:bg-gray-900/40 md:backdrop-blur-xl border border-white/20 dark:border-gray-800/50 hover:shadow-lg transition-all"
                 >
                   <motion.div
                     className="p-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ duration: 0.2 }}
+                    whileHover={isMobile ? undefined : { scale: 1.1, rotate: 5 }}
+                    transition={isMobile ? undefined : { duration: 0.2 }}
                   >
                     <item.icon className="w-5 h-5 text-white" />
                   </motion.div>
@@ -98,11 +102,11 @@ export function Contact() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
+                      initial={isMobile ? undefined : { opacity: 0, y: 20 }}
+                      whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
-                      className={`${config.showContactForm ? 'flex-1' : ''} p-4 rounded-2xl bg-gradient-to-r ${social.color} text-white hover:shadow-lg hover:scale-105 transition-all text-center`}
+                      transition={isMobile ? undefined : { duration: 0.6, delay: index * 0.1 }}
+                      className={`${config.showContactForm ? 'flex-1' : ''} p-4 rounded-2xl bg-gradient-to-r ${social.color} text-white hover:shadow-lg md:hover:scale-105 transition-all text-center`}
                     >
                       <social.icon className="w-6 h-6 mx-auto mb-2" />
                       <p className="font-medium">{social.label}</p>
@@ -115,11 +119,11 @@ export function Contact() {
             {/* Contact Form */}
             {config.showContactForm && (
               <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={isMobile ? undefined : { opacity: 0, x: 20 }}
+                whileInView={isMobile ? undefined : { opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="p-8 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-xl"
+                transition={isMobile ? undefined : { duration: 0.6 }}
+                className="p-8 rounded-3xl bg-white/40 dark:bg-gray-900/40 md:backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-xl"
               >
                 <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
                 <form className="space-y-4">

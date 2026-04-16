@@ -1,7 +1,11 @@
 import { motion } from "motion/react";
 import { Code, Rocket, Zap, Cloud, Brain, Settings } from "lucide-react";
 
-export function Projects() {
+interface ProjectsProps {
+  isMobile?: boolean;
+}
+
+export function Projects({ isMobile }: ProjectsProps) {
   const projects = [
     {
       icon: Brain,
@@ -51,10 +55,10 @@ export function Projects() {
     <section id="projects" className="relative py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={isMobile ? undefined : { opacity: 0, y: 30 }}
+          whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={isMobile ? undefined : { duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
             Featured Projects
@@ -64,17 +68,17 @@ export function Projects() {
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={isMobile ? undefined : { opacity: 0, y: 20 }}
+                whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-lg hover:shadow-2xl transition-all hover:scale-105"
+                transition={isMobile ? undefined : { duration: 0.6, delay: index * 0.1 }}
+                className="group p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 md:backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-lg md:hover:shadow-2xl transition-all md:hover:scale-105"
               >
                 {/* Icon with gradient background */}
                 <motion.div
                   className={`inline-flex p-3 rounded-2xl bg-gradient-to-r ${project.gradient} mb-4`}
-                  whileHover={{ rotate: 360, scale: 1.1 }}
-                  transition={{ duration: 0.3 }}
+                  whileHover={isMobile ? undefined : { rotate: 360, scale: 1.1 }}
+                  transition={isMobile ? undefined : { duration: 0.3 }}
                 >
                   <project.icon className="w-6 h-6 text-white" />
                 </motion.div>
@@ -104,11 +108,11 @@ export function Projects() {
 
           {/* Publication */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={isMobile ? undefined : { opacity: 0, y: 20 }}
+            whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-12 p-8 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/5 dark:to-purple-500/5 backdrop-blur-xl border border-white/20 dark:border-gray-800/50"
+            transition={isMobile ? undefined : { duration: 0.6, delay: 0.3 }}
+            className="mt-12 p-8 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/5 dark:to-purple-500/5 md:backdrop-blur-xl border border-white/20 dark:border-gray-800/50"
           >
             <h3 className="text-2xl font-bold mb-4">Publication</h3>
             <p className="text-gray-700 dark:text-gray-300 mb-2">

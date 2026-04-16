@@ -1,6 +1,10 @@
 import { motion } from "motion/react";
 import { Target, Users, Zap } from "lucide-react";
 
+interface AboutDetailsProps {
+  isMobile?: boolean;
+}
+
 const highlights = [
     {
         icon: Target,
@@ -19,18 +23,18 @@ const highlights = [
     },
 ];
 
-export function AboutDetails() {
+export function AboutDetails({ isMobile }: AboutDetailsProps) {
     return (
         <>
             <div className="max-w-6xl mx-auto">
-                <div className="p-8 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/5 dark:to-purple-500/5 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 mb-12">
+                <div className="p-8 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/5 dark:to-purple-500/5 md:backdrop-blur-xl border border-white/20 dark:border-gray-800/50 mb-12">
                     <h3 className="text-2xl font-bold mb-6 text-center">Leadership Philosophy</h3>
                     <motion.div
                         className="grid md:grid-cols-3 gap-6"
-                        initial="hidden"
-                        whileInView="visible"
+                        initial={isMobile ? undefined : "hidden"}
+                        whileInView={isMobile ? undefined : "visible"}
                         viewport={{ once: true }}
-                        variants={{
+                        variants={isMobile ? undefined : {
                             hidden: {},
                             visible: {
                                 transition: {
@@ -82,11 +86,11 @@ export function AboutDetails() {
                     {highlights.map((item, index) => (
                         <motion.div
                             key={item.title}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={isMobile ? undefined : { opacity: 0, y: 20 }}
+                            whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
-                            className="p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                            transition={isMobile ? undefined : { duration: 0.6, delay: index * 0.1 }}
+                            className="p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 md:backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-lg md:hover:shadow-xl transition-all md:hover:scale-105"
                         >
                             <item.icon className="w-10 h-10 text-indigo-600 dark:text-indigo-400 mb-4" />
                             <h4 className="text-xl font-bold mb-2">{item.title}</h4>

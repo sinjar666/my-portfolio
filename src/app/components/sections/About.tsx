@@ -1,21 +1,25 @@
 import { motion } from "motion/react";
 import { AboutDetails } from "./AboutDetails";
 
-export function About() {
+interface AboutProps {
+  isMobile?: boolean;
+}
+
+export function About({ isMobile }: AboutProps) {
   return (
     <section id="about" className="relative py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={isMobile ? undefined : { opacity: 0, y: 30 }}
+          whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={isMobile ? undefined : { duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
             About Me
           </h2>
 
-          <div className="p-8 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-xl mb-12">
+          <div className="p-8 rounded-3xl bg-white/40 dark:bg-gray-900/40 md:backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-xl mb-12">
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
               AI is redefining how software is built. I work on the systems that make that future possible.
               I build and scale mission-critical platforms that power high-throughput, globally distributed systems.

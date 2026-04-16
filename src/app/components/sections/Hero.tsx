@@ -2,22 +2,26 @@ import { motion } from "motion/react";
 import { Github, Linkedin, Mail, Download } from "lucide-react";
 import profileImage from "../../../assets/profile.png";
 
-export function Hero() {
+interface HeroProps {
+  isMobile?: boolean;
+}
+
+export function Hero({ isMobile }: HeroProps) {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center px-6 pt-20">
       <div className="max-w-6xl mx-auto text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={isMobile ? undefined : { opacity: 0, y: 30 }}
+          animate={isMobile ? undefined : { opacity: 1, y: 0 }}
+          transition={isMobile ? undefined : { duration: 0.8 }}
         >
           {/* Profile Image */}
           <motion.div
             className="mb-8 inline-block"
-            animate={{
+            animate={isMobile ? undefined : {
               y: [0, -10, 0],
             }}
-            transition={{
+            transition={isMobile ? undefined : {
               duration: 4,
               repeat: Infinity,
               ease: "easeInOut",
@@ -45,7 +49,7 @@ export function Hero() {
           </p>
 
           {/* Glassmorphic Card */}
-          <div className="inline-block p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-xl mb-8">
+          <div className="inline-block p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 md:backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-xl mb-8">
             <p className="text-base text-gray-700 dark:text-gray-300 max-w-2xl">
               Engineering leader with <span className="font-semibold text-indigo-600 dark:text-indigo-400">14 years</span> of experience building mission-critical platforms that power{" "}
               <span className="font-semibold text-purple-600 dark:text-purple-400">high-throughput, globally distributed systems</span>. 
@@ -56,9 +60,9 @@ export function Hero() {
           {/* CTA Buttons */}
           <motion.div 
             className="flex flex-wrap items-center justify-center gap-4 mb-12"
-            initial="hidden"
-            animate="visible"
-            variants={{
+            initial={isMobile ? undefined : "hidden"}
+            animate={isMobile ? undefined : "visible"}
+            variants={isMobile ? undefined : {
               hidden: {},
               visible: {
                 transition: {
@@ -110,9 +114,9 @@ export function Hero() {
               href="https://github.com/sinjar666"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all hover:scale-110"
+              className="p-3 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all md:hover:scale-110"
               aria-label="GitHub"
-              variants={{
+              variants={isMobile ? undefined : {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 }
               }}
@@ -123,9 +127,9 @@ export function Hero() {
               href="https://linkedin.com/in/sinjar666"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all hover:scale-110"
+              className="p-3 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all md:hover:scale-110"
               aria-label="LinkedIn"
-              variants={{
+              variants={isMobile ? undefined : {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 }
               }}
@@ -134,9 +138,9 @@ export function Hero() {
             </motion.a>
             <motion.a
               href="mailto:srijmukh070@gmail.com"
-              className="p-3 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all hover:scale-110"
+              className="p-3 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all md:hover:scale-110"
               aria-label="Email"
-              variants={{
+              variants={isMobile ? undefined : {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 }
               }}
@@ -149,9 +153,9 @@ export function Hero() {
         {/* Scroll Indicator */}
         <motion.div
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          initial={isMobile ? undefined : { opacity: 0 }}
+          animate={isMobile ? undefined : { opacity: 1, y: [0, 10, 0] }}
+          transition={isMobile ? undefined : { duration: 2, repeat: Infinity }}
         >
           <div className="w-6 h-10 rounded-full border-2 border-gray-400 dark:border-gray-600 flex items-start justify-center p-2">
             <div className="w-1 h-2 bg-gray-400 dark:bg-gray-600 rounded-full" />

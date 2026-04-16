@@ -1,7 +1,11 @@
 import { motion } from "motion/react";
 import { Briefcase, Calendar } from "lucide-react";
 
-export function Experience() {
+interface ExperienceProps {
+  isMobile?: boolean;
+}
+
+export function Experience({ isMobile }: ExperienceProps) {
   const experiences = [
     {
       title: "Director, Software Development",
@@ -69,10 +73,10 @@ export function Experience() {
     <section id="experience" className="relative py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={isMobile ? undefined : { opacity: 0, y: 30 }}
+          whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={isMobile ? undefined : { duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
             Experience
@@ -85,10 +89,10 @@ export function Experience() {
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={isMobile ? undefined : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={isMobile ? undefined : { opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={isMobile ? undefined : { duration: 0.6, delay: index * 0.1 }}
                 className={`relative mb-12 ${
                   index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8 md:ml-auto md:text-left"
                 } md:w-1/2`}
@@ -97,9 +101,9 @@ export function Experience() {
                 <div className={`absolute top-6 ${index % 2 === 0 ? "md:right-0" : "left-0 md:left-0"} md:transform md:-translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 border-4 border-white dark:border-gray-900 z-10`} style={{ left: index % 2 === 0 ? 'auto' : '-8px', right: index % 2 === 0 ? '-8px' : 'auto' }} />
 
                 <motion.div
-                  className="ml-8 md:ml-0 p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-lg hover:shadow-xl transition-all"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
+                  className="ml-8 md:ml-0 p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 md:backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-lg md:hover:shadow-xl transition-all"
+                  whileHover={isMobile ? undefined : { scale: 1.02 }}
+                  transition={isMobile ? undefined : { duration: 0.2 }}
                 >
                   <div className="flex items-center gap-2 mb-2 justify-start md:justify-inherit">
                     <Briefcase className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
