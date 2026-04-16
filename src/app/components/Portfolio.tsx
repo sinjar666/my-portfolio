@@ -7,6 +7,7 @@ import { Contact } from "./sections/Contact";
 import { Navigation } from "./Navigation";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import { AboutDetails } from "./sections/AboutDetails";
 
 export function Portfolio() {
   const [scrolled, setScrolled] = useState(false);
@@ -71,8 +72,9 @@ export function Portfolio() {
       <main className="relative">
         <Hero />
         <About />
-        <Experience />
         <Projects />
+        <Experience />
+        <AboutDetails />
         <Skills />
         <Contact />
       </main>
