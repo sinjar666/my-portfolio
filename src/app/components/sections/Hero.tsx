@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Github, Linkedin, Mail, Download } from "lucide-react";
 import profileImage from "../../../assets/profile.png";
+import { config } from "../../../config";
 
 export function Hero() {
   return (
@@ -78,7 +79,7 @@ export function Hero() {
               Get In Touch
             </motion.a>
             <motion.a
-              href="https://github.com/sinjar666/my-resume/releases/download/v20260405-141321/resume.pdf"
+              href={config.resumeUrl}
               download
               className="px-8 py-3 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 font-medium hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all flex items-center gap-2"
               variants={{
