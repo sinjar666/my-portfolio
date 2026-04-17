@@ -73,7 +73,6 @@ export function Portfolio() {
       <main className="relative">
         <Hero />
         <About />
-        <AdditionalHighlights />
         <Projects />
         <Experience />
         <AboutDetails />
