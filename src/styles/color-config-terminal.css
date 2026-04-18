@@ -84,6 +84,8 @@
   --timeline-line: #d0d0c8;
   --timeline-dot: #563812;
   --icon-background: #563812;
+  --chip-background: #6a5010;
+  --chip-foreground: #ffffff;
   /* Card border (subtle, low saturation) */
   --card-border: rgba(86,56,18,0.08);
 

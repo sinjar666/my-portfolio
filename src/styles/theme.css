@@ -177,6 +177,17 @@
     background: var(--button-primary-hover);
   }
 
+  .chip {
+    background-color: var(--chip-background);
+    background: var(--chip-background);
+    color: var(--chip-foreground);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .chip:hover {
+    filter: brightness(0.98);
+  }
+
   .btn-secondary {
     background: var(--button-secondary-background);
     color: var(--button-secondary-foreground);
