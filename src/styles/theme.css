@@ -72,6 +72,7 @@
     transform: translateY(-220%);
     padding: 0.5rem 0.875rem;
     border-radius: 0.5rem;
+    background-color: var(--accent);
     background: var(--accent);
     color: var(--accent-foreground);
     font-weight: 600;
@@ -166,11 +167,13 @@
   }
 
   .btn-primary {
+    background-color: var(--button-primary-background);
     background: var(--button-primary-background);
     color: var(--button-primary-foreground);
   }
 
   .btn-primary:hover {
+    background-color: var(--button-primary-hover);
     background: var(--button-primary-hover);
   }
 

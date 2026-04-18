@@ -73,22 +73,22 @@
   --page-background: #ffffff;
   --hero-ring: #d9dde1;
   --button-primary-background: var(--section-title);
-  --button-primary-hover: #5a4510;
+  --button-primary-hover: #3f2a0b;
   --button-primary-foreground: #ffffff;
   --button-secondary-background: #f4f3ef;
   --button-secondary-foreground: #121212;
-  --section-title: #6a5010;
-  --nav-logo: #5a4510;
-  --link-color: #5a4510;
-  --link-hover: #3e2e0a;
+  --section-title: #563812;
+  --nav-logo: #563812;
+  --link-color: #563812;
+  --link-hover: #3f2a0b;
   --timeline-line: #d0d0c8;
-  --timeline-dot: #5a4510;
-  --icon-background: #5a4510;
+  --timeline-dot: #563812;
+  --icon-background: #563812;
   /* Card border (subtle, low saturation) */
-  --card-border: rgba(106,80,16,0.08);
+  --card-border: rgba(86,56,18,0.08);
 
   /* Icon gradient pairs (8 theme-matched variants) */
-  --icon-c1-from: #5a4510; --icon-c1-to: #7a6018; /* amber — primary accent */
+  --icon-c1-from: #563812; --icon-c1-to: #744d1b; /* amber — primary accent */
   --icon-c2-from: #1a2c42; --icon-c2-to: #24364e; /* navy */
   --icon-c3-from: #1a3232; --icon-c3-to: #243c3c; /* teal */
   --icon-c4-from: #3a1e08; --icon-c4-to: #50280c; /* sienna */
