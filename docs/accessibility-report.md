@@ -68,8 +68,12 @@ Audit command used:
 
 ```bash
 npm run a11y:audit:install-browser
-AUDIT_URL=http://127.0.0.1:4173 node scripts/accessibility-audit.mjs > docs/portfolio-a11y-audit-after.json
+AUDIT_URL=http://127.0.0.1:4174 node scripts/accessibility-audit.mjs > docs/portfolio-a11y-audit-after.json
 ```
+
+Latest audit run:
+
+From `docs/portfolio-a11y-audit-after.json` (auditedAt: 2026-04-18T19:19:28.858Z, url: http://127.0.0.1:4174):
 
 ## Baseline Before Fixes
 
