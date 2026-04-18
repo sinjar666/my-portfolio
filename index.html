@@ -10,6 +10,26 @@
       <meta name="description" content="Srijan Mukherjee is a Director of Engineering specializing in cloud platform, distributed systems, and AI-powered infrastructure. Explore his portfolio, leadership experience, and professional achievements." />
       <meta name="keywords" content="Srijan Mukherjee, engineering leader, director of engineering, cloud platform, distributed systems, AI, portfolio, software architecture, infrastructure, resume" />
       <meta name="theme-color" content="#7c3aed" />
+      <script>
+        (function () {
+          try {
+            var storageKey = 'portfolio-theme';
+            var stored = localStorage.getItem(storageKey);
+            if (stored === 'light' || stored === 'dark') {
+              document.documentElement.classList.add(stored);
+              return;
+            }
+
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+              document.documentElement.classList.add('dark');
+            } else {
+              document.documentElement.classList.add('light');
+            }
+          } catch (e) {
+            // ignore (localStorage may be disabled)
+          }
+        })();
+      </script>
       <title>%VITE_SITE_TITLE%</title>
 
       <link rel="canonical" href="%VITE_SITE_URL%" />

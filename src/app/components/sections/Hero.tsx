@@ -1,9 +1,13 @@
 import { motion } from "motion/react";
-import { Github, Linkedin, Mail, Download } from "lucide-react";
+import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import profileImage from "../../../assets/profile.png";
 import { config } from "../../../config";
 
-export function Hero() {
+type HeroProps = {
+  hasScrolled: boolean;
+};
+
+export function Hero({ hasScrolled }: HeroProps) {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center px-6 pt-20">
       <div className="max-w-6xl mx-auto text-center">
@@ -24,7 +28,7 @@ export function Hero() {
               ease: "easeInOut",
             }}
           >
-            <div className="w-40 h-40 rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-1 shadow-2xl">
+            <div className="w-40 h-40 rounded-full p-1 shadow-2xl hero-ring">
               <img 
                 src={profileImage} 
                 alt="Srijan Mukherjee" 
@@ -33,7 +37,7 @@ export function Hero() {
             </div>
           </motion.div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-primary">
             Srijan Mukherjee
           </h1>
 
@@ -48,9 +52,9 @@ export function Hero() {
           {/* Glassmorphic Card */}
           <div className="inline-block p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-xl mb-8">
             <p className="text-base text-gray-700 dark:text-gray-300 max-w-2xl">
-              Engineering leader with <span className="font-semibold text-indigo-600 dark:text-indigo-400">14 years</span> of experience building mission-critical platforms that power{" "}
-              <span className="font-semibold text-purple-600 dark:text-purple-400">high-throughput, globally distributed systems</span>. 
-              Driving the future of <span className="font-semibold text-pink-600 dark:text-pink-400">AI-powered infrastructure</span>.
+              Engineering leader with <span className="semibold-accent">14 years</span> of experience building mission-critical platforms that power{" "}
+              <span className="semibold-accent">high-throughput, globally distributed systems</span>. 
+              Driving the future of <span className="semibold-accent">AI-powered infrastructure</span>.
             </p>
           </div>
 
@@ -70,7 +74,7 @@ export function Hero() {
           >
             <motion.a
               href="#contact"
-              className="px-8 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium hover:shadow-lg hover:scale-105 transition-all"
+              className="px-8 py-3 rounded-full btn-primary font-medium hover:shadow-lg hover:scale-105 transition-all"
               variants={{
                 hidden: { opacity: 0, scale: 0.8 },
                 visible: { opacity: 1, scale: 1 }
@@ -149,14 +153,39 @@ export function Hero() {
 
         {/* Scroll Indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2"
+          initial={{ opacity: 0, y: 16 }}
+          animate={hasScrolled ? { opacity: 0, y: 16 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+          aria-hidden="true"
         >
-          <div className="w-6 h-10 rounded-full border-2 border-gray-400 dark:border-gray-600 flex items-start justify-center p-2">
-            <div className="w-1 h-2 bg-gray-400 dark:bg-gray-600 rounded-full" />
-          </div>
+          <motion.div
+            className="hidden md:flex w-6 h-10 rounded-full border-2 border-gray-400 dark:border-gray-600 items-start justify-center p-2"
+            animate={hasScrolled ? { opacity: 0 } : { opacity: 1 }}
+            transition={{ duration: 0.2 }}
+          >
+            <motion.div
+              className="w-1 h-2 bg-gray-400 dark:bg-gray-600 rounded-full"
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </motion.div>
+
+          <motion.div
+            className="flex md:hidden flex-col items-center gap-2 text-[10px] font-medium uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400"
+            animate={hasScrolled ? { opacity: 0 } : { opacity: 1 }}
+            transition={{ duration: 0.2 }}
+          >
+            <span>Swipe</span>
+            <motion.div
+              className="flex flex-col items-center"
+              animate={{ y: [0, 6, 0], opacity: [0.45, 1, 0.45] }}
+              transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <ArrowDown className="h-4 w-4" />
+              <ArrowDown className="-mt-1 h-4 w-4" />
+            </motion.div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

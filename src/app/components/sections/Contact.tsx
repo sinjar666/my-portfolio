@@ -34,7 +34,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative py-24 px-6">
+    <section id="contact" className="relative px-6 py-16 md:py-20">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -42,7 +42,7 @@ export function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-primary">
             Get In Touch
           </h2>
 
@@ -64,7 +64,7 @@ export function Contact() {
                   className="flex items-center gap-4 p-4 rounded-2xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 hover:shadow-lg transition-all"
                 >
                   <motion.div
-                    className="p-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500"
+                    className="p-3 rounded-xl icon-bg"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -75,7 +75,7 @@ export function Contact() {
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="font-medium text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                        className="font-medium text-gray-900 dark:text-gray-100 hover:text-secondary transition-colors"
                       >
                         {item.value}
                       </a>
@@ -159,7 +159,7 @@ export function Contact() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium hover:shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-2"
+                    className="w-full px-6 py-3 rounded-xl btn-primary font-medium hover:shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-2"
                   >
                     <Send className="w-4 h-4" />
                     Send Message
@@ -170,7 +170,7 @@ export function Contact() {
           </div>
 
           {/* Additional CTA */}
-          <div className="p-8 rounded-3xl bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 dark:from-indigo-500/5 dark:via-purple-500/5 dark:to-pink-500/5 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 text-center">
+          <div className="p-8 rounded-3xl bg-white/20 dark:bg-gray-900/20 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 text-center">
             <h3 className="text-2xl font-bold mb-4">Want to buy me a coffee?</h3>
             <p className="text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
               I'm passionate about building high-performing teams, driving technical excellence, and delivering
@@ -179,7 +179,7 @@ export function Contact() {
             <a
               href="https://calendly.com/srijmukh070"
               target="_blank"
-              className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium hover:shadow-lg hover:scale-105 transition-all"
+              className="inline-block px-8 py-3 rounded-full btn-primary font-medium hover:shadow-lg hover:scale-105 transition-all"
             >
               Let's Talk
             </a>

@@ -3,7 +3,7 @@ import { AboutDetails } from "./AboutDetails";
 
 export function About() {
   return (
-    <section id="about" className="relative py-24 px-6">
+    <section id="about" className="relative px-6 py-16 md:py-20">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -11,7 +11,7 @@ export function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-primary">
             About Me
           </h2>
 

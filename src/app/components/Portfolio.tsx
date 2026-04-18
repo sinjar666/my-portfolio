@@ -6,19 +6,20 @@ import { Skills } from "./sections/Skills";
 import { AdditionalHighlights } from "./sections/AdditionalHighlights";
 import { Contact } from "./sections/Contact";
 import { Navigation } from "./Navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { AboutDetails } from "./sections/AboutDetails";
 
 export function Portfolio() {
   const [scrolled, setScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const scrolledDown = currentScrollY > lastScrollY;
+      const scrolledDown = currentScrollY > lastScrollY.current;
       const scrolledPastThreshold = currentScrollY > 100;
 
       if (scrolledDown && scrolledPastThreshold) {
@@ -28,50 +29,21 @@ export function Portfolio() {
       }
 
       setScrolled(currentScrollY > 50);
-      setLastScrollY(currentScrollY);
+      setHasScrolled(currentScrollY > 24);
+      lastScrollY.current = currentScrollY;
     };
 
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-950 dark:via-indigo-950 dark:to-purple-950">
-      {/* Animated background */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-blue-400/20 to-purple-400/20 dark:from-blue-600/10 dark:to-purple-600/10 rounded-full blur-3xl"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-tl from-pink-400/20 to-indigo-400/20 dark:from-pink-600/10 dark:to-indigo-600/10 rounded-full blur-3xl"
-          animate={{
-            x: [0, -100, 0],
-            y: [0, 50, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2,
-          }}
-        />
-      </div>
-
+    <div className="relative min-h-screen overflow-x-clip bg-page text-foreground">
       <Navigation scrolled={scrolled} isVisible={isVisible} />
 
       <main className="relative">
-        <Hero />
+        <Hero hasScrolled={hasScrolled} />
         <About />
         <Projects />
         <Experience />

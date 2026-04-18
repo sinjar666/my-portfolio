@@ -1,0 +1,184 @@
+/**
+ * Color Theme Configuration - Purple
+ * 
+ * This file defines all color variables for the Purple theme.
+ * Modern, elegant purple-based color scheme.
+ */
+
+/* ============================================================================
+   LIGHT MODE COLORS (:root)
+   ============================================================================ */
+:root {
+  /* Background & Foreground */
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+
+  /* Card */
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+
+  /* Popover */
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+
+  /* Primary */
+  --primary: #030213;
+  --primary-foreground: oklch(1 0 0);
+
+  /* Secondary */
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
+
+  /* Muted */
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+
+  /* Accent */
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+
+  /* Destructive (Error/Warning) */
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+
+  /* Border & Input */
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+
+  /* Switch */
+  --switch-background: #cbced4;
+
+  /* Ring (Focus) */
+  --ring: oklch(0.708 0 0);
+
+  /* Chart Colors */
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+
+  /* Sidebar */
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+
+  /* Page / Decorations */
+  --page-background: linear-gradient(135deg, #eef2ff 0%, #f6edff 100%);
+  --hero-ring: linear-gradient(135deg, #6366f1, #a855f7);
+  --button-primary-background: linear-gradient(135deg, #6366f1, #a855f7);
+  --button-primary-hover: linear-gradient(135deg, #4f46e5, #7c3aed);
+  --button-primary-foreground: #ffffff;
+  --button-secondary-background: rgba(255, 255, 255, 0.65);
+  --button-secondary-foreground: #030213;
+  --nav-logo: #6366f1;
+  --link-color: #6366f1;
+  --link-hover: #7c3aed;
+  --timeline-line: linear-gradient(180deg, #6366f1, #a855f7);
+  --timeline-dot: linear-gradient(135deg, #6366f1, #a855f7);
+  --icon-background: linear-gradient(135deg, #7c3aed, #ec4899);
+  --section-title: #4f46e5;
+  --card-border: rgba(99, 102, 241, 0.12);
+
+  --icon-c1-from: #6366f1; --icon-c1-to: #4f46e5;
+  --icon-c2-from: #8b5cf6; --icon-c2-to: #7c3aed;
+  --icon-c3-from: #a855f7; --icon-c3-to: #9333ea;
+  --icon-c4-from: #c026d3; --icon-c4-to: #a21caf;
+  --icon-c5-from: #ec4899; --icon-c5-to: #db2777;
+  --icon-c6-from: #7c3aed; --icon-c6-to: #ec4899;
+  --icon-c7-from: #6366f1; --icon-c7-to: #a855f7;
+  --icon-c8-from: #4f46e5; --icon-c8-to: #7c3aed;
+}
+
+/* ============================================================================
+   DARK MODE COLORS (.dark)
+   ============================================================================ */
+.dark {
+  /* Background & Foreground */
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+
+  /* Card */
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+
+  /* Popover */
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+
+  /* Primary */
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+
+  /* Secondary */
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+
+  /* Muted */
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+
+  /* Accent */
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+
+  /* Destructive (Error/Warning) */
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+
+  /* Border & Input */
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+
+  /* Ring (Focus) */
+  --ring: oklch(0.439 0 0);
+
+  /* Chart Colors */
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+
+  /* Sidebar */
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+
+  /* Page / Decorations */
+  --page-background: linear-gradient(135deg, oklch(0.145 0 0), oklch(0.205 0 0));
+  --hero-ring: linear-gradient(135deg, oklch(0.488 0.243 264.376), oklch(0.269 0 0));
+  --button-primary-background: linear-gradient(135deg, oklch(0.488 0.243 264.376), oklch(0.269 0 0));
+  --button-primary-hover: linear-gradient(135deg, oklch(0.645 0.246 16.439), oklch(0.769 0.188 70.08));
+  --button-primary-foreground: oklch(0.145 0 0);
+  --button-secondary-background: oklch(0.269 0 0);
+  --button-secondary-foreground: oklch(0.985 0 0);
+  --nav-logo: oklch(0.488 0.243 264.376);
+  --link-color: oklch(0.488 0.243 264.376);
+  --link-hover: oklch(0.769 0.188 70.08);
+  --timeline-line: linear-gradient(180deg, oklch(0.488 0.243 264.376), oklch(0.269 0 0));
+  --timeline-dot: oklch(0.985 0 0);
+  --icon-background: oklch(0.269 0 0);
+  --section-title: #a78bfa;
+  --card-border: rgba(167, 139, 250, 0.2);
+
+  --icon-c1-from: #818cf8; --icon-c1-to: #6366f1;
+  --icon-c2-from: #a78bfa; --icon-c2-to: #8b5cf6;
+  --icon-c3-from: #c4b5fd; --icon-c3-to: #a78bfa;
+  --icon-c4-from: #e879f9; --icon-c4-to: #d946ef;
+  --icon-c5-from: #f472b6; --icon-c5-to: #ec4899;
+  --icon-c6-from: #8b5cf6; --icon-c6-to: #ec4899;
+  --icon-c7-from: #818cf8; --icon-c7-to: #a78bfa;
+  --icon-c8-from: #6366f1; --icon-c8-to: #8b5cf6;
+}

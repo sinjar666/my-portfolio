@@ -1,0 +1,188 @@
+/**
+ * Color Theme Configuration - Terminal
+ * 
+ * This file defines all color variables for the Terminal theme.
+ * Solid, vibrant terminal colors with classic terminal aesthetics.
+ */
+
+/* ============================================================================
+   LIGHT MODE COLORS (:root) - Terminal Light Mode
+   ============================================================================ */
+:root {
+  /* Background & Foreground */
+  --background: #ffffff;
+  --foreground: #121212;
+
+  /* Card */
+  --card: #ffffff;
+  --card-foreground: #121212;
+
+  /* Popover */
+  --popover: #ffffff;
+  --popover-foreground: #121212;
+
+  /* Primary */
+  --primary: var(--section-title);
+  --primary-foreground: #ffffff;
+
+  /* Secondary */
+  --secondary: #3f5260;
+  --secondary-foreground: #ffffff;
+
+  /* Muted */
+  --muted: #c8c7bc;
+  --muted-foreground: #323232;
+
+  /* Accent (match section title) */
+  --accent: var(--section-title);
+  --accent-foreground: #ffffff;
+
+  /* Destructive (Error/Warning) */
+  --destructive: #8c2e29;
+  --destructive-foreground: #ffffff;
+
+  /* Border & Input */
+  --border: #d0d0c8;
+  --input: transparent;
+  --input-background: #ffffff;
+
+  /* Switch */
+  --switch-background: #999999;
+
+  /* Ring (Focus) */
+  --ring: #5f7284;
+
+  /* Chart Colors - Terminal palette */
+  --chart-1: #60707d;
+  --chart-2: #4f6374;
+  --chart-3: #8a9ba5;
+  --chart-4: #c7b77f;
+  --chart-5: #ca6f67;
+
+  /* Sidebar */
+  --sidebar: #f0f0f0;
+  --sidebar-foreground: #000000;
+  --sidebar-primary: #2c3d4b;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #d8d3c7;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #d0d0c8;
+  --sidebar-ring: #5f7284;
+
+  /* Page / Decorations */
+  --page-background: #ffffff;
+  --hero-ring: #d9dde1;
+  --button-primary-background: var(--section-title);
+  --button-primary-hover: #5a4510;
+  --button-primary-foreground: #ffffff;
+  --button-secondary-background: #f4f3ef;
+  --button-secondary-foreground: #121212;
+  --section-title: #6a5010;
+  --nav-logo: #5a4510;
+  --link-color: #5a4510;
+  --link-hover: #3e2e0a;
+  --timeline-line: #d0d0c8;
+  --timeline-dot: #5a4510;
+  --icon-background: #5a4510;
+  /* Card border (subtle, low saturation) */
+  --card-border: rgba(106,80,16,0.08);
+
+  /* Icon gradient pairs (8 theme-matched variants) */
+  --icon-c1-from: #5a4510; --icon-c1-to: #7a6018; /* amber — primary accent */
+  --icon-c2-from: #1a2c42; --icon-c2-to: #24364e; /* navy */
+  --icon-c3-from: #1a3232; --icon-c3-to: #243c3c; /* teal */
+  --icon-c4-from: #3a1e08; --icon-c4-to: #50280c; /* sienna */
+  --icon-c5-from: #1e2e10; --icon-c5-to: #2c3e1a; /* olive */
+  --icon-c6-from: #20183c; --icon-c6-to: #2e2850; /* violet */
+  --icon-c7-from: #3c1010; --icon-c7-to: #541818; /* ruby */
+  --icon-c8-from: #1c2830; --icon-c8-to: #283440; /* slate */
+}
+
+/* ============================================================================
+   DARK MODE COLORS (.dark) - Terminal Dark Mode
+   ============================================================================ */
+.dark {
+  /* Background & Foreground */
+  --background: #000000;
+  --foreground: #dcdad4;
+
+  /* Card */
+  --card: #131617;
+  --card-foreground: #dcdad4;
+
+  /* Popover */
+  --popover: #131617;
+  --popover-foreground: #dcdad4;
+
+  /* Primary */
+  --primary: var(--section-title);
+  --primary-foreground: #000000;
+
+  /* Secondary */
+  --secondary: #a0b3be;
+  --secondary-foreground: #000000;
+
+  /* Muted */
+  --muted: #444440;
+  --muted-foreground: #aeada6;
+
+  /* Accent (match section title) */
+  --accent: var(--section-title);
+  --accent-foreground: #000000;
+
+  /* Destructive (Error/Warning) */
+  --destructive: #ef9992;
+  --destructive-foreground: #1a0808;
+
+  /* Border & Input */
+  --border: #333333;
+  --input: #1a1a1a;
+
+  /* Ring (Focus) */
+  --ring: #628793;
+
+  /* Chart Colors - Terminal palette */
+  --chart-1: #8a9ba5;
+  --chart-2: #7ba3b0;
+  --chart-3: #c7b77f;
+  --chart-4: #d0a78e;
+  --chart-5: #ca6f67;
+
+  /* Sidebar */
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #dcdad4;
+  --sidebar-primary: #8a9ba5;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #2c3d4b;
+  --sidebar-accent-foreground: #c2d2dc;
+  --sidebar-border: #333330;
+  --sidebar-ring: #628793;
+
+  /* Page / Decorations */
+  --page-background: #000000;
+  --hero-ring: #1a232b;
+  --button-primary-background: var(--section-title);
+  --button-primary-hover: #c8a030;
+  --button-primary-foreground: #000000;
+  --button-secondary-background: #12171d;
+  --button-secondary-foreground: #dcdad4;
+  --section-title: #d4aa40;
+  --nav-logo: #c8a030;
+  --link-color: #c8a030;
+  --link-hover: #d8b840;
+  --timeline-line: #232b33;
+  --timeline-dot: #c8a030;
+  --icon-background: #2e2008;
+  /* Card border (subtle, slightly stronger on dark backgrounds) */
+  --card-border: rgba(212,170,64,0.12);
+
+  /* Icon gradient pairs (8 theme-matched variants) */
+  --icon-c1-from: #7a5818; --icon-c1-to: #9e7420; /* amber */
+  --icon-c2-from: #263a54; --icon-c2-to: #324666; /* navy */
+  --icon-c3-from: #1e3c3c; --icon-c3-to: #2a4c4c; /* teal */
+  --icon-c4-from: #4c2a0c; --icon-c4-to: #663a18; /* sienna */
+  --icon-c5-from: #283a18; --icon-c5-to: #364c24; /* olive */
+  --icon-c6-from: #28224e; --icon-c6-to: #363060; /* violet */
+  --icon-c7-from: #4a1818; --icon-c7-to: #622222; /* ruby */
+  --icon-c8-from: #24303e; --icon-c8-to: #303c4c; /* slate */
+}

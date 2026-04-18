@@ -38,7 +38,7 @@ export function Navigation({ scrolled, isVisible }: NavigationProps) {
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+          <a href="#home" className="text-2xl font-bold text-logo">
             SM
           </a>
 
@@ -60,7 +60,7 @@ export function Navigation({ scrolled, isVisible }: NavigationProps) {
               <motion.a
                 key={item.label}
                 href={item.href}
-                className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-secondary transition-colors"
                 variants={{
                   hidden: { opacity: 0, y: -10 },
                   visible: { opacity: 1, y: 0 }
@@ -78,9 +78,9 @@ export function Navigation({ scrolled, isVisible }: NavigationProps) {
             aria-label="Toggle theme"
           >
             {theme === "dark" ? (
-              <Sun className="w-5 h-5 text-yellow-500" />
+              <Sun className="w-5 h-5 text-secondary" />
             ) : (
-              <Moon className="w-5 h-5 text-indigo-600" />
+              <Moon className="w-5 h-5 text-secondary" />
             )}
           </button>
 
@@ -106,7 +106,7 @@ export function Navigation({ scrolled, isVisible }: NavigationProps) {
                 key={item.label}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                className="block py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-secondary transition-colors"
               >
                 {item.label}
               </a>

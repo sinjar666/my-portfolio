@@ -1,0 +1,10 @@
+/**
+ * Color Theme Configuration - Default
+ * 
+ * This file imports the active color theme.
+ * Change the import to switch themes:
+ * - './color-config-purple.css' - Modern purple theme
+ * - './color-config-terminal.css' - Classic terminal theme (default)
+ */
+
+@import './color-config-terminal.css';

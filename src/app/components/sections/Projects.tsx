@@ -8,47 +8,47 @@ export function Projects() {
       title: "Agentic Workflow Builder",
       description: "Multi-tenant platform enabling teams to build complex enterprise workflows using natural language prompts. Innovative agentic loop aimed at reducing context rot with large conversation histories.",
       tags: ["Generative AI", "LLM", "Multi-tenant", "Natural Language"],
-      gradient: "from-blue-500 to-cyan-500",
+      gradient: "icon-color-6",
     },
     {
       icon: Code,
       title: "vPlay - AI Native IDE",
       description: "Cloud-based AI native in-browser IDE aimed at left-shifting developer setup inertia, with projected annual savings exceeding $1M.",
       tags: ["AI", "Cloud", "Developer Tools", "Productivity"],
-      gradient: "from-purple-500 to-pink-500",
+      gradient: "icon-color-2",
     },
     {
       icon: Zap,
       title: "Active-Active Message Queue",
       description: "Designed and implemented Active-Active Message Queue Architecture for distributed enterprise job execution engine, resulting in 60% improvement in p95 SLAs and 30% reduction in resource utilization.",
       tags: ["Distributed Systems", "Kafka", "Performance", "Architecture"],
-      gradient: "from-orange-500 to-red-500",
+      gradient: "icon-color-1",
     },
     {
       icon: Cloud,
       title: "Active-Active Dual Region Writer",
       description: "Innovated application architecture with RDMS based on conflict avoidance strategy for split brain coupled with in-built Disaster Recovery state machine.",
       tags: ["High Availability", "RDMS", "Disaster Recovery", "Resilience"],
-      gradient: "from-green-500 to-emerald-500",
+      gradient: "icon-color-3",
     },
     {
       icon: Settings,
       title: "Infrastructure Lifecycle Orchestration",
       description: "Optimizing Compute Infrastructure Lifecycle Management to achieve decommissioning SLAs of <6 hours for virtualized assets and sub-week SLAs for physical hardware.",
       tags: ["Cloud Platform", "Automation", "SLA Optimization"],
-      gradient: "from-indigo-500 to-blue-500",
+      gradient: "icon-color-8",
     },
     {
       icon: Rocket,
       title: "Flight Management Systems",
       description: "Wrote safety and mission critical software for UI and Display Proxy layers of Next Gen FMS powering cockpits of Boeing, Airbus, Dassault, and Gulfstream aircraft.",
       tags: ["Aerospace", "Mission Critical", "C++", "Safety Systems"],
-      gradient: "from-violet-500 to-purple-500",
+      gradient: "icon-color-7",
     },
   ];
 
   return (
-    <section id="projects" className="relative py-24 px-6">
+    <section id="projects" className="relative px-6 py-16 md:py-20">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -56,7 +56,7 @@ export function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-primary">
             Featured Projects
           </h2>
 
@@ -72,14 +72,14 @@ export function Projects() {
               >
                 {/* Icon with gradient background */}
                 <motion.div
-                  className={`inline-flex p-3 rounded-2xl bg-gradient-to-r ${project.gradient} mb-4`}
+                  className={`inline-flex p-3 rounded-2xl ${project.gradient} mb-4`}
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 >
                   <project.icon className="w-6 h-6 text-white" />
                 </motion.div>
 
-                <h3 className="text-xl font-bold mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                <h3 className="text-xl font-bold mb-3 group-hover:text-secondary transition-colors">
                   {project.title}
                 </h3>
 
@@ -108,7 +108,7 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-12 p-8 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/5 dark:to-purple-500/5 backdrop-blur-xl border border-white/20 dark:border-gray-800/50"
+            className="mt-12 p-8 rounded-3xl bg-white/20 dark:bg-gray-900/20 backdrop-blur-xl border border-white/20 dark:border-gray-800/50"
           >
             <h3 className="text-2xl font-bold mb-4">Publication</h3>
             <p className="text-gray-700 dark:text-gray-300 mb-2">
@@ -121,7 +121,7 @@ export function Projects() {
               href="https://www.tdcommons.org/dpubs_series/5048"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-indigo-600 dark:text-indigo-400 hover:underline"
+              className="text-secondary hover:underline"
             >
               View Publication →
             </a>
