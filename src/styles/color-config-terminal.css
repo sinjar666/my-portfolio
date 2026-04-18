@@ -124,7 +124,7 @@
 
   /* Muted */
   --muted: #444440;
-  --muted-foreground: #aeada6;
+  --muted-foreground: #e6e6e1;
 
   /* Accent (match section title) */
   --accent: var(--section-title);
