@@ -29,9 +29,9 @@ Each checkpoint below lists the test performed, the method used (automated or ma
 
 - **Color — Primary buttons (updated light bronze):** Manual contrast check and automated axe sampling. Light: `#ffffff` on `#563812` = 10.66:1 — AAA (PASS). Light hover: `#ffffff` on `#3f2a0b` = 13.57:1 — AAA (PASS). Dark: `#000000` on `#d4aa40` = 9.62:1 — AAA (PASS).
 
-- **Color — Chips / Tags (updated to primary button style):** Chips now use the same primary button styling (`btn-primary`) with white text.
-	- Terminal theme (light): `#ffffff` on `#563812` = 10.66:1 — AAA (PASS).
-	- Terminal theme (dark): `#000000` on `#d4aa40` = 9.62:1 — AAA (PASS).
+**Color — Chips / Tags:** Chips use a transparent background with a border matching the primary color in light mode, and a neutral gray background in dark mode. This keeps the visual emphasis while ensuring accessible contrast.
+	- Terminal theme (light): text uses `--section-title` (`#563812`) on transparent/white background = 10.66:1 — AAA (PASS).
+	- Terminal theme (dark): chip uses `#e6e6e1` on `#444440` = 7.81:1 — AAA (PASS).
 	- Purple theme (light): BEFORE: `#ececf0` (bg) vs `#717182` (fg) = 4.06:1 — FAIL (identified during audit). REMEDIATED: `--muted-foreground` changed to `#323232`, AFTER: `#ececf0` vs `#323232` = 10.88:1 — AAA (PASS).
 
 - **Color — Links and body inline text:** Automated axe checks plus manual sampling of tokenized link colors against page backgrounds — PASS (no contrast violations reported by axe after remediation).
@@ -108,6 +108,7 @@ AUDIT_URL=http://127.0.0.1:4173 node scripts/accessibility-audit.mjs > docs/port
 
 ## Post-Fix Results
 
+
 From `docs/portfolio-a11y-audit-after.json`:
 
 - axe violation count:
@@ -115,13 +116,15 @@ From `docs/portfolio-a11y-audit-after.json`:
 	- Dark mode: 0
 
 - manual scanner contrast findings (known false positives due parser limitations):
-	- Light mode: 75
-	- Dark mode: 75
+	- Light mode: 3
+	- Dark mode: 3
 
-Manual confirmation for button/skip-link contrast pairs (token-based controls):
+Manual confirmation for button/skip-link/chip contrast pairs (token-based controls):
 
-- Light: `#ffffff` text on `#563812` background = 10.66:1 (AAA)
-- Dark: `#000000` text on `#d4aa40` background = 9.62:1 (AAA)
+- Light button text: `#ffffff` on `#563812` background = 10.66:1 (AAA)
+- Light chip text: `#563812` on white/transparent = 10.66:1 (AAA)
+- Dark button text: `#000000` on `#d4aa40` background = 9.62:1 (AAA)
+- Dark chip text: `#e6e6e1` on `#444440` = 7.81:1 (AAA)
 
 ## Limitations and Notes
 
