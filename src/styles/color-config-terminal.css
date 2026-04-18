@@ -91,6 +91,10 @@
 
   /* Icon gradient pairs (8 theme-matched variants) */
   --icon-c1-from: #563812; --icon-c1-to: #744d1b; /* amber — primary accent */
+  /* Chip (tags) - light mode: transparent background with border matching primary */
+  --chip-background: transparent;
+  --chip-foreground: var(--section-title);
+  --chip-border: var(--section-title);
   --icon-c2-from: #1a2c42; --icon-c2-to: #24364e; /* navy */
   --icon-c3-from: #1a3232; --icon-c3-to: #243c3c; /* teal */
   --icon-c4-from: #3a1e08; --icon-c4-to: #50280c; /* sienna */
@@ -177,6 +181,11 @@
   --icon-background: #2e2008;
   /* Card border (subtle, slightly stronger on dark backgrounds) */
   --card-border: rgba(212,170,64,0.12);
+
+  /* Chip (tags) - dark mode: keep neutral gray */
+  --chip-background: #444440;
+  --chip-foreground: #e6e6e1;
+  --chip-border: rgba(255,255,255,0.08);
 
   /* Icon gradient pairs (8 theme-matched variants) */
   --icon-c1-from: #7a5818; --icon-c1-to: #9e7420; /* amber */

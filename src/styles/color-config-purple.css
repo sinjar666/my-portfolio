@@ -94,6 +94,10 @@
   --icon-c6-from: #7c3aed; --icon-c6-to: #ec4899;
   --icon-c7-from: #6366f1; --icon-c7-to: #a855f7;
   --icon-c8-from: #4f46e5; --icon-c8-to: #7c3aed;
+  /* Chip (tags) - light mode: transparent background with border matching primary */
+  --chip-background: transparent;
+  --chip-foreground: var(--section-title);
+  --chip-border: var(--section-title);
 }
 
 /* ============================================================================
@@ -172,6 +176,11 @@
   --icon-background: oklch(0.269 0 0);
   --section-title: #a78bfa;
   --card-border: rgba(167, 139, 250, 0.2);
+
+  /* Chip (tags) - dark mode: neutral gray */
+  --chip-background: #444440;
+  --chip-foreground: #e6e6e1;
+  --chip-border: rgba(255,255,255,0.08);
 
   --icon-c1-from: #818cf8; --icon-c1-to: #6366f1;
   --icon-c2-from: #a78bfa; --icon-c2-to: #8b5cf6;

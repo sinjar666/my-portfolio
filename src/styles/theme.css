@@ -181,7 +181,7 @@
     background-color: var(--chip-background);
     background: var(--chip-background);
     color: var(--chip-foreground);
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid var(--chip-border);
   }
 
   .chip:hover {
