@@ -3,6 +3,7 @@ import { useTheme } from "./ThemeProvider";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { navigationContent } from "../../content";
+import { config } from "../../config";
 
 interface NavigationProps {
   scrolled: boolean;
@@ -39,9 +40,11 @@ export function Navigation({ scrolled }: NavigationProps) {
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="text-2xl font-bold text-logo">
-            {navigationContent.logoText}
-          </a>
+          {config.showLogo && (
+            <a href="#home" className="text-2xl font-bold text-logo">
+              {navigationContent.logoText}
+            </a>
+          )}
 
           {/* Desktop Navigation */}
           <motion.div 
