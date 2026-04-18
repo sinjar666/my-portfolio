@@ -36,7 +36,7 @@ export function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-lg hover:shadow-2xl transition-all hover:scale-105"
+                className="group glass-card glass-card-interactive p-6 hover:scale-[1.03]"
               >
                 {/* Icon with gradient background */}
                 <motion.div
@@ -51,7 +51,7 @@ export function Projects() {
                   {project.title}
                 </h3>
 
-                <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                <p className="text-foreground mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
@@ -60,7 +60,7 @@ export function Projects() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-xs rounded-full bg-white/50 dark:bg-gray-800/50 border border-white/20 dark:border-gray-700/50"
+                      className="px-3 py-1 text-xs rounded-full bg-muted text-muted-foreground border border-white/20 dark:border-gray-700/50"
                     >
                       {tag}
                     </span>
@@ -76,13 +76,13 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-12 p-8 rounded-3xl bg-white/20 dark:bg-gray-900/20 backdrop-blur-xl border border-white/20 dark:border-gray-800/50"
+            className="glass-card-soft mt-12 p-8"
           >
             <h3 className="text-2xl font-bold mb-4">{projectsContent.publication.heading}</h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-2">
+            <p className="text-foreground mb-2">
               <strong>{projectsContent.publication.title}</strong>
             </p>
-            <p className="text-gray-600 dark:text-gray-400 mb-2">
+            <p className="text-muted-foreground mb-2">
               {projectsContent.publication.authorsAndDate}
             </p>
             <a

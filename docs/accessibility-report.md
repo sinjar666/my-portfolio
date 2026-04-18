@@ -1,95 +1,146 @@
-# Accessibility Report — Terminal Color Theme
+# Accessibility Report — Comprehensive AAA Audit
 
-**Standard:** WCAG 2.1 Level AAA (contrast ratio ≥ 7:1 for normal text, ≥ 4.5:1 for large text/UI components)  
-**Date:** 2026-04-18  
-**File audited:** `src/styles/color-config-terminal.css`
+Standard: WCAG 2.1 Level AAA target  
+Date: 2026-04-18  
+Scope: Entire single-page portfolio (light and dark mode)
 
----
+## Executive Summary
 
-## Summary
+- Status: PASS for the audited scope after remediation.
+- Automated engine (axe-core): 0 violations in light mode, 0 violations in dark mode.
+- High-risk AAA gaps found and fixed:
+	- Low-contrast animated scroll-indicator text.
+	- Multiple section/body texts using non-AAA gray shades.
+	- Missing skip link for keyboard navigation.
+	- Inconsistent focus-visible treatments.
+	- Non-essential motion not honoring reduced-motion preferences globally.
 
-| Mode | Pairs audited | AAA ✅ | AA only ⚠️ | Fixed |
-|------|--------------|--------|-----------|-------|
-| Light | 13 | 13 | 0 | 8 pairs corrected |
-| Dark | 18 | 18 | 0 | 5 pairs corrected |
+## What Was Audited
 
-All text and interactive color pairs now meet **WCAG 2.1 Level AAA** (≥ 7:1).
+- Semantic structure and landmarks: nav/main/footer navigation flow.
+- Keyboard and focus behavior: visible focus ring, mobile menu semantics, escape handling.
+- Color contrast across the rendered page in light and dark themes.
+- Motion and animation behavior under `prefers-reduced-motion`.
+- Accessible names for key interactive controls.
 
----
+## Checkpoints and Results
 
-## Light Mode — Final Audit
+Each checkpoint below lists the test performed, the method used (automated or manual), and the pass/fail result. Numeric contrast ratios are provided where applicable (WCAG 2.1 thresholds: AA = 4.5:1 for normal text, AAA = 7:1 for normal text).
 
-Background: `#ffffff` | Card: `#ffffff` | Muted bg: `#c8c7bc`
+- **Color — Primary buttons:** Manual contrast check and automated axe sampling. Light: `#ffffff` on `#6a5010` = 7.59:1 — AAA (PASS). Dark: `#000000` on `#d4aa40` = 9.62:1 — AAA (PASS).
 
-| Color Pair | Ratio | Level | Status |
-|---|---|---|---|
-| Body text `#121212` on white | 18.73:1 | AAA | ✅ Pass |
-| Section title `#6a5010` on white | 7.59:1 | AAA | ✅ Pass |
-| Nav logo / Link `#5a4510` on white | 9.16:1 | AAA | ✅ Pass (was `#7a6010` → 5.99:1 AA) |
-| Link hover `#3e2e0a` on white | 13.6:1 | AAA | ✅ Pass |
-| Primary `#2c3d4b` on white | 11.19:1 | AAA | ✅ Pass |
-| Secondary `#3f5260` on white | 8.12:1 | AAA | ✅ Pass (was `#60707d` → 5.11:1 AA) |
-| Muted foreground `#323232` on white | 12.63:1 | AAA | ✅ Pass (was `#5d5e58` → 6.55:1 AA) |
-| Muted foreground `#323232` on muted `#c8c7bc` | 7.54:1 | AAA | ✅ Pass (was `#5d5e58` → 3.85:1 AA-Large) |
-| Accent fg `#ffffff` on accent `#5a4510` | 9.16:1 | AAA | ✅ Pass (was `#8a6c18` → 4.95:1 AA) |
-| Button primary fg `#f8f5e6` on `#5a4510` | 8.37:1 | AAA | ✅ Pass (was `#7a6010` → 5.47:1 AA) |
-| Button secondary fg `#121212` on `#f4f3ef` | 16.87:1 | AAA | ✅ Pass |
-| Destructive `#8c2e29` on white | 8.27:1 | AAA | ✅ Pass (was `#ca6f67` → 3.51:1 AA-Large) |
-| Destructive fg `#ffffff` on `#8c2e29` | 8.27:1 | AAA | ✅ Pass (was 3.51:1 AA-Large) |
+- **Color — Chips / Tags (`bg-muted` + `text-muted-foreground`):** Token-based checks across themes.
+	- Terminal theme (light): `#c8c7bc` (bg) vs `#323232` (fg) = 7.54:1 — AAA (PASS).
+	- Terminal theme (dark): `#444440` (bg) vs `#e6e6e1` (fg) = 7.81:1 — AAA (PASS).
+	- Purple theme (light): BEFORE: `#ececf0` (bg) vs `#717182` (fg) = 4.06:1 — FAIL (identified during audit). REMEDIATED: `--muted-foreground` changed to `#323232`, AFTER: `#ececf0` vs `#323232` = 10.88:1 — AAA (PASS).
 
-### Light Mode — Changes Made
+- **Color — Links and body inline text:** Automated axe checks plus manual sampling of tokenized link colors against page backgrounds — PASS (no contrast violations reported by axe after remediation).
 
-| Variable | Before | After | Old Ratio | New Ratio |
-|---|---|---|---|---|
-| `--secondary` | `#60707d` | `#3f5260` | 5.11:1 AA | 8.12:1 AAA |
-| `--muted-foreground` | `#5d5e58` | `#323232` | 6.55:1 AA / 3.85 on muted | 12.63:1 AAA / 7.54 AAA |
-| `--accent` | `#8a6c18` | `#5a4510` | 4.95:1 AA | 9.16:1 AAA |
-| `--destructive` | `#ca6f67` | `#8c2e29` | 3.51:1 AA-Large | 8.27:1 AAA |
-| `--button-primary-background` | `#7a6010` | `#5a4510` | 5.47:1 AA | 8.37:1 AAA |
-| `--nav-logo` / `--link-color` | `#7a6010` | `#5a4510` | 5.99:1 AA | 9.16:1 AAA |
-| `--timeline-dot` | `#b09030` | `#5a4510` | 3.05:1 AA-Large | 9.16:1 AAA |
-| `--icon-background` | `#7a6010` | `#5a4510` | — | — |
+- **Keyboard navigation & landmarks:** Manual keyboard walkthrough and automated checks. Added skip link, `id="main-content"` target, and ensured logical landmark flow — PASS.
 
----
+- **Focus visibility:** Global `:focus-visible` outline and improved focus rings applied and manually verified on buttons, toggles, and menu controls — PASS.
 
-## Dark Mode — Final Audit
+- **ARIA attributes & accessible names:** Mobile menu (`aria-expanded`, `aria-controls`), theme toggle (`aria-pressed`) and other interactive controls have accessible names and states — PASS.
 
-Background: `#000000` | Card: `#131617`
+- **Reduced motion:** Wrapped app in MotionConfig (`reducedMotion="user"`) and added global reduced-motion fallbacks for CSS transitions — PASS.
 
-| Color Pair | Ratio | Level | Status |
-|---|---|---|---|
-| Body text `#dcdad4` on black | 15.02:1 | AAA | ✅ Pass |
-| Body text `#dcdad4` on card `#131617` | 13.01:1 | AAA | ✅ Pass |
-| Section title `#d4aa40` on black | 9.62:1 | AAA | ✅ Pass |
-| Section title `#d4aa40` on card `#131617` | 8.33:1 | AAA | ✅ Pass |
-| Nav logo / Link `#c8a030` on black | 8.53:1 | AAA | ✅ Pass |
-| Nav logo / Link `#c8a030` on card `#131617` | 7.38:1 | AAA | ✅ Pass |
-| Link hover `#d8b840` on black | 10.85:1 | AAA | ✅ Pass |
-| Primary `#aabfc1` on black | 10.93:1 | AAA | ✅ Pass |
-| Primary `#aabfc1` on card `#131617` | 9.47:1 | AAA | ✅ Pass |
-| Secondary `#a0b3be` on black | 9.49:1 | AAA | ✅ Pass (was `#8a9ba5` → 7.31 AAA on black) |
-| Secondary `#a0b3be` on card `#131617` | 8.39:1 | AAA | ✅ Pass (was `#8a9ba5` → 6.33:1 AA) |
-| Muted foreground `#aeada6` on black | 8.08:1 | AAA | ✅ Pass (was `#888880` → 5.88:1 AA) |
-| Muted foreground `#aeada6` on card `#131617` | 7.00:1 | AAA | ✅ Pass (was `#888880` → 5.09:1 AA) |
-| Accent fg `#000000` on accent `#c8a030` | 8.53:1 | AAA | ✅ Pass |
-| Button primary fg `#e8e4d8` on `#2e2008` | 12.46:1 | AAA | ✅ Pass |
-| Destructive `#ef9992` on black | 9.64:1 | AAA | ✅ Pass (was `#ca6f67` → 5.98:1 AA) |
-| Destructive `#ef9992` on card `#131617` | 8.35:1 | AAA | ✅ Pass (was `#ca6f67` → 5.18:1 AA) |
-| Timeline dot `#c8a030` on black | 8.53:1 | AAA | ✅ Pass |
+- **Automated axe-core audit (Playwright Chromium):** Full page crawl with axe-core. Results after remediation: Light mode = 0 violations; Dark mode = 0 violations — PASS.
 
-### Dark Mode — Changes Made
+- **Manual contrast scanner for CSS custom properties:** Used a custom scanner (`scripts/accessibility-audit.mjs`) and spot-checked controls that use CSS custom properties (tokens) to confirm reliable contrast results — PASS (see Limitations for scanner caveats).
 
-| Variable | Before | After | Old Ratio (on card) | New Ratio (on card) |
-|---|---|---|---|---|
-| `--secondary` | `#8a9ba5` | `#a0b3be` | 6.33:1 AA | 8.39:1 AAA |
-| `--muted-foreground` | `#888880` | `#aeada6` | 5.09:1 AA | 7.00:1 AAA |
-| `--destructive` | `#ca6f67` | `#ef9992` | 5.18:1 AA | 8.35:1 AAA |
+- **Images & alt text (spot checks):** Informative images inspected for `alt` attributes during manual review — PASS.
 
----
+- **Headings & semantic structure:** Heading hierarchy and landmark roles checked for linear reading order and semantic correctness — PASS.
 
-## Notes
+- **Interactive control states & focus management:** Buttons, dialogs, drawers, and toggles verified for visible state, keyboard operability, and proper focus handling — PASS.
 
-- **Decorative elements** (timeline line, borders, hero ring) are exempt from contrast requirements per WCAG 1.4.11 Non-text Contrast, as they serve as separators rather than informational content.
-- **Muted background** (`#c8c7bc`) is used as a non-interactive chip/badge background only. Text placed on it uses `--muted-foreground` (`#323232`) which achieves 7.54:1 AAA.
-- **Icon backgrounds** use `--icon-background` as a solid background for icon glyphs. The icon glyph itself is white, achieving 9.16:1 AAA in light mode and sufficient contrast in dark mode.
-- All contrast ratios calculated using the WCAG 2.1 relative luminance formula (IEC 61966-2-1 sRGB transfer function).
+Notes:
+- Where a numeric ratio is listed the value was measured with the project's contrast scripts or with a local sRGB contrast check. "PASS" indicates the checkpoint meets the requested AAA-focused threshold where applicable or otherwise meets WCAG expectations for the given control.
+- The Purple theme's muted-foreground was the only token that required change to meet AAA for tag/chip text; that change is committed in `src/styles/color-config-purple.css` and listed in the updated files section.
+
+## Tooling
+
+- Browser automation and rule audit: Playwright Chromium + axe-core.
+- Additional contrast sampling script: custom scanner in `scripts/accessibility-audit.mjs`.
+- Manual verification for controls using CSS custom property backgrounds (see Limitations section).
+
+Audit command used:
+
+```bash
+npm run a11y:audit:install-browser
+AUDIT_URL=http://localhost:5174 npm run a11y:audit > /tmp/portfolio-a11y-audit-after.json
+```
+
+## Baseline Before Fixes
+
+- axe violations:
+	- Light mode: 1
+	- Dark mode: 1
+- Primary failure:
+	- `color-contrast` on animated scroll label in hero section.
+
+## Remediation Implemented
+
+### 1) Focus and keyboard access
+
+- Added global `:focus-visible` outline treatment.
+- Added a skip link at page start: "Skip to main content".
+- Added `id="main-content"` target and made it programmatically focusable (`tabIndex={-1}`).
+- Improved mobile menu accessibility:
+	- `aria-expanded` and `aria-controls` on toggle.
+	- Escape key closes menu.
+- Added `aria-pressed` for theme toggle state.
+
+### 2) Contrast remediation for text and chips
+
+- Replaced low-contrast gray utility text in primary sections with theme tokens:
+	- `text-foreground` for primary text.
+	- `text-muted-foreground` for secondary/meta text.
+- Replaced low-contrast skill/tag chip color combos with `bg-muted` + `text-muted-foreground`.
+	- Note: the Purple theme's light-mode `--muted-foreground` was too light and failed contrast; it has been updated from `#717182` to `#323232`, giving `#323232` on `#ececf0` = 10.88:1 (AAA).
+- Replaced gradient social cards in contact section with token-based glass surfaces to ensure reliable themed contrast.
+
+### 3) Motion accessibility
+
+- Wrapped app in `MotionConfig reducedMotion="user"`.
+- Added global CSS reduced-motion fallback for transitions/animations.
+- Removed opacity-dimming animation on scroll-indicator labels/icons to avoid transient contrast drops.
+
+## Post-Fix Results
+
+From `/tmp/portfolio-a11y-audit-after.json`:
+
+- axe violation count:
+	- Light mode: 0
+	- Dark mode: 0
+
+Manual confirmation for button/skip-link contrast pairs (token-based controls):
+
+- Light: `#ffffff` text on `#6a5010` background = 7.59:1 (AAA)
+- Dark: `#000000` text on `#d4aa40` background = 9.62:1 (AAA)
+
+## Limitations and Notes
+
+- The custom contrast scanner may emit false positives for some controls that use CSS custom-property `background` shorthand. For this reason:
+	- Axe results and manual ratio checks were used as source of truth for final pass/fail.
+- Decorative separators (timeline lines, subtle borders) are treated as non-informational visuals.
+
+## Files Updated During Remediation
+
+- `src/styles/theme.css`
+- `src/app/App.tsx`
+- `src/app/components/Portfolio.tsx`
+- `src/app/components/Navigation.tsx`
+- `src/app/components/sections/Hero.tsx`
+- `src/app/components/sections/About.tsx`
+- `src/app/components/sections/Projects.tsx`
+- `src/app/components/sections/Experience.tsx`
+- `src/app/components/sections/AboutDetails.tsx`
+- `src/app/components/sections/Skills.tsx`
+- `src/app/components/sections/Contact.tsx`
+- `scripts/accessibility-audit.mjs`
+ - `src/styles/color-config-purple.css`
+
+## Compliance Statement
+
+Based on automated axe checks (light and dark), manual contrast validation of critical tokenized controls, and implemented fixes above, the portfolio now satisfies the requested AAA-focused accessibility requirements for the audited UI scope.

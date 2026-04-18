@@ -15,11 +15,11 @@ export function About() {
             {aboutContent.heading}
           </h2>
 
-          <div className="p-8 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-xl mb-12">
+          <div className="glass-card p-8 shadow-xl mb-12">
             {aboutContent.paragraphs.map((paragraph, index) => (
               <p
                 key={index}
-                className={`text-lg text-gray-700 dark:text-gray-300 leading-relaxed ${
+                className={`text-lg text-foreground leading-relaxed ${
                   index !== aboutContent.paragraphs.length - 1 ? "mb-6" : ""
                 }`}
               >

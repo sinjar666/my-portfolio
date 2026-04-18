@@ -47,7 +47,7 @@ export function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-lg hover:shadow-xl transition-all"
+                className="glass-card glass-card-interactive p-6"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <motion.div
@@ -64,7 +64,7 @@ export function Skills() {
                   {category.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1.5 text-sm rounded-full bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover:scale-105 transition-transform"
+                      className="px-3 py-1.5 text-sm rounded-full bg-muted text-muted-foreground backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover:scale-105 transition-transform"
                     >
                       {skill}
                     </span>

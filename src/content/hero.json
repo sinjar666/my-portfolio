@@ -36,6 +36,7 @@
     }
   ],
   "scrollIndicator": {
-    "mobileLabel": "Swipe"
+    "mobileLabel": "Swipe",
+    "desktopLabel": "Scroll down"
   }
 }

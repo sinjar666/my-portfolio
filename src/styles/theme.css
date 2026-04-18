@@ -59,6 +59,29 @@
     @apply bg-background text-foreground;
   }
 
+  :focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 3px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: 0.5rem;
+    z-index: 200;
+    transform: translateY(-220%);
+    padding: 0.5rem 0.875rem;
+    border-radius: 0.5rem;
+    background: var(--accent);
+    color: var(--accent-foreground);
+    font-weight: 600;
+    transition: transform 0.2s ease;
+  }
+
+  .skip-link:focus-visible {
+    transform: translateY(0);
+  }
+
   /**
   * Default typography styles for HTML elements (h1-h4, p, label, button, input).
   * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
@@ -116,6 +139,26 @@
 @layer utilities {
   .bg-page {
     background: var(--page-background);
+  }
+
+  .glass-card {
+    @apply rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-lg;
+  }
+
+  .glass-card-soft {
+    @apply rounded-3xl bg-white/20 dark:bg-gray-900/20 backdrop-blur-xl border border-white/20 dark:border-gray-800/50;
+  }
+
+  .glass-card-interactive {
+    @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+  }
+
+  .interest-card {
+    @apply rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-md border border-white/35 dark:border-gray-700/60 shadow-md px-5 py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  .interest-card p {
+    @apply text-center font-semibold text-gray-800 dark:text-gray-200;
   }
 
   .hero-ring {
@@ -183,4 +226,18 @@ html body [class*="rounded-2xl"][class*="border"],
 html body [class*="rounded-xl"][class*="border"],
 html body [class*="backdrop-blur"] {
   border-color: var(--card-border);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
