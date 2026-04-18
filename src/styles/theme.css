@@ -59,6 +59,29 @@
     @apply bg-background text-foreground;
   }
 
+  :focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 3px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: 0.5rem;
+    z-index: 200;
+    transform: translateY(-220%);
+    padding: 0.5rem 0.875rem;
+    border-radius: 0.5rem;
+    background: var(--accent);
+    color: var(--accent-foreground);
+    font-weight: 600;
+    transition: transform 0.2s ease;
+  }
+
+  .skip-link:focus-visible {
+    transform: translateY(0);
+  }
+
   /**
   * Default typography styles for HTML elements (h1-h4, p, label, button, input).
   * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
@@ -203,4 +226,18 @@ html body [class*="rounded-2xl"][class*="border"],
 html body [class*="rounded-xl"][class*="border"],
 html body [class*="backdrop-blur"] {
   border-color: var(--card-border);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

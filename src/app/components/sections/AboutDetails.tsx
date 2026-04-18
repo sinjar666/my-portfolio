@@ -39,7 +39,7 @@ export function AboutDetails() {
                                     }}
                                 >
                                     <div className="text-4xl mb-3">{item.emoji}</div>
-                                    <p className="text-gray-700 dark:text-gray-300">
+                                    <p className="text-foreground">
                                         {item.text}
                                     </p>
                                 </motion.div>
@@ -62,7 +62,7 @@ export function AboutDetails() {
                             >
                                 <Icon className="w-10 h-10 text-secondary mb-4" />
                                 <h4 className="text-xl font-bold mb-2">{item.title}</h4>
-                                <p className="text-gray-600 dark:text-gray-400">{item.description}</p>
+                                <p className="text-muted-foreground">{item.description}</p>
                             </motion.div>
                         )})}
                     </div>

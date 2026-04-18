@@ -27,7 +27,7 @@ export function Contact() {
             {contactContent.heading}
           </h2>
 
-          <p className="text-lg text-center text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-12">
+          <p className="text-lg text-center text-foreground max-w-2xl mx-auto mb-12">
             {contactContent.intro}
           </p>
 
@@ -55,16 +55,16 @@ export function Contact() {
                     <Icon className="w-5 h-5 text-white" />
                   </motion.div>
                   <div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{item.label}</p>
+                    <p className="text-sm text-muted-foreground">{item.label}</p>
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="font-medium text-gray-900 dark:text-gray-100 hover:text-secondary transition-colors"
+                        className="font-medium text-foreground hover:text-secondary transition-colors"
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <p className="font-medium text-gray-900 dark:text-gray-100">{item.value}</p>
+                      <p className="font-medium text-foreground">{item.value}</p>
                     )}
                   </div>
                 </motion.div>
@@ -90,9 +90,10 @@ export function Contact() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
-                      className={`${config.showContactForm ? 'flex-1' : ''} p-4 rounded-2xl bg-gradient-to-r ${social.color} text-white hover:shadow-lg hover:scale-105 transition-all text-center`}
+                      className={`${config.showContactForm ? 'flex-1' : ''} p-4 rounded-2xl glass-card text-foreground hover:shadow-lg hover:scale-105 transition-all text-center`}
+                      aria-label={social.label}
                     >
-                      <Icon className="w-6 h-6 mx-auto mb-2" />
+                      <Icon className="w-6 h-6 mx-auto mb-2 text-secondary" />
                       <p className="font-medium">{social.label}</p>
                     </motion.a>
                   )})}
@@ -159,7 +160,7 @@ export function Contact() {
           {/* Additional CTA */}
           <div className="p-8 rounded-3xl bg-white/20 dark:bg-gray-900/20 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 text-center">
             <h3 className="text-2xl font-bold mb-4">{contactContent.cta.heading}</h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+            <p className="text-foreground mb-6 max-w-2xl mx-auto">
               {contactContent.cta.description}
             </p>
             <a

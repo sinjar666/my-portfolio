@@ -19,7 +19,7 @@ export function About() {
             {aboutContent.paragraphs.map((paragraph, index) => (
               <p
                 key={index}
-                className={`text-lg text-gray-700 dark:text-gray-300 leading-relaxed ${
+                className={`text-lg text-foreground leading-relaxed ${
                   index !== aboutContent.paragraphs.length - 1 ? "mb-6" : ""
                 }`}
               >

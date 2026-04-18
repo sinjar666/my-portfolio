@@ -48,17 +48,17 @@ export function Hero({ hasScrolled }: HeroProps) {
             {heroContent.name}
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-4">
+          <p className="text-xl md:text-2xl text-foreground mb-4">
             {heroContent.role}
           </p>
 
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
             {heroContent.summary}
           </p>
 
           {/* Glassmorphic Card */}
           <div className="inline-block p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-xl mb-8">
-            <p className="text-base text-gray-700 dark:text-gray-300 max-w-2xl">
+            <p className="text-base text-foreground max-w-2xl">
               {heroContent.introCard.segments.map((segment, index) => (
                 segment.emphasis ? (
                   <span key={index} className="semibold-accent">
@@ -98,7 +98,7 @@ export function Hero({ hasScrolled }: HeroProps) {
             <motion.a
               href={config.resumeUrl}
               download
-              className="px-8 py-3 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 font-medium hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all flex items-center gap-2"
+              className="px-8 py-3 rounded-full btn-secondary backdrop-blur-sm border border-white/20 dark:border-gray-700/50 font-medium hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all flex items-center gap-2"
               variants={{
                 hidden: { opacity: 0, scale: 0.8 },
                 visible: { opacity: 1, scale: 1 },
@@ -133,7 +133,7 @@ export function Hero({ hasScrolled }: HeroProps) {
                   href={social.href}
                   target={social.href.startsWith("http") ? "_blank" : undefined}
                   rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="p-3 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all hover:scale-110"
+                  className="p-3 rounded-full btn-secondary backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all hover:scale-110"
                   aria-label={social.ariaLabel}
                   variants={{
                     hidden: { opacity: 0, y: 20 },
@@ -160,17 +160,17 @@ export function Hero({ hasScrolled }: HeroProps) {
             animate={hasScrolled ? { opacity: 0 } : { opacity: 1 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="w-6 h-10 rounded-full border-2 border-gray-400 dark:border-gray-600 flex items-start justify-center p-2">
+            <div className="w-6 h-10 rounded-full border-2 border-secondary flex items-start justify-center p-2">
               <motion.div
-                className="w-1 h-2 bg-gray-400 dark:bg-gray-600 rounded-full"
+                className="w-1 h-2 bg-secondary rounded-full"
                 animate={{ y: [0, 12, 0] }}
                 transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
               />
             </div>
 
             <motion.span
-              className="text-[10px] font-medium uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400"
-              animate={{ y: [0, 6, 0], opacity: [0.6, 1, 0.6] }}
+              className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground"
+              animate={{ y: [0, 6, 0] }}
               transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
             >
               {heroContent.scrollIndicator.desktopLabel ?? "Scroll down"}
@@ -178,14 +178,14 @@ export function Hero({ hasScrolled }: HeroProps) {
           </motion.div>
 
           <motion.div
-            className="flex md:hidden flex-col items-center gap-2 text-[10px] font-medium uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400"
+            className="flex md:hidden flex-col items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground"
             animate={hasScrolled ? { opacity: 0 } : { opacity: 1 }}
             transition={{ duration: 0.2 }}
           >
             <span>{heroContent.scrollIndicator.mobileLabel}</span>
             <motion.div
               className="flex flex-col items-center"
-              animate={{ y: [0, 6, 0], opacity: [0.45, 1, 0.45] }}
+              animate={{ y: [0, 6, 0] }}
               transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
             >
               <ArrowDown className="h-4 w-4" />

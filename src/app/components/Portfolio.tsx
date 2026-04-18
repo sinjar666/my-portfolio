@@ -28,9 +28,13 @@ export function Portfolio() {
 
   return (
     <div className="relative min-h-screen overflow-x-clip bg-page text-foreground">
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+
       <Navigation scrolled={scrolled} />
 
-      <main className="relative">
+      <main id="main-content" className="relative" tabIndex={-1}>
         <Hero hasScrolled={hasScrolled} />
         <About />
         <Projects />
@@ -43,7 +47,7 @@ export function Portfolio() {
       {/* Footer */}
       <footer className="relative border-t border-white/20 dark:border-gray-800/50 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-6 py-8">
-          <p className="text-center text-sm text-gray-600 dark:text-gray-400">
+          <p className="text-center text-sm text-muted-foreground">
             {footerContent.copyright}
           </p>
         </div>

@@ -44,13 +44,13 @@ export function Experience() {
                       <p className="mt-2 text-lg font-medium text-secondary">{exp.company}</p>
                     </div>
                   </div>
-                  <div className="mb-5 flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                  <div className="mb-5 flex items-center gap-2 text-sm text-muted-foreground">
                     <Calendar className="h-4 w-4" />
                     <span>{exp.location}</span>
                   </div>
                   <ul className="space-y-3 text-left">
                     {exp.highlights.map((highlight, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-gray-700 dark:text-gray-300">
+                      <li key={idx} className="flex items-start gap-2 text-foreground">
                         <span className="mt-1.5 text-secondary">▹</span>
                         <span>{highlight}</span>
                       </li>
@@ -93,7 +93,7 @@ export function Experience() {
                   <p className="text-lg text-secondary font-medium mb-2">
                     {exp.company}
                   </p>
-                  <div className={`mb-4 flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 ${index % 2 === 0 ? "md:justify-end" : "md:justify-start"}`}>
+                  <div className={`mb-4 flex items-center gap-2 text-sm text-muted-foreground ${index % 2 === 0 ? "md:justify-end" : "md:justify-start"}`}>
                     <Calendar className="w-4 h-4" />
                     <span>{exp.period}</span>
                     <span>•</span>
@@ -101,7 +101,7 @@ export function Experience() {
                   </div>
                   <ul className="space-y-2 text-left">
                     {exp.highlights.map((highlight, idx) => (
-                      <li key={idx} className="text-gray-700 dark:text-gray-300 flex items-start gap-2">
+                      <li key={idx} className="text-foreground flex items-start gap-2">
                         <span className="text-secondary mt-1.5">▹</span>
                         <span>{highlight}</span>
                       </li>
