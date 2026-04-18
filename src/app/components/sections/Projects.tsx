@@ -8,42 +8,42 @@ export function Projects() {
       title: "Agentic Workflow Builder",
       description: "Multi-tenant platform enabling teams to build complex enterprise workflows using natural language prompts. Innovative agentic loop aimed at reducing context rot with large conversation histories.",
       tags: ["Generative AI", "LLM", "Multi-tenant", "Natural Language"],
-      gradient: "from-blue-500 to-cyan-500",
+      gradient: "icon-color-6",
     },
     {
       icon: Code,
       title: "vPlay - AI Native IDE",
       description: "Cloud-based AI native in-browser IDE aimed at left-shifting developer setup inertia, with projected annual savings exceeding $1M.",
       tags: ["AI", "Cloud", "Developer Tools", "Productivity"],
-      gradient: "from-purple-500 to-pink-500",
+      gradient: "icon-color-2",
     },
     {
       icon: Zap,
       title: "Active-Active Message Queue",
       description: "Designed and implemented Active-Active Message Queue Architecture for distributed enterprise job execution engine, resulting in 60% improvement in p95 SLAs and 30% reduction in resource utilization.",
       tags: ["Distributed Systems", "Kafka", "Performance", "Architecture"],
-      gradient: "from-orange-500 to-red-500",
+      gradient: "icon-color-1",
     },
     {
       icon: Cloud,
       title: "Active-Active Dual Region Writer",
       description: "Innovated application architecture with RDMS based on conflict avoidance strategy for split brain coupled with in-built Disaster Recovery state machine.",
       tags: ["High Availability", "RDMS", "Disaster Recovery", "Resilience"],
-      gradient: "from-green-500 to-emerald-500",
+      gradient: "icon-color-3",
     },
     {
       icon: Settings,
       title: "Infrastructure Lifecycle Orchestration",
       description: "Optimizing Compute Infrastructure Lifecycle Management to achieve decommissioning SLAs of <6 hours for virtualized assets and sub-week SLAs for physical hardware.",
       tags: ["Cloud Platform", "Automation", "SLA Optimization"],
-      gradient: "from-indigo-500 to-blue-500",
+      gradient: "icon-color-8",
     },
     {
       icon: Rocket,
       title: "Flight Management Systems",
       description: "Wrote safety and mission critical software for UI and Display Proxy layers of Next Gen FMS powering cockpits of Boeing, Airbus, Dassault, and Gulfstream aircraft.",
       tags: ["Aerospace", "Mission Critical", "C++", "Safety Systems"],
-      gradient: "from-violet-500 to-purple-500",
+      gradient: "icon-color-7",
     },
   ];
 
@@ -72,7 +72,7 @@ export function Projects() {
               >
                 {/* Icon with gradient background */}
                 <motion.div
-                  className={`inline-flex p-3 rounded-2xl bg-gradient-to-r ${project.gradient} mb-4`}
+                  className={`inline-flex p-3 rounded-2xl ${project.gradient} mb-4`}
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 >

@@ -24,7 +24,7 @@ export function Skills() {
         "Strategic Thinking",
         "Conflict Resolution",
       ],
-      color: "from-blue-500 to-cyan-500",
+      color: "icon-color-1",
     },
     {
       icon: Brain,
@@ -37,7 +37,7 @@ export function Skills() {
         "Knowledge Graphs",
         "Agentic Workflows",
       ],
-      color: "from-purple-500 to-pink-500",
+      color: "icon-color-6",
     },
     {
       icon: Cloud,
@@ -50,7 +50,7 @@ export function Skills() {
         "ElasticSearch",
         "Hazelcast",
       ],
-      color: "from-green-500 to-emerald-500",
+      color: "icon-color-3",
     },
     {
       icon: Code,
@@ -65,7 +65,7 @@ export function Skills() {
         "Python",
         "Multithreading",
       ],
-      color: "from-orange-500 to-red-500",
+      color: "icon-color-4",
     },
     {
       icon: Layout,
@@ -79,7 +79,7 @@ export function Skills() {
         "RxJS",
         "Micro-frontends",
       ],
-      color: "from-indigo-500 to-blue-500",
+      color: "icon-color-2",
     },
     {
       icon: Database,
@@ -91,7 +91,7 @@ export function Skills() {
         "Redis",
         "Data Architecture",
       ],
-      color: "from-violet-500 to-purple-500",
+      color: "icon-color-8",
     },
     {
       icon: Globe,
@@ -103,7 +103,7 @@ export function Skills() {
         "WebSockets",
         "gRPC",
       ],
-      color: "from-pink-500 to-rose-500",
+      color: "icon-color-5",
     },
     {
       icon: Cpu,
@@ -115,7 +115,7 @@ export function Skills() {
         "Software Architecture",
         "Design Patterns",
       ],
-      color: "from-teal-500 to-cyan-500",
+      color: "icon-color-7",
     },
   ];
 
@@ -144,7 +144,7 @@ export function Skills() {
               >
                 <div className="flex items-center gap-3 mb-4">
                   <motion.div
-                    className={`p-2 rounded-xl bg-gradient-to-r ${category.color}`}
+                  className={`p-2 rounded-xl ${category.color}`}
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.2 }}
                   >

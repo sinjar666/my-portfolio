@@ -22,7 +22,7 @@
   --popover-foreground: #121212;
 
   /* Primary */
-  --primary: #2c3d4b;
+  --primary: var(--section-title);
   --primary-foreground: #ffffff;
 
   /* Secondary */
@@ -33,8 +33,8 @@
   --muted: #c8c7bc;
   --muted-foreground: #323232;
 
-  /* Accent */
-  --accent: #5a4510;
+  /* Accent (match section title) */
+  --accent: var(--section-title);
   --accent-foreground: #ffffff;
 
   /* Destructive (Error/Warning) */
@@ -72,9 +72,9 @@
   /* Page / Decorations */
   --page-background: #ffffff;
   --hero-ring: #d9dde1;
-  --button-primary-background: #5a4510;
-  --button-primary-hover: #6a5218;
-  --button-primary-foreground: #f8f5e6;
+  --button-primary-background: var(--section-title);
+  --button-primary-hover: #5a4510;
+  --button-primary-foreground: #ffffff;
   --button-secondary-background: #f4f3ef;
   --button-secondary-foreground: #121212;
   --section-title: #6a5010;
@@ -84,6 +84,16 @@
   --timeline-line: #d0d0c8;
   --timeline-dot: #5a4510;
   --icon-background: #5a4510;
+
+  /* Icon gradient pairs (8 theme-matched variants) */
+  --icon-c1-from: #5a4510; --icon-c1-to: #7a6018; /* amber — primary accent */
+  --icon-c2-from: #1a2c42; --icon-c2-to: #24364e; /* navy */
+  --icon-c3-from: #1a3232; --icon-c3-to: #243c3c; /* teal */
+  --icon-c4-from: #3a1e08; --icon-c4-to: #50280c; /* sienna */
+  --icon-c5-from: #1e2e10; --icon-c5-to: #2c3e1a; /* olive */
+  --icon-c6-from: #20183c; --icon-c6-to: #2e2850; /* violet */
+  --icon-c7-from: #3c1010; --icon-c7-to: #541818; /* ruby */
+  --icon-c8-from: #1c2830; --icon-c8-to: #283440; /* slate */
 }
 
 /* ============================================================================
@@ -103,7 +113,7 @@
   --popover-foreground: #dcdad4;
 
   /* Primary */
-  --primary: #aabfc1;
+  --primary: var(--section-title);
   --primary-foreground: #000000;
 
   /* Secondary */
@@ -114,8 +124,8 @@
   --muted: #444440;
   --muted-foreground: #aeada6;
 
-  /* Accent */
-  --accent: #c8a030;
+  /* Accent (match section title) */
+  --accent: var(--section-title);
   --accent-foreground: #000000;
 
   /* Destructive (Error/Warning) */
@@ -149,9 +159,9 @@
   /* Page / Decorations */
   --page-background: #000000;
   --hero-ring: #1a232b;
-  --button-primary-background: #2e2008;
-  --button-primary-hover: #3e2c0a;
-  --button-primary-foreground: #e8e4d8;
+  --button-primary-background: var(--section-title);
+  --button-primary-hover: #c8a030;
+  --button-primary-foreground: #000000;
   --button-secondary-background: #12171d;
   --button-secondary-foreground: #dcdad4;
   --section-title: #d4aa40;
@@ -161,4 +171,14 @@
   --timeline-line: #232b33;
   --timeline-dot: #c8a030;
   --icon-background: #2e2008;
+
+  /* Icon gradient pairs (8 theme-matched variants) */
+  --icon-c1-from: #7a5818; --icon-c1-to: #9e7420; /* amber */
+  --icon-c2-from: #263a54; --icon-c2-to: #324666; /* navy */
+  --icon-c3-from: #1e3c3c; --icon-c3-to: #2a4c4c; /* teal */
+  --icon-c4-from: #4c2a0c; --icon-c4-to: #663a18; /* sienna */
+  --icon-c5-from: #283a18; --icon-c5-to: #364c24; /* olive */
+  --icon-c6-from: #28224e; --icon-c6-to: #363060; /* violet */
+  --icon-c7-from: #4a1818; --icon-c7-to: #622222; /* ruby */
+  --icon-c8-from: #24303e; --icon-c8-to: #303c4c; /* slate */
 }

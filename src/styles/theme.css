@@ -150,9 +150,31 @@
   .icon-bg {
     background: var(--icon-background);
   }
+
+  /* Themed icon gradient backgrounds — 8 palette variants */
+  .icon-color-1 { background: linear-gradient(to right, var(--icon-c1-from), var(--icon-c1-to)); }
+  .icon-color-2 { background: linear-gradient(to right, var(--icon-c2-from), var(--icon-c2-to)); }
+  .icon-color-3 { background: linear-gradient(to right, var(--icon-c3-from), var(--icon-c3-to)); }
+  .icon-color-4 { background: linear-gradient(to right, var(--icon-c4-from), var(--icon-c4-to)); }
+  .icon-color-5 { background: linear-gradient(to right, var(--icon-c5-from), var(--icon-c5-to)); }
+  .icon-color-6 { background: linear-gradient(to right, var(--icon-c6-from), var(--icon-c6-to)); }
+  .icon-color-7 { background: linear-gradient(to right, var(--icon-c7-from), var(--icon-c7-to)); }
+  .icon-color-8 { background: linear-gradient(to right, var(--icon-c8-from), var(--icon-c8-to)); }
 }
 
 /* Section title color — overrides Tailwind utility classes */
 h1, h2 {
   color: var(--section-title);
+}
+
+/* Emphasis / strong text should use the primary (heading) color */
+strong, b, .text-accent {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Apply primary color to semibold utility too */
+.font-semibold {
+  color: var(--primary);
+  font-weight: 600;
 }
