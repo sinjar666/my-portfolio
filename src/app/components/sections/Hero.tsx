@@ -24,7 +24,7 @@ export function Hero() {
               ease: "easeInOut",
             }}
           >
-            <div className="w-40 h-40 rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-1 shadow-2xl">
+            <div className="w-40 h-40 rounded-full p-1 shadow-2xl hero-ring">
               <img 
                 src={profileImage} 
                 alt="Srijan Mukherjee" 
@@ -33,7 +33,7 @@ export function Hero() {
             </div>
           </motion.div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-primary">
             Srijan Mukherjee
           </h1>
 
@@ -48,9 +48,9 @@ export function Hero() {
           {/* Glassmorphic Card */}
           <div className="inline-block p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-xl mb-8">
             <p className="text-base text-gray-700 dark:text-gray-300 max-w-2xl">
-              Engineering leader with <span className="font-semibold text-indigo-600 dark:text-indigo-400">14 years</span> of experience building mission-critical platforms that power{" "}
-              <span className="font-semibold text-purple-600 dark:text-purple-400">high-throughput, globally distributed systems</span>. 
-              Driving the future of <span className="font-semibold text-pink-600 dark:text-pink-400">AI-powered infrastructure</span>.
+              Engineering leader with <span className="font-semibold text-secondary">14 years</span> of experience building mission-critical platforms that power{" "}
+              <span className="font-semibold text-secondary">high-throughput, globally distributed systems</span>. 
+              Driving the future of <span className="font-semibold text-secondary">AI-powered infrastructure</span>.
             </p>
           </div>
 
@@ -70,7 +70,7 @@ export function Hero() {
           >
             <motion.a
               href="#contact"
-              className="px-8 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium hover:shadow-lg hover:scale-105 transition-all"
+              className="px-8 py-3 rounded-full btn-primary font-medium hover:shadow-lg hover:scale-105 transition-all"
               variants={{
                 hidden: { opacity: 0, scale: 0.8 },
                 visible: { opacity: 1, scale: 1 }

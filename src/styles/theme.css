@@ -110,3 +110,44 @@
     line-height: 1.5;
   }
 }
+
+@layer utilities {
+  .bg-page {
+    background: var(--page-background);
+  }
+
+  .hero-ring {
+    background: var(--hero-ring);
+  }
+
+  .btn-primary {
+    background: var(--button-primary-background);
+    color: var(--button-primary-foreground);
+  }
+
+  .btn-primary:hover {
+    background: var(--button-primary-hover);
+  }
+
+  .btn-secondary {
+    background: var(--button-secondary-background);
+    color: var(--button-secondary-foreground);
+  }
+
+  .text-logo {
+    color: var(--nav-logo);
+  }
+
+  .timeline-line {
+    background: var(--timeline-line);
+  }
+
+  .timeline-dot {
+    background: var(--timeline-dot);
+    border-color: var(--border);
+  }
+
+  .icon-bg {
+    background: var(--icon-background);
+  }
+}

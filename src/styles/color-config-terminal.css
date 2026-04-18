@@ -1,0 +1,162 @@
+/**
+ * Color Theme Configuration - Terminal
+ * 
+ * This file defines all color variables for the Terminal theme.
+ * Solid, vibrant terminal colors with classic terminal aesthetics.
+ */
+
+/* ============================================================================
+   LIGHT MODE COLORS (:root) - Terminal Light Mode
+   ============================================================================ */
+:root {
+  /* Background & Foreground */
+  --background: #ffffff;
+  --foreground: #121212;
+
+  /* Card */
+  --card: #ffffff;
+  --card-foreground: #121212;
+
+  /* Popover */
+  --popover: #ffffff;
+  --popover-foreground: #121212;
+
+  /* Primary */
+  --primary: #2c3d4b;
+  --primary-foreground: #ffffff;
+
+  /* Secondary */
+  --secondary: #60707d;
+  --secondary-foreground: #ffffff;
+
+  /* Muted */
+  --muted: #c8c7bc;
+  --muted-foreground: #5d5e58;
+
+  /* Accent */
+  --accent: #4f6374;
+  --accent-foreground: #ffffff;
+
+  /* Destructive (Error/Warning) */
+  --destructive: #ca6f67;
+  --destructive-foreground: #ffffff;
+
+  /* Border & Input */
+  --border: #d0d0c8;
+  --input: transparent;
+  --input-background: #ffffff;
+
+  /* Switch */
+  --switch-background: #999999;
+
+  /* Ring (Focus) */
+  --ring: #5f7284;
+
+  /* Chart Colors - Terminal palette */
+  --chart-1: #60707d;
+  --chart-2: #4f6374;
+  --chart-3: #8a9ba5;
+  --chart-4: #c7b77f;
+  --chart-5: #ca6f67;
+
+  /* Sidebar */
+  --sidebar: #f0f0f0;
+  --sidebar-foreground: #000000;
+  --sidebar-primary: #2c3d4b;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #d8d3c7;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #d0d0c8;
+  --sidebar-ring: #5f7284;
+
+  /* Page / Decorations */
+  --page-background: #ffffff;
+  --hero-ring: #d9dde1;
+  --button-primary-background: #4f6374;
+  --button-primary-hover: #5f7284;
+  --button-primary-foreground: #f8f5e6;
+  --button-secondary-background: #f4f3ef;
+  --button-secondary-foreground: #121212;
+  --nav-logo: #4f6374;
+  --link-color: #4f6374;
+  --link-hover: #2f4856;
+  --timeline-line: #d0d0c8;
+  --timeline-dot: #8a9ba5;
+  --icon-background: #4f6374;
+}
+
+/* ============================================================================
+   DARK MODE COLORS (.dark) - Terminal Dark Mode
+   ============================================================================ */
+.dark {
+  /* Background & Foreground */
+  --background: #000000;
+  --foreground: #dcdad4;
+
+  /* Card */
+  --card: #131617;
+  --card-foreground: #dcdad4;
+
+  /* Popover */
+  --popover: #131617;
+  --popover-foreground: #dcdad4;
+
+  /* Primary */
+  --primary: #aabfc1;
+  --primary-foreground: #000000;
+
+  /* Secondary */
+  --secondary: #8a9ba5;
+  --secondary-foreground: #000000;
+
+  /* Muted */
+  --muted: #444440;
+  --muted-foreground: #888880;
+
+  /* Accent */
+  --accent: #7ba3b0;
+  --accent-foreground: #000000;
+
+  /* Destructive (Error/Warning) */
+  --destructive: #ca6f67;
+  --destructive-foreground: #f6e8d8;
+
+  /* Border & Input */
+  --border: #333333;
+  --input: #1a1a1a;
+
+  /* Ring (Focus) */
+  --ring: #628793;
+
+  /* Chart Colors - Terminal palette */
+  --chart-1: #8a9ba5;
+  --chart-2: #7ba3b0;
+  --chart-3: #c7b77f;
+  --chart-4: #d0a78e;
+  --chart-5: #ca6f67;
+
+  /* Sidebar */
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #dcdad4;
+  --sidebar-primary: #8a9ba5;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #2c3d4b;
+  --sidebar-accent-foreground: #c2d2dc;
+  --sidebar-border: #333330;
+  --sidebar-ring: #628793;
+
+  /* Page / Decorations */
+  --page-background: #000000;
+  --hero-ring: #1a232b;
+  --button-primary-background: #2c3d4b;
+  --button-primary-hover: #3a5265;
+  --button-primary-foreground: #e8e4d8;
+  --button-secondary-background: #12171d;
+  --button-secondary-foreground: #dcdad4;
+  --nav-logo: #8a9ba5;
+  --link-color: #9eb0b9;
+  --link-hover: #c2d2dc;
+  --timeline-line: #232b33;
+  --timeline-dot: #8a9ba5;
+  --icon-background: #2c3d4b;
+}

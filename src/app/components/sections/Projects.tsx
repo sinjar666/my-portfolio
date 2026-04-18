@@ -56,7 +56,7 @@ export function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-primary">
             Featured Projects
           </h2>
 
@@ -79,7 +79,7 @@ export function Projects() {
                   <project.icon className="w-6 h-6 text-white" />
                 </motion.div>
 
-                <h3 className="text-xl font-bold mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                <h3 className="text-xl font-bold mb-3 group-hover:text-secondary dark:group-hover:text-secondary transition-colors">
                   {project.title}
                 </h3>
 
@@ -108,7 +108,7 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-12 p-8 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/5 dark:to-purple-500/5 backdrop-blur-xl border border-white/20 dark:border-gray-800/50"
+            className="mt-12 p-8 rounded-3xl bg-white/20 dark:bg-gray-900/20 backdrop-blur-xl border border-white/20 dark:border-gray-800/50"
           >
             <h3 className="text-2xl font-bold mb-4">Publication</h3>
             <p className="text-gray-700 dark:text-gray-300 mb-2">
@@ -121,7 +121,7 @@ export function Projects() {
               href="https://www.tdcommons.org/dpubs_series/5048"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-indigo-600 dark:text-indigo-400 hover:underline"
+              className="text-secondary hover:underline"
             >
               View Publication →
             </a>
