@@ -45,7 +45,7 @@ export function Contact() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 hover:shadow-lg transition-all"
+                  className="flex items-center gap-4 p-4 rounded-2xl glass-card hover:shadow-lg transition-all"
                 >
                   <motion.div
                     className="p-3 rounded-xl icon-bg"
@@ -108,7 +108,7 @@ export function Contact() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="p-8 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-xl"
+                className="p-8 rounded-3xl glass-card shadow-xl"
               >
                 <h3 className="text-2xl font-bold mb-6">{contactContent.form.heading}</h3>
                 <form className="space-y-4">
@@ -158,7 +158,7 @@ export function Contact() {
           </div>
 
           {/* Additional CTA */}
-          <div className="p-8 rounded-3xl bg-white/20 dark:bg-gray-900/20 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 text-center">
+          <div className="p-8 rounded-3xl glass-card text-center">
             <h3 className="text-2xl font-bold mb-4">{contactContent.cta.heading}</h3>
             <p className="text-foreground mb-6 max-w-2xl mx-auto">
               {contactContent.cta.description}

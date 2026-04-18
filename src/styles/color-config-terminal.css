@@ -10,7 +10,7 @@
    ============================================================================ */
 :root {
   /* Background & Foreground */
-  --background: #ffffff;
+  --background: #fbf7f0;
   --foreground: #121212;
 
   /* Card */
@@ -70,25 +70,31 @@
   --sidebar-ring: #5f7284;
 
   /* Page / Decorations */
-  --page-background: #ffffff;
+  --page-background: #fbf7f0;
   --hero-ring: #d9dde1;
   --button-primary-background: var(--section-title);
-  --button-primary-hover: #5a4510;
+  --button-primary-hover: #3f2a0b;
   --button-primary-foreground: #ffffff;
   --button-secondary-background: #f4f3ef;
   --button-secondary-foreground: #121212;
-  --section-title: #6a5010;
-  --nav-logo: #5a4510;
-  --link-color: #5a4510;
-  --link-hover: #3e2e0a;
+  --section-title: #563812;
+  --nav-logo: #563812;
+  --link-color: #563812;
+  --link-hover: #3f2a0b;
   --timeline-line: #d0d0c8;
-  --timeline-dot: #5a4510;
-  --icon-background: #5a4510;
+  --timeline-dot: #563812;
+  --icon-background: #563812;
+  --chip-background: #6a5010;
+  --chip-foreground: #ffffff;
   /* Card border (subtle, low saturation) */
-  --card-border: rgba(106,80,16,0.08);
+  --card-border: rgba(86,56,18,0.08);
 
   /* Icon gradient pairs (8 theme-matched variants) */
-  --icon-c1-from: #5a4510; --icon-c1-to: #7a6018; /* amber — primary accent */
+  --icon-c1-from: #563812; --icon-c1-to: #744d1b; /* amber — primary accent */
+  /* Chip (tags) - light mode: transparent background with border matching primary */
+  --chip-background: transparent;
+  --chip-foreground: var(--section-title);
+  --chip-border: var(--section-title);
   --icon-c2-from: #1a2c42; --icon-c2-to: #24364e; /* navy */
   --icon-c3-from: #1a3232; --icon-c3-to: #243c3c; /* teal */
   --icon-c4-from: #3a1e08; --icon-c4-to: #50280c; /* sienna */
@@ -175,6 +181,11 @@
   --icon-background: #2e2008;
   /* Card border (subtle, slightly stronger on dark backgrounds) */
   --card-border: rgba(212,170,64,0.12);
+
+  /* Chip (tags) - dark mode: keep neutral gray */
+  --chip-background: #444440;
+  --chip-foreground: #e6e6e1;
+  --chip-border: rgba(255,255,255,0.08);
 
   /* Icon gradient pairs (8 theme-matched variants) */
   --icon-c1-from: #7a5818; --icon-c1-to: #9e7420; /* amber */

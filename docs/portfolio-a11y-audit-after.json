@@ -1,6 +1,6 @@
 {
-  "auditedAt": "2026-04-18T18:11:27.640Z",
-  "url": "http://localhost:5174",
+  "auditedAt": "2026-04-18T18:59:30.062Z",
+  "url": "http://127.0.0.1:4173",
   "modes": {
     "light": {
       "theme": "light",
@@ -9,7 +9,7 @@
         "violations": []
       },
       "contrast": {
-        "checked": 363,
+        "checked": 362,
         "failingCount": 3,
         "failures": [
           {
@@ -56,7 +56,7 @@
         "violations": []
       },
       "contrast": {
-        "checked": 363,
+        "checked": 362,
         "failingCount": 3,
         "failures": [
           {

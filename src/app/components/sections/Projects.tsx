@@ -56,11 +56,11 @@ export function Projects() {
                 </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-xs rounded-full bg-muted text-muted-foreground border border-white/20 dark:border-gray-700/50"
+                      className="px-3 py-1 text-xs rounded-full chip"
                     >
                       {tag}
                     </span>
