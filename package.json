@@ -6,7 +6,9 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "a11y:audit": "node scripts/accessibility-audit.mjs"
+    "a11y:audit": "node scripts/accessibility-audit.mjs",
+    "a11y:audit:install-browser": "playwright install --with-deps chromium",
+    "a11y:audit:ci": "npm run a11y:audit:install-browser && npm run a11y:audit"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",

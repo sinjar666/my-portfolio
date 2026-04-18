@@ -1,9 +1,8 @@
-import puppeteer from "puppeteer-core";
+import { chromium } from "playwright";
 import axe from "axe-core";
 import { hex as contrastRatio } from "wcag-contrast";
 
 const BASE_URL = process.env.AUDIT_URL ?? "http://localhost:5173";
-const CHROME_PATH = process.env.CHROME_PATH ?? "/usr/bin/google-chrome";
 
 const INTERACTIVE_SELECTOR = [
   "a[href]",
@@ -203,16 +202,17 @@ async function analyzeTheme(page, theme) {
 }
 
 async function main() {
-  const browser = await puppeteer.launch({
-    executablePath: CHROME_PATH,
+  const browser = await chromium.launch({
     headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    defaultViewport: { width: 1600, height: 2400 },
   });
-  const page = await browser.newPage();
+  const context = await browser.newContext({
+    viewport: { width: 1600, height: 2400 },
+  });
+  const page = await context.newPage();
 
   try {
-    await page.goto(BASE_URL, { waitUntil: "networkidle2" });
+    await page.goto(BASE_URL, { waitUntil: "networkidle" });
 
     const light = await analyzeTheme(page, "light");
     const dark = await analyzeTheme(page, "dark");

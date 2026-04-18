@@ -44,7 +44,7 @@ Each checkpoint below lists the test performed, the method used (automated or ma
 
 - **Reduced motion:** Wrapped app in MotionConfig (`reducedMotion="user"`) and added global reduced-motion fallbacks for CSS transitions — PASS.
 
-- **Automated axe-core audit (Puppeteer):** Full page crawl with axe-core. Results after remediation: Light mode = 0 violations; Dark mode = 0 violations — PASS.
+- **Automated axe-core audit (Playwright Chromium):** Full page crawl with axe-core. Results after remediation: Light mode = 0 violations; Dark mode = 0 violations — PASS.
 
 - **Manual contrast scanner for CSS custom properties:** Used a custom scanner (`scripts/accessibility-audit.mjs`) and spot-checked controls that use CSS custom properties (tokens) to confirm reliable contrast results — PASS (see Limitations for scanner caveats).
 
@@ -60,14 +60,15 @@ Notes:
 
 ## Tooling
 
-- Browser automation and rule audit: Puppeteer + axe-core.
+- Browser automation and rule audit: Playwright Chromium + axe-core.
 - Additional contrast sampling script: custom scanner in `scripts/accessibility-audit.mjs`.
 - Manual verification for controls using CSS custom property backgrounds (see Limitations section).
 
 Audit command used:
 
 ```bash
-AUDIT_URL=http://localhost:5174 node scripts/accessibility-audit.mjs > /tmp/portfolio-a11y-audit-after.json
+npm run a11y:audit:install-browser
+AUDIT_URL=http://localhost:5174 npm run a11y:audit > /tmp/portfolio-a11y-audit-after.json
 ```
 
 ## Baseline Before Fixes
