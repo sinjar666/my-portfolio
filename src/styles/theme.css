@@ -170,6 +170,12 @@ strong, b, .text-accent {
   font-weight: 700;
 }
 
+/* Opt-in utility: semibold text that uses the primary (bold) accent color */
+.semibold-accent {
+  color: var(--primary);
+  font-weight: 600;
+}
+
 /* Card border override: apply a subtle, theme-matched border to card elements */
 /* Apply card border without using !important by increasing selector specificity */
 html body [class*="rounded-3xl"][class*="border"],

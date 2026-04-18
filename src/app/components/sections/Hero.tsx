@@ -52,9 +52,9 @@ export function Hero({ hasScrolled }: HeroProps) {
           {/* Glassmorphic Card */}
           <div className="inline-block p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-xl mb-8">
             <p className="text-base text-gray-700 dark:text-gray-300 max-w-2xl">
-              Engineering leader with <span className="font-semibold text-secondary">14 years</span> of experience building mission-critical platforms that power{" "}
-              <span className="font-semibold text-secondary">high-throughput, globally distributed systems</span>. 
-              Driving the future of <span className="font-semibold text-secondary">AI-powered infrastructure</span>.
+              Engineering leader with <span className="semibold-accent">14 years</span> of experience building mission-critical platforms that power{" "}
+              <span className="semibold-accent">high-throughput, globally distributed systems</span>. 
+              Driving the future of <span className="semibold-accent">AI-powered infrastructure</span>.
             </p>
           </div>
 
