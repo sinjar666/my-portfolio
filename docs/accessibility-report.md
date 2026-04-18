@@ -23,6 +23,41 @@ Scope: Entire single-page portfolio (light and dark mode)
 - Motion and animation behavior under `prefers-reduced-motion`.
 - Accessible names for key interactive controls.
 
+## Checkpoints and Results
+
+Each checkpoint below lists the test performed, the method used (automated or manual), and the pass/fail result. Numeric contrast ratios are provided where applicable (WCAG 2.1 thresholds: AA = 4.5:1 for normal text, AAA = 7:1 for normal text).
+
+- **Color — Primary buttons:** Manual contrast check and automated axe sampling. Light: `#ffffff` on `#6a5010` = 7.59:1 — AAA (PASS). Dark: `#000000` on `#d4aa40` = 9.62:1 — AAA (PASS).
+
+- **Color — Chips / Tags (`bg-muted` + `text-muted-foreground`):** Token-based checks across themes.
+	- Terminal theme (light): `#c8c7bc` (bg) vs `#323232` (fg) = 7.54:1 — AAA (PASS).
+	- Terminal theme (dark): `#444440` (bg) vs `#e6e6e1` (fg) = 7.81:1 — AAA (PASS).
+	- Purple theme (light): BEFORE: `#ececf0` (bg) vs `#717182` (fg) = 4.06:1 — FAIL (identified during audit). REMEDIATED: `--muted-foreground` changed to `#323232`, AFTER: `#ececf0` vs `#323232` = 10.88:1 — AAA (PASS).
+
+- **Color — Links and body inline text:** Automated axe checks plus manual sampling of tokenized link colors against page backgrounds — PASS (no contrast violations reported by axe after remediation).
+
+- **Keyboard navigation & landmarks:** Manual keyboard walkthrough and automated checks. Added skip link, `id="main-content"` target, and ensured logical landmark flow — PASS.
+
+- **Focus visibility:** Global `:focus-visible` outline and improved focus rings applied and manually verified on buttons, toggles, and menu controls — PASS.
+
+- **ARIA attributes & accessible names:** Mobile menu (`aria-expanded`, `aria-controls`), theme toggle (`aria-pressed`) and other interactive controls have accessible names and states — PASS.
+
+- **Reduced motion:** Wrapped app in MotionConfig (`reducedMotion="user"`) and added global reduced-motion fallbacks for CSS transitions — PASS.
+
+- **Automated axe-core audit (Puppeteer):** Full page crawl with axe-core. Results after remediation: Light mode = 0 violations; Dark mode = 0 violations — PASS.
+
+- **Manual contrast scanner for CSS custom properties:** Used a custom scanner (`scripts/accessibility-audit.mjs`) and spot-checked controls that use CSS custom properties (tokens) to confirm reliable contrast results — PASS (see Limitations for scanner caveats).
+
+- **Images & alt text (spot checks):** Informative images inspected for `alt` attributes during manual review — PASS.
+
+- **Headings & semantic structure:** Heading hierarchy and landmark roles checked for linear reading order and semantic correctness — PASS.
+
+- **Interactive control states & focus management:** Buttons, dialogs, drawers, and toggles verified for visible state, keyboard operability, and proper focus handling — PASS.
+
+Notes:
+- Where a numeric ratio is listed the value was measured with the project's contrast scripts or with a local sRGB contrast check. "PASS" indicates the checkpoint meets the requested AAA-focused threshold where applicable or otherwise meets WCAG expectations for the given control.
+- The Purple theme's muted-foreground was the only token that required change to meet AAA for tag/chip text; that change is committed in `src/styles/color-config-purple.css` and listed in the updated files section.
+
 ## Tooling
 
 - Browser automation and rule audit: Puppeteer + axe-core.
@@ -61,6 +96,7 @@ AUDIT_URL=http://localhost:5174 node scripts/accessibility-audit.mjs > /tmp/port
 	- `text-foreground` for primary text.
 	- `text-muted-foreground` for secondary/meta text.
 - Replaced low-contrast skill/tag chip color combos with `bg-muted` + `text-muted-foreground`.
+	- Note: the Purple theme's light-mode `--muted-foreground` was too light and failed contrast; it has been updated from `#717182` to `#323232`, giving `#323232` on `#ececf0` = 10.88:1 (AAA).
 - Replaced gradient social cards in contact section with token-based glass surfaces to ensure reliable themed contrast.
 
 ### 3) Motion accessibility
@@ -102,6 +138,7 @@ Manual confirmation for button/skip-link contrast pairs (token-based controls):
 - `src/app/components/sections/Skills.tsx`
 - `src/app/components/sections/Contact.tsx`
 - `scripts/accessibility-audit.mjs`
+ - `src/styles/color-config-purple.css`
 
 ## Compliance Statement
 
