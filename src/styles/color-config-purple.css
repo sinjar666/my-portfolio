@@ -10,7 +10,7 @@
    ============================================================================ */
 :root {
   /* Background & Foreground */
-  --background: #ffffff;
+  --background: #fbf7f0;
   --foreground: oklch(0.145 0 0);
 
   /* Card */
@@ -70,7 +70,7 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   /* Page / Decorations */
-  --page-background: linear-gradient(135deg, #eef2ff 0%, #f6edff 100%);
+  --page-background: #fbf7f0;
   --hero-ring: linear-gradient(135deg, #6366f1, #a855f7);
   --button-primary-background: linear-gradient(135deg, #6366f1, #a855f7);
   --button-primary-hover: linear-gradient(135deg, #4f46e5, #7c3aed);

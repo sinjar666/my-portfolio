@@ -10,7 +10,7 @@
    ============================================================================ */
 :root {
   /* Background & Foreground */
-  --background: #ffffff;
+  --background: #fbf7f0;
   --foreground: #121212;
 
   /* Card */
@@ -70,7 +70,7 @@
   --sidebar-ring: #5f7284;
 
   /* Page / Decorations */
-  --page-background: #ffffff;
+  --page-background: #fbf7f0;
   --hero-ring: #d9dde1;
   --button-primary-background: var(--section-title);
   --button-primary-hover: #3f2a0b;
