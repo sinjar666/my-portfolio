@@ -72,12 +72,14 @@
     font-size: var(--text-2xl);
     font-weight: var(--font-weight-medium);
     line-height: 1.5;
+    color: var(--section-title);
   }
 
   h2 {
     font-size: var(--text-xl);
     font-weight: var(--font-weight-medium);
     line-height: 1.5;
+    color: var(--section-title);
   }
 
   h3 {
@@ -162,21 +164,10 @@
   .icon-color-8 { background: linear-gradient(to right, var(--icon-c8-from), var(--icon-c8-to)); }
 }
 
-/* Section title color — overrides Tailwind utility classes */
-h1, h2 {
-  color: var(--section-title);
-}
-
 /* Emphasis / strong text should use the primary (heading) color */
 strong, b, .text-accent {
   color: var(--primary);
   font-weight: 700;
-}
-
-/* Apply primary color to semibold utility too */
-.font-semibold {
-  color: var(--primary);
-  font-weight: 600;
 }
 
 /* Card border override: apply a subtle, theme-matched border to card elements */

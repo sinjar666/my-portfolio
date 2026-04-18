@@ -79,7 +79,7 @@ export function Projects() {
                   <project.icon className="w-6 h-6 text-white" />
                 </motion.div>
 
-                <h3 className="text-xl font-bold mb-3 group-hover:text-secondary dark:group-hover:text-secondary transition-colors">
+                <h3 className="text-xl font-bold mb-3 group-hover:text-secondary transition-colors">
                   {project.title}
                 </h3>
 
