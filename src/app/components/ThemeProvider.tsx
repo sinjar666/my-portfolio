@@ -26,9 +26,14 @@ export function ThemeProvider({
   storageKey = "ui-theme",
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
-  );
+  const [theme, setTheme] = useState<Theme>(() => {
+    try {
+      if (typeof window === "undefined") return defaultTheme;
+      return (localStorage.getItem(storageKey) as Theme) || defaultTheme;
+    } catch (e) {
+      return defaultTheme;
+    }
+  });
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -36,13 +41,27 @@ export function ThemeProvider({
     root.classList.remove("light", "dark");
 
     if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
+      const mql = window.matchMedia("(prefers-color-scheme: dark)");
 
-      root.classList.add(systemTheme);
-      return;
+      const apply = () => {
+        root.classList.remove("light", "dark");
+        root.classList.add(mql.matches ? "dark" : "light");
+      };
+
+      apply();
+
+      const listener = (e: MediaQueryListEvent) => {
+        root.classList.remove("light", "dark");
+        root.classList.add(e.matches ? "dark" : "light");
+      };
+
+      if (mql.addEventListener) mql.addEventListener("change", listener);
+      else mql.addListener(listener);
+
+      return () => {
+        if (mql.removeEventListener) mql.removeEventListener("change", listener);
+        else mql.removeListener(listener);
+      };
     }
 
     root.classList.add(theme);
