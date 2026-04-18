@@ -26,19 +26,19 @@
   --primary-foreground: #ffffff;
 
   /* Secondary */
-  --secondary: #60707d;
+  --secondary: #3f5260;
   --secondary-foreground: #ffffff;
 
   /* Muted */
   --muted: #c8c7bc;
-  --muted-foreground: #5d5e58;
+  --muted-foreground: #323232;
 
   /* Accent */
-  --accent: #4f6374;
+  --accent: #5a4510;
   --accent-foreground: #ffffff;
 
   /* Destructive (Error/Warning) */
-  --destructive: #ca6f67;
+  --destructive: #8c2e29;
   --destructive-foreground: #ffffff;
 
   /* Border & Input */
@@ -72,17 +72,18 @@
   /* Page / Decorations */
   --page-background: #ffffff;
   --hero-ring: #d9dde1;
-  --button-primary-background: #4f6374;
-  --button-primary-hover: #5f7284;
+  --button-primary-background: #5a4510;
+  --button-primary-hover: #6a5218;
   --button-primary-foreground: #f8f5e6;
   --button-secondary-background: #f4f3ef;
   --button-secondary-foreground: #121212;
-  --nav-logo: #4f6374;
-  --link-color: #4f6374;
-  --link-hover: #2f4856;
+  --section-title: #6a5010;
+  --nav-logo: #5a4510;
+  --link-color: #5a4510;
+  --link-hover: #3e2e0a;
   --timeline-line: #d0d0c8;
-  --timeline-dot: #8a9ba5;
-  --icon-background: #4f6374;
+  --timeline-dot: #5a4510;
+  --icon-background: #5a4510;
 }
 
 /* ============================================================================
@@ -106,20 +107,20 @@
   --primary-foreground: #000000;
 
   /* Secondary */
-  --secondary: #8a9ba5;
+  --secondary: #a0b3be;
   --secondary-foreground: #000000;
 
   /* Muted */
   --muted: #444440;
-  --muted-foreground: #888880;
+  --muted-foreground: #aeada6;
 
   /* Accent */
-  --accent: #7ba3b0;
+  --accent: #c8a030;
   --accent-foreground: #000000;
 
   /* Destructive (Error/Warning) */
-  --destructive: #ca6f67;
-  --destructive-foreground: #f6e8d8;
+  --destructive: #ef9992;
+  --destructive-foreground: #1a0808;
 
   /* Border & Input */
   --border: #333333;
@@ -148,15 +149,16 @@
   /* Page / Decorations */
   --page-background: #000000;
   --hero-ring: #1a232b;
-  --button-primary-background: #2c3d4b;
-  --button-primary-hover: #3a5265;
+  --button-primary-background: #2e2008;
+  --button-primary-hover: #3e2c0a;
   --button-primary-foreground: #e8e4d8;
   --button-secondary-background: #12171d;
   --button-secondary-foreground: #dcdad4;
-  --nav-logo: #8a9ba5;
-  --link-color: #9eb0b9;
-  --link-hover: #c2d2dc;
+  --section-title: #d4aa40;
+  --nav-logo: #c8a030;
+  --link-color: #c8a030;
+  --link-hover: #d8b840;
   --timeline-line: #232b33;
-  --timeline-dot: #8a9ba5;
-  --icon-background: #2c3d4b;
+  --timeline-dot: #c8a030;
+  --icon-background: #2e2008;
 }

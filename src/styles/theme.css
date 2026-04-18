@@ -151,3 +151,8 @@
     background: var(--icon-background);
   }
 }
+
+/* Section title color — overrides Tailwind utility classes */
+h1, h2 {
+  color: var(--section-title);
+}
