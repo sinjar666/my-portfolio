@@ -1,0 +1,50 @@
+{
+  "heading": "Get In Touch",
+  "intro": "Open to conversations around platform engineering, cloud infrastructure, and AI-driven systems.",
+  "contactInformationHeading": "Contact Information",
+  "contactInfo": [
+    {
+      "icon": "mail",
+      "label": "Email",
+      "value": "srijmukh070@gmail.com",
+      "href": "mailto:srijmukh070@gmail.com"
+    },
+    {
+      "icon": "mapPin",
+      "label": "Location",
+      "value": "Bengaluru, Karnataka, India",
+      "href": null
+    }
+  ],
+  "socialSectionHeading": "Connect on Social",
+  "socialLinks": [
+    {
+      "icon": "linkedin",
+      "label": "LinkedIn",
+      "href": "https://linkedin.com/in/sinjar666",
+      "color": "from-blue-500 to-blue-600"
+    },
+    {
+      "icon": "github",
+      "label": "GitHub",
+      "href": "https://github.com/sinjar666",
+      "color": "from-gray-700 to-gray-900"
+    }
+  ],
+  "form": {
+    "heading": "Send a Message",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your.email@example.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Your message...",
+    "submitLabel": "Send Message"
+  },
+  "cta": {
+    "heading": "Want to buy me a coffee?",
+    "description": "I'm passionate about building high-performing teams, driving technical excellence, and delivering business impact through scalable platform engineering and AI-powered infrastructure.",
+    "buttonLabel": "Let's Talk",
+    "buttonHref": "https://calendly.com/srijmukh070"
+  }
+}

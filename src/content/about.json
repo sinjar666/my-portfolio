@@ -1,0 +1,8 @@
+{
+  "heading": "About Me",
+  "paragraphs": [
+    "AI is redefining how software is built. I work on the systems that make that future possible. I build and scale mission-critical platforms that power high-throughput, globally distributed systems.",
+    "Currently, I lead engineering for Visa's private cloud platform, driving the design and evolution of infrastructure that underpins secure, resilient, and scalable financial systems. My focus is on transforming infrastructure into a product - enabling developer velocity, operational excellence, and cost efficiency at scale.",
+    "Over the past decade, I've operated across the stack - from low-level systems in aerospace software at Honeywell to cloud-native platforms in fintech - giving me a deep appreciation for reliability, performance, and real-world constraints."
+  ]
+}

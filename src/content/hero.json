@@ -1,0 +1,41 @@
+{
+  "name": "Srijan Mukherjee",
+  "profileImageAlt": "Srijan Mukherjee",
+  "role": "Director of Engineering @ Visa",
+  "summary": "Cloud Platform, Distributed Systems & AI | Scaling High-Throughput Infrastructure",
+  "introCard": {
+    "segments": [
+      { "text": "Engineering leader with " },
+      { "text": "14 years", "emphasis": true },
+      { "text": " of experience building mission-critical platforms that power " },
+      { "text": "high-throughput, globally distributed systems", "emphasis": true },
+      { "text": ". Driving the future of " },
+      { "text": "AI-powered infrastructure", "emphasis": true },
+      { "text": "." }
+    ]
+  },
+  "cta": {
+    "primary": { "label": "Get In Touch", "href": "#contact" },
+    "resume": { "label": "Resume" }
+  },
+  "socialLinks": [
+    {
+      "icon": "github",
+      "href": "https://github.com/sinjar666",
+      "ariaLabel": "GitHub"
+    },
+    {
+      "icon": "linkedin",
+      "href": "https://linkedin.com/in/sinjar666",
+      "ariaLabel": "LinkedIn"
+    },
+    {
+      "icon": "mail",
+      "href": "mailto:srijmukh070@gmail.com",
+      "ariaLabel": "Email"
+    }
+  ],
+  "scrollIndicator": {
+    "mobileLabel": "Swipe"
+  }
+}

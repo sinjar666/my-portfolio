@@ -9,115 +9,19 @@ import {
   Cpu,
   Users
 } from "lucide-react";
+import { skillsContent } from "../../../content";
 
 export function Skills() {
-  const skillCategories = [
-    {
-      icon: Users,
-      title: "Leadership & Management",
-      skills: [
-        "Engineering Leadership",
-        "Team Collaboration",
-        "People Management",
-        "Project Management",
-        "Mentorship",
-        "Strategic Thinking",
-        "Conflict Resolution",
-      ],
-      color: "icon-color-1",
-    },
-    {
-      icon: Brain,
-      title: "AI & Machine Learning",
-      skills: [
-        "Generative AI",
-        "LLM",
-        "RAG",
-        "Prompt Engineering",
-        "Knowledge Graphs",
-        "Agentic Workflows",
-      ],
-      color: "icon-color-6",
-    },
-    {
-      icon: Cloud,
-      title: "Cloud & Infrastructure",
-      skills: [
-        "Distributed Computing",
-        "Virtualization",
-        "Kubernetes",
-        "Kafka",
-        "ElasticSearch",
-        "Hazelcast",
-      ],
-      color: "icon-color-3",
-    },
-    {
-      icon: Code,
-      title: "Backend Development",
-      skills: [
-        "NodeJS",
-        "Java",
-        "Spring",
-        "GoLang",
-        "C++",
-        "C# .NET",
-        "Python",
-        "Multithreading",
-      ],
-      color: "icon-color-4",
-    },
-    {
-      icon: Layout,
-      title: "Frontend Development",
-      skills: [
-        "Angular",
-        "React",
-        "TypeScript",
-        "HTML/CSS",
-        "Redux",
-        "RxJS",
-        "Micro-frontends",
-      ],
-      color: "icon-color-2",
-    },
-    {
-      icon: Database,
-      title: "Data & Storage",
-      skills: [
-        "MySQL",
-        "MongoDB",
-        "ElasticSearch",
-        "Redis",
-        "Data Architecture",
-      ],
-      color: "icon-color-8",
-    },
-    {
-      icon: Globe,
-      title: "Protocols & APIs",
-      skills: [
-        "HTTP/REST",
-        "HTTP/2 SPDY",
-        "Server-Sent Events",
-        "WebSockets",
-        "gRPC",
-      ],
-      color: "icon-color-5",
-    },
-    {
-      icon: Cpu,
-      title: "Systems & Tools",
-      skills: [
-        "Linux",
-        "Qt",
-        "Erlang",
-        "Software Architecture",
-        "Design Patterns",
-      ],
-      color: "icon-color-7",
-    },
-  ];
+  const skillIconMap = {
+    users: Users,
+    brain: Brain,
+    cloud: Cloud,
+    code: Code,
+    layout: Layout,
+    database: Database,
+    globe: Globe,
+    cpu: Cpu,
+  } as const;
 
   return (
     <section id="skills" className="relative px-6 py-16 md:py-20">
@@ -129,11 +33,14 @@ export function Skills() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-primary">
-            Skills & Expertise
+            {skillsContent.heading}
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {skillCategories.map((category, index) => (
+            {skillsContent.categories.map((category, index) => {
+              const Icon = skillIconMap[category.icon];
+
+              return (
               <motion.div
                 key={category.title}
                 initial={{ opacity: 0, y: 20 }}
@@ -148,7 +55,7 @@ export function Skills() {
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <category.icon className="w-5 h-5 text-white" />
+                    <Icon className="w-5 h-5 text-white" />
                   </motion.div>
                   <h3 className="text-xl font-bold">{category.title}</h3>
                 </div>
@@ -164,7 +71,7 @@ export function Skills() {
                   ))}
                 </div>
               </motion.div>
-            ))}
+            )})}
           </div>
         </motion.div>
       </div>

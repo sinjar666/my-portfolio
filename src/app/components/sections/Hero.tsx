@@ -2,12 +2,19 @@ import { motion } from "motion/react";
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import profileImage from "../../../assets/profile.png";
 import { config } from "../../../config";
+import { heroContent } from "../../../content";
 
 type HeroProps = {
   hasScrolled: boolean;
 };
 
 export function Hero({ hasScrolled }: HeroProps) {
+  const socialIconMap = {
+    github: Github,
+    linkedin: Linkedin,
+    mail: Mail,
+  } as const;
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center px-6 pt-20">
       <div className="max-w-6xl mx-auto text-center">
@@ -31,30 +38,36 @@ export function Hero({ hasScrolled }: HeroProps) {
             <div className="w-40 h-40 rounded-full p-1 shadow-2xl hero-ring">
               <img 
                 src={profileImage} 
-                alt="Srijan Mukherjee" 
+                alt={heroContent.profileImageAlt}
                 className="w-full h-full rounded-full object-cover border-4 border-white dark:border-gray-900"
               />
             </div>
           </motion.div>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-primary">
-            Srijan Mukherjee
+            {heroContent.name}
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-4">
-            Director of Engineering @ Visa
+            {heroContent.role}
           </p>
 
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8">
-            Cloud Platform, Distributed Systems & AI | Scaling High-Throughput Infrastructure
+            {heroContent.summary}
           </p>
 
           {/* Glassmorphic Card */}
           <div className="inline-block p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-xl mb-8">
             <p className="text-base text-gray-700 dark:text-gray-300 max-w-2xl">
-              Engineering leader with <span className="semibold-accent">14 years</span> of experience building mission-critical platforms that power{" "}
-              <span className="semibold-accent">high-throughput, globally distributed systems</span>. 
-              Driving the future of <span className="semibold-accent">AI-powered infrastructure</span>.
+              {heroContent.introCard.segments.map((segment, index) => (
+                segment.emphasis ? (
+                  <span key={index} className="semibold-accent">
+                    {segment.text}
+                  </span>
+                ) : (
+                  <span key={index}>{segment.text}</span>
+                )
+              ))}
             </p>
           </div>
 
@@ -73,14 +86,14 @@ export function Hero({ hasScrolled }: HeroProps) {
             }}
           >
             <motion.a
-              href="#contact"
+              href={heroContent.cta.primary.href}
               className="px-8 py-3 rounded-full btn-primary font-medium hover:shadow-lg hover:scale-105 transition-all"
               variants={{
                 hidden: { opacity: 0, scale: 0.8 },
                 visible: { opacity: 1, scale: 1 }
               }}
             >
-              Get In Touch
+              {heroContent.cta.primary.label}
             </motion.a>
             <motion.a
               href={config.resumeUrl}
@@ -92,7 +105,7 @@ export function Hero({ hasScrolled }: HeroProps) {
               }}
             >
               <Download className="w-4 h-4" />
-              Resume
+              {heroContent.cta.resume.label}
             </motion.a>
           </motion.div>
 
@@ -111,43 +124,26 @@ export function Hero({ hasScrolled }: HeroProps) {
               }
             }}
           >
-            <motion.a
-              href="https://github.com/sinjar666"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all hover:scale-110"
-              aria-label="GitHub"
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 }
-              }}
-            >
-              <Github className="w-5 h-5" />
-            </motion.a>
-            <motion.a
-              href="https://linkedin.com/in/sinjar666"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all hover:scale-110"
-              aria-label="LinkedIn"
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 }
-              }}
-            >
-              <Linkedin className="w-5 h-5" />
-            </motion.a>
-            <motion.a
-              href="mailto:srijmukh070@gmail.com"
-              className="p-3 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all hover:scale-110"
-              aria-label="Email"
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 }
-              }}
-            >
-              <Mail className="w-5 h-5" />
-            </motion.a>
+            {heroContent.socialLinks.map((social) => {
+              const Icon = socialIconMap[social.icon];
+
+              return (
+                <motion.a
+                  key={social.ariaLabel}
+                  href={social.href}
+                  target={social.href.startsWith("http") ? "_blank" : undefined}
+                  rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="p-3 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all hover:scale-110"
+                  aria-label={social.ariaLabel}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 }
+                  }}
+                >
+                  <Icon className="w-5 h-5" />
+                </motion.a>
+              );
+            })}
           </motion.div>
         </motion.div>
 
@@ -176,7 +172,7 @@ export function Hero({ hasScrolled }: HeroProps) {
             animate={hasScrolled ? { opacity: 0 } : { opacity: 1 }}
             transition={{ duration: 0.2 }}
           >
-            <span>Swipe</span>
+            <span>{heroContent.scrollIndicator.mobileLabel}</span>
             <motion.div
               className="flex flex-col items-center"
               animate={{ y: [0, 6, 0], opacity: [0.45, 1, 0.45] }}
