@@ -39,7 +39,7 @@ export function Portfolio() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-page text-foreground">
+    <div className="relative min-h-screen overflow-x-clip bg-page text-foreground">
       <Navigation scrolled={scrolled} isVisible={isVisible} />
 
       <main className="relative">
