@@ -5,7 +5,7 @@ export function Experience() {
   const experiences = [
     {
       title: "Director, Software Development",
-      company: "VISA Cloud Platform",
+      company: "VISA",
       period: "September 2023 – Present",
       location: "Bengaluru, IN",
       highlights: [
@@ -17,7 +17,7 @@ export function Experience() {
     },
     {
       title: "Senior Engineering Manager",
-      company: "VISA Cloud Platform IaaS",
+      company: "VISA",
       period: "August 2021 – August 2023",
       location: "Bengaluru, IN",
       highlights: [
@@ -29,7 +29,7 @@ export function Experience() {
     },
     {
       title: "Staff Full Stack Developer",
-      company: "VISA Cloud Platform IaaS",
+      company: "VISA",
       period: "January 2019 – July 2021",
       location: "Bengaluru, IN",
       highlights: [
@@ -41,7 +41,7 @@ export function Experience() {
     },
     {
       title: "Senior SW Developer",
-      company: "VISA Cloud Platform UI",
+      company: "VISA",
       period: "February 2017 – January 2019",
       location: "Bengaluru, IN",
       highlights: [
