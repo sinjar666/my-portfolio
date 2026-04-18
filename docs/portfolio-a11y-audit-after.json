@@ -1,6 +1,6 @@
 {
-  "auditedAt": "2026-04-18T18:59:30.062Z",
-  "url": "http://127.0.0.1:4173",
+  "auditedAt": "2026-04-18T19:19:28.858Z",
+  "url": "http://127.0.0.1:4174",
   "modes": {
     "light": {
       "theme": "light",
@@ -16,31 +16,31 @@
             "selector": "a",
             "snippet": "Skip to main content",
             "foreground": "#ffffff",
-            "background": "#ffffff",
+            "background": "#fbf7f0",
             "minRatio": 7,
             "fontSize": 16,
             "fontWeight": 600,
-            "ratio": 1
+            "ratio": 1.07
           },
           {
             "selector": "a",
             "snippet": "Get In Touch",
             "foreground": "#ffffff",
-            "background": "#ffffff",
+            "background": "#fbf7f0",
             "minRatio": 7,
             "fontSize": 16,
             "fontWeight": 500,
-            "ratio": 1
+            "ratio": 1.07
           },
           {
             "selector": "a",
             "snippet": "Let's Talk",
             "foreground": "#ffffff",
-            "background": "#ffffff",
+            "background": "#fbf7f0",
             "minRatio": 7,
             "fontSize": 16,
             "fontWeight": 500,
-            "ratio": 1
+            "ratio": 1.07
           }
         ]
       },
