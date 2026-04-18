@@ -6,10 +6,9 @@ import { navigationContent } from "../../content";
 
 interface NavigationProps {
   scrolled: boolean;
-  isVisible: boolean;
 }
 
-export function Navigation({ scrolled, isVisible }: NavigationProps) {
+export function Navigation({ scrolled }: NavigationProps) {
   const { theme, setTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -19,9 +18,7 @@ export function Navigation({ scrolled, isVisible }: NavigationProps) {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 transform ${
-        isVisible ? 'translate-y-0' : '-translate-y-full'
-      } ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg shadow-lg border-b border-white/20 dark:border-gray-800/50"
           : "bg-transparent"

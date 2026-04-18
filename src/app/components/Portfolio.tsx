@@ -5,31 +5,20 @@ import { Projects } from "./sections/Projects";
 import { Skills } from "./sections/Skills";
 import { Contact } from "./sections/Contact";
 import { Navigation } from "./Navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { AboutDetails } from "./sections/AboutDetails";
 import { footerContent } from "../../content";
 
 export function Portfolio() {
   const [scrolled, setScrolled] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
   const [hasScrolled, setHasScrolled] = useState(false);
-  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const scrolledDown = currentScrollY > lastScrollY.current;
-      const scrolledPastThreshold = currentScrollY > 100;
-
-      if (scrolledDown && scrolledPastThreshold) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
 
       setScrolled(currentScrollY > 50);
       setHasScrolled(currentScrollY > 24);
-      lastScrollY.current = currentScrollY;
     };
 
     handleScroll();
@@ -39,7 +28,7 @@ export function Portfolio() {
 
   return (
     <div className="relative min-h-screen overflow-x-clip bg-page text-foreground">
-      <Navigation scrolled={scrolled} isVisible={isVisible} />
+      <Navigation scrolled={scrolled} />
 
       <main className="relative">
         <Hero hasScrolled={hasScrolled} />
