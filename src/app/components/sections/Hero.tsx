@@ -36,8 +36,8 @@ export function Hero({ hasScrolled }: HeroProps) {
             }}
           >
             <div className="w-40 h-40 rounded-full p-1 shadow-2xl hero-ring">
-              <img 
-                src={profileImage} 
+              <img
+                src={profileImage}
                 alt={heroContent.profileImageAlt}
                 className="w-full h-full rounded-full object-cover border-4 border-white dark:border-gray-900"
               />
@@ -72,7 +72,7 @@ export function Hero({ hasScrolled }: HeroProps) {
           </div>
 
           {/* CTA Buttons */}
-          <motion.div 
+          <motion.div
             className="flex flex-wrap items-center justify-center gap-4 mb-12"
             initial="hidden"
             animate="visible"
@@ -80,9 +80,9 @@ export function Hero({ hasScrolled }: HeroProps) {
               hidden: {},
               visible: {
                 transition: {
-                  staggerChildren: 0.2
-                }
-              }
+                  staggerChildren: 0.2,
+                },
+              },
             }}
           >
             <motion.a
@@ -90,7 +90,7 @@ export function Hero({ hasScrolled }: HeroProps) {
               className="px-8 py-3 rounded-full btn-primary font-medium hover:shadow-lg hover:scale-105 transition-all"
               variants={{
                 hidden: { opacity: 0, scale: 0.8 },
-                visible: { opacity: 1, scale: 1 }
+                visible: { opacity: 1, scale: 1 },
               }}
             >
               {heroContent.cta.primary.label}
@@ -101,7 +101,7 @@ export function Hero({ hasScrolled }: HeroProps) {
               className="px-8 py-3 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 font-medium hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all flex items-center gap-2"
               variants={{
                 hidden: { opacity: 0, scale: 0.8 },
-                visible: { opacity: 1, scale: 1 }
+                visible: { opacity: 1, scale: 1 },
               }}
             >
               <Download className="w-4 h-4" />
@@ -110,7 +110,7 @@ export function Hero({ hasScrolled }: HeroProps) {
           </motion.div>
 
           {/* Social Links */}
-          <motion.div 
+          <motion.div
             className="flex items-center justify-center gap-4"
             initial="hidden"
             animate="visible"
@@ -119,9 +119,9 @@ export function Hero({ hasScrolled }: HeroProps) {
               visible: {
                 transition: {
                   staggerChildren: 0.1,
-                  delayChildren: 0.3
-                }
-              }
+                  delayChildren: 0.3,
+                },
+              },
             }}
           >
             {heroContent.socialLinks.map((social) => {
@@ -137,7 +137,7 @@ export function Hero({ hasScrolled }: HeroProps) {
                   aria-label={social.ariaLabel}
                   variants={{
                     hidden: { opacity: 0, y: 20 },
-                    visible: { opacity: 1, y: 0 }
+                    visible: { opacity: 1, y: 0 },
                   }}
                 >
                   <Icon className="w-5 h-5" />
@@ -156,15 +156,25 @@ export function Hero({ hasScrolled }: HeroProps) {
           aria-hidden="true"
         >
           <motion.div
-            className="hidden md:flex w-6 h-10 rounded-full border-2 border-gray-400 dark:border-gray-600 items-start justify-center p-2"
+            className="hidden md:flex flex-col items-center gap-2"
             animate={hasScrolled ? { opacity: 0 } : { opacity: 1 }}
             transition={{ duration: 0.2 }}
           >
-            <motion.div
-              className="w-1 h-2 bg-gray-400 dark:bg-gray-600 rounded-full"
-              animate={{ y: [0, 12, 0] }}
+            <div className="w-6 h-10 rounded-full border-2 border-gray-400 dark:border-gray-600 flex items-start justify-center p-2">
+              <motion.div
+                className="w-1 h-2 bg-gray-400 dark:bg-gray-600 rounded-full"
+                animate={{ y: [0, 12, 0] }}
+                transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+              />
+            </div>
+
+            <motion.span
+              className="text-[10px] font-medium uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400"
+              animate={{ y: [0, 6, 0], opacity: [0.6, 1, 0.6] }}
               transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-            />
+            >
+              {heroContent.scrollIndicator.desktopLabel ?? "Scroll down"}
+            </motion.span>
           </motion.div>
 
           <motion.div

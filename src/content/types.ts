@@ -39,6 +39,7 @@ export type HeroContent = {
   }>;
   scrollIndicator: {
     mobileLabel: string;
+    desktopLabel?: string;
   };
 };
 
