@@ -13,7 +13,7 @@ export function AboutDetails() {
         <>
             <section id="about-details" className="relative px-6 py-16 md:py-20">
                 <div className="max-w-6xl mx-auto">
-                    <div className="p-8 rounded-3xl bg-white/20 dark:bg-gray-900/20 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 mb-12">
+                    <div className="glass-card-soft p-8 mb-12">
                         <h3 className="text-2xl font-bold mb-6 text-center">{aboutDetailsContent.leadershipPhilosophy.heading}</h3>
                         <motion.div
                             className="grid md:grid-cols-3 gap-6"
@@ -58,7 +58,7 @@ export function AboutDetails() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="p-6 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                                className="glass-card glass-card-interactive p-6 hover:scale-[1.03]"
                             >
                                 <Icon className="w-10 h-10 text-secondary mb-4" />
                                 <h4 className="text-xl font-bold mb-2">{item.title}</h4>
@@ -67,11 +67,11 @@ export function AboutDetails() {
                         )})}
                     </div>
 
-                    <div className="mt-12 p-8 rounded-3xl bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 shadow-xl">
+                    <div className="glass-card mt-12 p-8 shadow-xl">
                         <h3 className="text-2xl font-bold mb-6 text-center">{aboutDetailsContent.areasOfInterest.heading}</h3>
                         <div className="grid md:grid-cols-3 gap-4">
                             {aboutDetailsContent.areasOfInterest.items.map((item) => (
-                                <div key={item} className="p-4 rounded-xl bg-white/10 dark:bg-gray-800/10 border border-white/10">
+                                <div key={item} className="interest-card">
                                     <p className="font-medium text-center">{item}</p>
                                 </div>
                             ))}

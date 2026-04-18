@@ -34,7 +34,7 @@ export function Experience() {
                 <div className="mb-3 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium text-secondary backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-900/30">
                   {exp.period}
                 </div>
-                <div className="rounded-3xl bg-white/40 p-6 shadow-lg backdrop-blur-xl border border-white/20 dark:border-gray-800/50 dark:bg-gray-900/40">
+                <div className="glass-card p-6">
                   <div className="mb-4 flex items-start gap-3">
                     <div className="mt-1 rounded-xl bg-white/10 p-2.5 dark:bg-gray-800/40">
                       <Briefcase className="h-5 w-5 text-secondary" />
@@ -82,7 +82,7 @@ export function Experience() {
                 />
 
                 <motion.div
-                  className="rounded-3xl bg-white/40 p-6 shadow-lg backdrop-blur-xl border border-white/20 dark:border-gray-800/50 dark:bg-gray-900/40 hover:shadow-xl transition-all"
+                  className="glass-card glass-card-interactive p-6"
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 >

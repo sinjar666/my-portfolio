@@ -13,7 +13,7 @@ export function AdditionalHighlights() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
-                        className="p-6 rounded-3xl bg-white/20 dark:bg-gray-900/20 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 text-center"
+                        className="glass-card-soft glass-card-interactive p-6 text-center"
                     >
                         <div className="text-4xl font-bold text-secondary mb-2">{stat.value}</div>
                         <p className="text-gray-700 dark:text-gray-300 font-medium">{stat.label}</p>
