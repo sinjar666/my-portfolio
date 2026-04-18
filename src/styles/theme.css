@@ -178,3 +178,12 @@ strong, b, .text-accent {
   color: var(--primary);
   font-weight: 600;
 }
+
+/* Card border override: apply a subtle, theme-matched border to card elements */
+/* Apply card border without using !important by increasing selector specificity */
+html body [class*="rounded-3xl"][class*="border"],
+html body [class*="rounded-2xl"][class*="border"],
+html body [class*="rounded-xl"][class*="border"],
+html body [class*="backdrop-blur"] {
+  border-color: var(--card-border);
+}

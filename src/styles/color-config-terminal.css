@@ -84,6 +84,8 @@
   --timeline-line: #d0d0c8;
   --timeline-dot: #5a4510;
   --icon-background: #5a4510;
+  /* Card border (subtle, low saturation) */
+  --card-border: rgba(106,80,16,0.08);
 
   /* Icon gradient pairs (8 theme-matched variants) */
   --icon-c1-from: #5a4510; --icon-c1-to: #7a6018; /* amber — primary accent */
@@ -171,6 +173,8 @@
   --timeline-line: #232b33;
   --timeline-dot: #c8a030;
   --icon-background: #2e2008;
+  /* Card border (subtle, slightly stronger on dark backgrounds) */
+  --card-border: rgba(212,170,64,0.12);
 
   /* Icon gradient pairs (8 theme-matched variants) */
   --icon-c1-from: #7a5818; --icon-c1-to: #9e7420; /* amber */
