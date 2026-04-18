@@ -1,0 +1,92 @@
+{
+  "heading": "Skills & Expertise",
+  "categories": [
+    {
+      "icon": "users",
+      "title": "Leadership & Management",
+      "skills": [
+        "Engineering Leadership",
+        "Team Collaboration",
+        "People Management",
+        "Project Management",
+        "Mentorship",
+        "Strategic Thinking",
+        "Conflict Resolution"
+      ],
+      "color": "icon-color-1"
+    },
+    {
+      "icon": "brain",
+      "title": "AI & Machine Learning",
+      "skills": [
+        "Generative AI",
+        "LLM",
+        "RAG",
+        "Prompt Engineering",
+        "Knowledge Graphs",
+        "Agentic Workflows"
+      ],
+      "color": "icon-color-6"
+    },
+    {
+      "icon": "cloud",
+      "title": "Cloud & Infrastructure",
+      "skills": [
+        "Distributed Computing",
+        "Virtualization",
+        "Kubernetes",
+        "Kafka",
+        "ElasticSearch",
+        "Hazelcast"
+      ],
+      "color": "icon-color-3"
+    },
+    {
+      "icon": "code",
+      "title": "Backend Development",
+      "skills": [
+        "NodeJS",
+        "Java",
+        "Spring",
+        "GoLang",
+        "C++",
+        "C# .NET",
+        "Python",
+        "Multithreading"
+      ],
+      "color": "icon-color-4"
+    },
+    {
+      "icon": "layout",
+      "title": "Frontend Development",
+      "skills": [
+        "Angular",
+        "React",
+        "TypeScript",
+        "HTML/CSS",
+        "Redux",
+        "RxJS",
+        "Micro-frontends"
+      ],
+      "color": "icon-color-2"
+    },
+    {
+      "icon": "database",
+      "title": "Data & Storage",
+      "skills": ["MySQL", "MongoDB", "ElasticSearch", "Redis", "Data Architecture"],
+      "color": "icon-color-8"
+    },
+    {
+      "icon": "globe",
+      "title": "Protocols & APIs",
+      "skills": ["HTTP/REST", "HTTP/2 SPDY", "Server-Sent Events", "WebSockets", "gRPC"],
+      "color": "icon-color-5"
+    },
+    {
+      "icon": "cpu",
+      "title": "Systems & Tools",
+      "skills": ["Linux", "Qt", "Erlang", "Software Architecture", "Design Patterns"],
+      "color": "icon-color-7"
+    }
+  ]
+}

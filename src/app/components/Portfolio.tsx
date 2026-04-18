@@ -3,12 +3,11 @@ import { About } from "./sections/About";
 import { Experience } from "./sections/Experience";
 import { Projects } from "./sections/Projects";
 import { Skills } from "./sections/Skills";
-import { AdditionalHighlights } from "./sections/AdditionalHighlights";
 import { Contact } from "./sections/Contact";
 import { Navigation } from "./Navigation";
 import { useEffect, useRef, useState } from "react";
-import { motion } from "motion/react";
 import { AboutDetails } from "./sections/AboutDetails";
+import { footerContent } from "../../content";
 
 export function Portfolio() {
   const [scrolled, setScrolled] = useState(false);
@@ -56,7 +55,7 @@ export function Portfolio() {
       <footer className="relative border-t border-white/20 dark:border-gray-800/50 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-6 py-8">
           <p className="text-center text-sm text-gray-600 dark:text-gray-400">
-            © 2026 Srijan Mukherjee. Crafted with precision & passion.
+            {footerContent.copyright}
           </p>
         </div>
       </footer>

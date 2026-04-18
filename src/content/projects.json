@@ -1,0 +1,56 @@
+{
+  "heading": "Featured Projects",
+  "items": [
+    {
+      "icon": "brain",
+      "title": "Agentic Workflow Builder",
+      "description": "Multi-tenant platform enabling teams to build complex enterprise workflows using natural language prompts. Innovative agentic loop aimed at reducing context rot with large conversation histories.",
+      "tags": ["Generative AI", "LLM", "Multi-tenant", "Natural Language"],
+      "gradient": "icon-color-6"
+    },
+    {
+      "icon": "code",
+      "title": "vPlay - AI Native IDE",
+      "description": "Cloud-based AI native in-browser IDE aimed at left-shifting developer setup inertia, with projected annual savings exceeding $1M.",
+      "tags": ["AI", "Cloud", "Developer Tools", "Productivity"],
+      "gradient": "icon-color-2"
+    },
+    {
+      "icon": "zap",
+      "title": "Active-Active Message Queue",
+      "description": "Designed and implemented Active-Active Message Queue Architecture for distributed enterprise job execution engine, resulting in 60% improvement in p95 SLAs and 30% reduction in resource utilization.",
+      "tags": ["Distributed Systems", "Kafka", "Performance", "Architecture"],
+      "gradient": "icon-color-1"
+    },
+    {
+      "icon": "cloud",
+      "title": "Active-Active Dual Region Writer",
+      "description": "Innovated application architecture with RDMS based on conflict avoidance strategy for split brain coupled with in-built Disaster Recovery state machine.",
+      "tags": ["High Availability", "RDMS", "Disaster Recovery", "Resilience"],
+      "gradient": "icon-color-3"
+    },
+    {
+      "icon": "settings",
+      "title": "Infrastructure Lifecycle Orchestration",
+      "description": "Optimizing Compute Infrastructure Lifecycle Management to achieve decommissioning SLAs of <6 hours for virtualized assets and sub-week SLAs for physical hardware.",
+      "tags": ["Cloud Platform", "Automation", "SLA Optimization"],
+      "gradient": "icon-color-8"
+    },
+    {
+      "icon": "rocket",
+      "title": "Flight Management Systems",
+      "description": "Wrote safety and mission critical software for UI and Display Proxy layers of Next Gen FMS powering cockpits of Boeing, Airbus, Dassault, and Gulfstream aircraft.",
+      "tags": ["Aerospace", "Mission Critical", "C++", "Safety Systems"],
+      "gradient": "icon-color-7"
+    }
+  ],
+  "publication": {
+    "heading": "Publication",
+    "title": "System and method of locking and ranking the resource for utilization in a distributed scheduling system",
+    "authorsAndDate": "S. Mukherjee, D. RC, N. Kumar, and A. P | April 6, 2022",
+    "link": {
+      "label": "View Publication →",
+      "href": "https://www.tdcommons.org/dpubs_series/5048"
+    }
+  }
+}

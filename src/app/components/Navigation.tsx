@@ -2,6 +2,7 @@ import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 import { useState } from "react";
 import { motion } from "motion/react";
+import { navigationContent } from "../../content";
 
 interface NavigationProps {
   scrolled: boolean;
@@ -11,15 +12,6 @@ interface NavigationProps {
 export function Navigation({ scrolled, isVisible }: NavigationProps) {
   const { theme, setTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const navItems = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Experience", href: "#experience" },
-    { label: "Projects", href: "#projects" },
-    { label: "Skills", href: "#skills" },
-    { label: "Contact", href: "#contact" },
-  ];
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -39,7 +31,7 @@ export function Navigation({ scrolled, isVisible }: NavigationProps) {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#home" className="text-2xl font-bold text-logo">
-            SM
+            {navigationContent.logoText}
           </a>
 
           {/* Desktop Navigation */}
@@ -56,7 +48,7 @@ export function Navigation({ scrolled, isVisible }: NavigationProps) {
               }
             }}
           >
-            {navItems.map((item) => (
+            {navigationContent.items.map((item) => (
               <motion.a
                 key={item.label}
                 href={item.href}
@@ -75,7 +67,7 @@ export function Navigation({ scrolled, isVisible }: NavigationProps) {
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all"
-            aria-label="Toggle theme"
+            aria-label={navigationContent.themeToggleAriaLabel}
           >
             {theme === "dark" ? (
               <Sun className="w-5 h-5 text-secondary" />
@@ -88,7 +80,7 @@ export function Navigation({ scrolled, isVisible }: NavigationProps) {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/50"
-            aria-label="Toggle menu"
+            aria-label={navigationContent.menuToggleAriaLabel}
           >
             {mobileMenuOpen ? (
               <X className="w-5 h-5" />
@@ -101,7 +93,7 @@ export function Navigation({ scrolled, isVisible }: NavigationProps) {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 p-4 rounded-2xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border border-white/20 dark:border-gray-800/50">
-            {navItems.map((item) => (
+            {navigationContent.items.map((item) => (
               <a
                 key={item.label}
                 href={item.href}

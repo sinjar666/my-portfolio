@@ -1,0 +1,44 @@
+{
+  "leadershipPhilosophy": {
+    "heading": "Leadership Philosophy",
+    "items": [
+      {
+        "emoji": "🏗️",
+        "text": "Build systems that scale without fragility"
+      },
+      {
+        "emoji": "👥",
+        "text": "Build teams that operate with ownership and clarity"
+      },
+      {
+        "emoji": "🤖",
+        "text": "Use automation and AI to eliminate operational toil"
+      }
+    ]
+  },
+  "highlights": [
+    {
+      "icon": "target",
+      "title": "Engineering Maturity",
+      "description": ">15% developer productivity using AI across multiple orgs"
+    },
+    {
+      "icon": "users",
+      "title": "Manager Effectiveness",
+      "description": "100% effectiveness score from FY-23 to FY-26"
+    },
+    {
+      "icon": "zap",
+      "title": "Exponential Growth",
+      "description": ">10M job runs in FY-23-24 with <1.5% churn rate"
+    }
+  ],
+  "areasOfInterest": {
+    "heading": "Areas of Interest",
+    "items": [
+      "AI-assisted platform engineering",
+      "Autonomous infrastructure & self-healing systems",
+      "Developer experience as a competitive advantage"
+    ]
+  }
+}
