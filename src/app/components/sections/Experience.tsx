@@ -66,7 +66,7 @@ export function Experience() {
   ];
 
   return (
-    <section id="experience" className="relative py-24 px-6">
+    <section id="experience" className="relative px-6 py-16 md:py-20">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

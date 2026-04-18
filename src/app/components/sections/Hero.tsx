@@ -1,9 +1,13 @@
 import { motion } from "motion/react";
-import { Github, Linkedin, Mail, Download } from "lucide-react";
+import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import profileImage from "../../../assets/profile.png";
 import { config } from "../../../config";
 
-export function Hero() {
+type HeroProps = {
+  hasScrolled: boolean;
+};
+
+export function Hero({ hasScrolled }: HeroProps) {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center px-6 pt-20">
       <div className="max-w-6xl mx-auto text-center">
@@ -149,14 +153,39 @@ export function Hero() {
 
         {/* Scroll Indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2"
+          initial={{ opacity: 0, y: 16 }}
+          animate={hasScrolled ? { opacity: 0, y: 16 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+          aria-hidden="true"
         >
-          <div className="w-6 h-10 rounded-full border-2 border-gray-400 dark:border-gray-600 flex items-start justify-center p-2">
-            <div className="w-1 h-2 bg-gray-400 dark:bg-gray-600 rounded-full" />
-          </div>
+          <motion.div
+            className="hidden md:flex w-6 h-10 rounded-full border-2 border-gray-400 dark:border-gray-600 items-start justify-center p-2"
+            animate={hasScrolled ? { opacity: 0 } : { opacity: 1 }}
+            transition={{ duration: 0.2 }}
+          >
+            <motion.div
+              className="w-1 h-2 bg-gray-400 dark:bg-gray-600 rounded-full"
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </motion.div>
+
+          <motion.div
+            className="flex md:hidden flex-col items-center gap-2 text-[10px] font-medium uppercase tracking-[0.35em] text-gray-500 dark:text-gray-400"
+            animate={hasScrolled ? { opacity: 0 } : { opacity: 1 }}
+            transition={{ duration: 0.2 }}
+          >
+            <span>Swipe</span>
+            <motion.div
+              className="flex flex-col items-center"
+              animate={{ y: [0, 6, 0], opacity: [0.45, 1, 0.45] }}
+              transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <ArrowDown className="h-4 w-4" />
+              <ArrowDown className="-mt-1 h-4 w-4" />
+            </motion.div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

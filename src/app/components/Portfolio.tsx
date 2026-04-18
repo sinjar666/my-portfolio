@@ -6,19 +6,20 @@ import { Skills } from "./sections/Skills";
 import { AdditionalHighlights } from "./sections/AdditionalHighlights";
 import { Contact } from "./sections/Contact";
 import { Navigation } from "./Navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { AboutDetails } from "./sections/AboutDetails";
 
 export function Portfolio() {
   const [scrolled, setScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const scrolledDown = currentScrollY > lastScrollY;
+      const scrolledDown = currentScrollY > lastScrollY.current;
       const scrolledPastThreshold = currentScrollY > 100;
 
       if (scrolledDown && scrolledPastThreshold) {
@@ -28,19 +29,21 @@ export function Portfolio() {
       }
 
       setScrolled(currentScrollY > 50);
-      setLastScrollY(currentScrollY);
+      setHasScrolled(currentScrollY > 24);
+      lastScrollY.current = currentScrollY;
     };
 
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   return (
     <div className="relative min-h-screen bg-page text-foreground">
       <Navigation scrolled={scrolled} isVisible={isVisible} />
 
       <main className="relative">
-        <Hero />
+        <Hero hasScrolled={hasScrolled} />
         <About />
         <Projects />
         <Experience />

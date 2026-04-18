@@ -22,7 +22,7 @@ const highlights = [
 export function AboutDetails() {
     return (
         <>
-            <section id="about-details" className="relative py-24 px-6">
+            <section id="about-details" className="relative px-6 py-16 md:py-20">
                 <div className="max-w-6xl mx-auto">
                     <div className="p-8 rounded-3xl bg-white/20 dark:bg-gray-900/20 backdrop-blur-xl border border-white/20 dark:border-gray-800/50 mb-12">
                         <h3 className="text-2xl font-bold mb-6 text-center">Leadership Philosophy</h3>
