@@ -13,7 +13,7 @@ export function Projects() {
   } as const;
 
   return (
-    <section id="projects" className="relative px-6 py-16 md:py-20">
+    <section id="projects" className="relative px-6 py-3 md:py-20">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

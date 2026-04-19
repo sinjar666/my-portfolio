@@ -11,7 +11,7 @@ const highlightIconMap = {
 export function AboutDetails() {
     return (
         <>
-            <section id="about-details" className="relative px-6 py-16 md:py-20">
+            <section id="about-details" className="relative px-6 py-3 md:py-20">
                 <div className="max-w-6xl mx-auto">
                     <div className="glass-card-soft p-8 mb-12">
                         <h3 className="text-2xl font-bold mb-6 text-center">{aboutDetailsContent.leadershipPhilosophy.heading}</h3>
@@ -30,20 +30,20 @@ export function AboutDetails() {
                             }}
                         >
                             {aboutDetailsContent.leadershipPhilosophy.items.map((item) => (
-                                <motion.div
-                                    key={item.text}
-                                    className="text-center"
-                                    variants={{
-                                        hidden: { opacity: 0, scale: 0.8 },
-                                        visible: { opacity: 1, scale: 1 },
-                                    }}
-                                >
-                                    <div className="text-4xl mb-3">{item.emoji}</div>
-                                    <p className="text-foreground">
-                                        {item.text}
-                                    </p>
-                                </motion.div>
-                            ))}
+                                    <motion.div
+                                        key={item.text}
+                                        className="glass-card p-6 text-center"
+                                        variants={{
+                                            hidden: { opacity: 0, scale: 0.8 },
+                                            visible: { opacity: 1, scale: 1 },
+                                        }}
+                                    >
+                                        <div className="text-4xl mb-3">{item.emoji}</div>
+                                        <p className="text-foreground">
+                                            {item.text}
+                                        </p>
+                                    </motion.div>
+                                ))}
                         </motion.div>
                     </div>
 
