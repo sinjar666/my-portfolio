@@ -16,23 +16,26 @@
       }
     ]
   },
-  "highlights": [
-    {
-      "icon": "target",
-      "title": "Engineering Maturity",
-      "description": ">15% developer productivity using AI across multiple orgs"
-    },
-    {
-      "icon": "users",
-      "title": "Manager Effectiveness",
-      "description": "100% effectiveness score from FY-23 to FY-26"
-    },
-    {
-      "icon": "zap",
-      "title": "Exponential Growth",
-      "description": ">10M job runs in FY-23-24 with <1.5% churn rate"
-    }
-  ],
+  "highlights": {
+    "highlightsHeading": "Most proud of",
+    "items": [
+      {
+        "icon": "target",
+        "title": "Engineering Maturity",
+        "description": ">15% developer productivity using AI across multiple orgs"
+      },
+      {
+        "icon": "users",
+        "title": "Manager Effectiveness",
+        "description": "100% effectiveness score from FY-23 to FY-26"
+      },
+      {
+        "icon": "zap",
+        "title": "Exponential Growth",
+        "description": ">10M job runs in FY-23-24 with <1.5% churn rate"
+      }
+    ]
+  },
   "areasOfInterest": {
     "heading": "Areas of Interest",
     "items": [

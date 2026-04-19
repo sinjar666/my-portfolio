@@ -47,8 +47,9 @@ export function AboutDetails() {
                         </motion.div>
                     </div>
 
+                    <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-primary">{aboutDetailsContent.highlights.highlightsHeading}</h2>
                     <div className="grid md:grid-cols-3 gap-6 mb-12">
-                        {aboutDetailsContent.highlights.map((item, index) => {
+                        {aboutDetailsContent.highlights.items.map((item, index) => {
                             const Icon = highlightIconMap[item.icon];
 
                             return (
