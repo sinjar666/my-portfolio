@@ -16,7 +16,7 @@ export function Hero({ hasScrolled }: HeroProps) {
   } as const;
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center px-6 pt-20">
+    <section id="home" className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-12 md:pb-20">
       <div className="max-w-6xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
