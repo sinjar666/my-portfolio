@@ -33,9 +33,9 @@
   --muted: #c8c7bc;
   --muted-foreground: #323232;
 
-  /* Accent (match section title) */
-  --accent: var(--section-title);
-  --accent-foreground: #ffffff;
+  /* Accent (follow primary token) */
+  --accent: var(--primary);
+  --accent-foreground: var(--primary-foreground);
 
   /* Destructive (Error/Warning) */
   --destructive: #8c2e29;
@@ -101,7 +101,7 @@
   --icon-c2-from: #1a2c42; --icon-c2-to: #24364e; /* navy */
   --icon-c3-from: #1a3232; --icon-c3-to: #243c3c; /* teal */
   --icon-c4-from: #3a1e08; --icon-c4-to: #50280c; /* sienna */
-  --icon-c5-from: #1e2e10; --icon-c5-to: #2c3e1a; /* olive */
+  --icon-c5-from: #19682f; --icon-c5-to: #2a8d4a; /* green gradient (light) */
   --icon-c6-from: #20183c; --icon-c6-to: #2e2850; /* violet */
   --icon-c7-from: #3c1010; --icon-c7-to: #541818; /* ruby */
   --icon-c8-from: #1c2830; --icon-c8-to: #283440; /* slate */
@@ -135,9 +135,9 @@
   --muted: #444440;
   --muted-foreground: #e6e6e1;
 
-  /* Accent (match section title) */
-  --accent: var(--section-title);
-  --accent-foreground: #000000;
+  /* Accent (follow primary token) */
+  --accent: var(--primary);
+  --accent-foreground: var(--primary-foreground);
 
   /* Destructive (Error/Warning) */
   --destructive: #ef9992;
@@ -198,7 +198,7 @@
   --icon-c2-from: #263a54; --icon-c2-to: #324666; /* navy */
   --icon-c3-from: #1e3c3c; --icon-c3-to: #2a4c4c; /* teal */
   --icon-c4-from: #4c2a0c; --icon-c4-to: #663a18; /* sienna */
-  --icon-c5-from: #283a18; --icon-c5-to: #364c24; /* olive */
+  --icon-c5-from: #1f7a36; --icon-c5-to: #39b36a; /* green gradient (dark) */
   --icon-c6-from: #28224e; --icon-c6-to: #363060; /* violet */
   --icon-c7-from: #4a1818; --icon-c7-to: #622222; /* ruby */
   --icon-c8-from: #24303e; --icon-c8-to: #303c4c; /* slate */

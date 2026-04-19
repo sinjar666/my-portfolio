@@ -227,15 +227,15 @@
   .icon-color-8 { background: linear-gradient(to right, var(--icon-c8-from), var(--icon-c8-to)); }
 }
 
-/* Emphasis / strong text should use the primary (heading) color */
+/* Emphasis / strong text should use the accent colour */
 strong, b, .text-accent {
-  color: var(--primary);
+  color: var(--accent);
   font-weight: 700;
 }
 
 /* Opt-in utility: semibold text that uses the primary (bold) accent color */
 .semibold-accent {
-  color: var(--primary);
+  color: var(--accent);
   font-weight: 600;
 }
 
