@@ -48,9 +48,11 @@ export function Hero({ hasScrolled }: HeroProps) {
             {heroContent.name}
           </h1>
 
-          <p className="text-xl md:text-2xl text-foreground mb-4">
-            {heroContent.role}
-          </p>
+          <div className="mx-auto mb-4 p-4 max-w-3xl">
+            <p className="text-xl md:text-2xl font-bold text-secondary m-0">
+              {heroContent.role}
+            </p>
+          </div>
 
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
             {heroContent.summary}
@@ -184,7 +186,7 @@ export function Hero({ hasScrolled }: HeroProps) {
                 animate={hasScrolled ? { opacity: 0 } : { opacity: 1 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="inline-flex flex-col items-center gap-2 px-3 py-2 rounded-2xl bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm border border-white/20 dark:border-gray-800/50 shadow-sm">
+                
                   <span>{heroContent.scrollIndicator.mobileLabel}</span>
 
                   <motion.div
@@ -195,7 +197,7 @@ export function Hero({ hasScrolled }: HeroProps) {
                     <ArrowDown className="h-4 w-4" />
                     <ArrowDown className="-mt-1 h-4 w-4" />
                   </motion.div>
-                </div>
+                
               </motion.div>
             </div>
           </div>
