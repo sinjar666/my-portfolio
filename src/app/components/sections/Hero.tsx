@@ -147,54 +147,58 @@ export function Hero({ hasScrolled }: HeroProps) {
           </motion.div>
         </motion.div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator (full-width glass footer) */}
         <motion.div
-          className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2"
+          className="pointer-events-none fixed bottom-0 left-0 w-full z-10"
           initial={{ opacity: 0, y: 16 }}
           animate={hasScrolled ? { opacity: 0, y: 16 } : { opacity: 1, y: 0 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
           aria-hidden="true"
         >
-          <motion.div
-            className="hidden md:flex flex-col items-center gap-2"
-            animate={hasScrolled ? { opacity: 0 } : { opacity: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <div className="w-6 h-10 rounded-full bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm border-2 border-secondary flex items-start justify-center p-2 shadow-sm">
+          <div className="w-full bg-white/30 dark:bg-gray-900/30 backdrop-blur-md border-t border-white/10 dark:border-gray-800/50">
+            <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-center">
               <motion.div
-                className="w-1 h-2 bg-secondary rounded-full"
-                animate={{ y: [0, 12, 0] }}
-                transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-              />
-            </div>
-
-            <motion.span
-              className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground"
-              animate={{ y: [0, 6, 0] }}
-              transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-            >
-              {heroContent.scrollIndicator.desktopLabel ?? "Scroll down"}
-            </motion.span>
-          </motion.div>
-
-          <motion.div
-            className="flex md:hidden flex-col items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground"
-            animate={hasScrolled ? { opacity: 0 } : { opacity: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <div className="inline-flex flex-col items-center gap-2 px-3 py-2 rounded-2xl bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm border border-white/20 dark:border-gray-800/50 shadow-sm">
-              <span>{heroContent.scrollIndicator.mobileLabel}</span>
-
-              <motion.div
-                className="flex flex-col items-center"
-                animate={{ y: [0, 6, 0] }}
-                transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+                className="hidden md:flex flex-col items-center gap-2"
+                animate={hasScrolled ? { opacity: 0 } : { opacity: 1 }}
+                transition={{ duration: 0.2 }}
               >
-                <ArrowDown className="h-4 w-4" />
-                <ArrowDown className="-mt-1 h-4 w-4" />
+                <div className="w-6 h-10 rounded-full bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm border-2 border-secondary flex items-start justify-center p-2 shadow-sm">
+                  <motion.div
+                    className="w-1 h-2 bg-secondary rounded-full"
+                    animate={{ y: [0, 12, 0] }}
+                    transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                  />
+                </div>
+
+                <motion.span
+                  className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground"
+                  animate={{ y: [0, 6, 0] }}
+                  transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  {heroContent.scrollIndicator.desktopLabel ?? "Scroll down"}
+                </motion.span>
+              </motion.div>
+
+              <motion.div
+                className="flex md:hidden flex-col items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground"
+                animate={hasScrolled ? { opacity: 0 } : { opacity: 1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="inline-flex flex-col items-center gap-2 px-3 py-2 rounded-2xl bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm border border-white/20 dark:border-gray-800/50 shadow-sm">
+                  <span>{heroContent.scrollIndicator.mobileLabel}</span>
+
+                  <motion.div
+                    className="flex flex-col items-center"
+                    animate={{ y: [0, 6, 0] }}
+                    transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <ArrowDown className="h-4 w-4" />
+                    <ArrowDown className="-mt-1 h-4 w-4" />
+                  </motion.div>
+                </div>
               </motion.div>
             </div>
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>
