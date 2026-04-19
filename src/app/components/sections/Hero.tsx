@@ -160,7 +160,7 @@ export function Hero({ hasScrolled }: HeroProps) {
             animate={hasScrolled ? { opacity: 0 } : { opacity: 1 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="w-6 h-10 rounded-full border-2 border-secondary flex items-start justify-center p-2">
+            <div className="w-6 h-10 rounded-full bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm border-2 border-secondary flex items-start justify-center p-2 shadow-sm">
               <motion.div
                 className="w-1 h-2 bg-secondary rounded-full"
                 animate={{ y: [0, 12, 0] }}
@@ -182,15 +182,18 @@ export function Hero({ hasScrolled }: HeroProps) {
             animate={hasScrolled ? { opacity: 0 } : { opacity: 1 }}
             transition={{ duration: 0.2 }}
           >
-            <span>{heroContent.scrollIndicator.mobileLabel}</span>
-            <motion.div
-              className="flex flex-col items-center"
-              animate={{ y: [0, 6, 0] }}
-              transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <ArrowDown className="h-4 w-4" />
-              <ArrowDown className="-mt-1 h-4 w-4" />
-            </motion.div>
+            <div className="inline-flex flex-col items-center gap-2 px-3 py-2 rounded-2xl bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm border border-white/20 dark:border-gray-800/50 shadow-sm">
+              <span>{heroContent.scrollIndicator.mobileLabel}</span>
+
+              <motion.div
+                className="flex flex-col items-center"
+                animate={{ y: [0, 6, 0] }}
+                transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <ArrowDown className="h-4 w-4" />
+                <ArrowDown className="-mt-1 h-4 w-4" />
+              </motion.div>
+            </div>
           </motion.div>
         </motion.div>
       </div>
