@@ -30,20 +30,20 @@ export function AboutDetails() {
                             }}
                         >
                             {aboutDetailsContent.leadershipPhilosophy.items.map((item) => (
-                                <motion.div
-                                    key={item.text}
-                                    className="text-center"
-                                    variants={{
-                                        hidden: { opacity: 0, scale: 0.8 },
-                                        visible: { opacity: 1, scale: 1 },
-                                    }}
-                                >
-                                    <div className="text-4xl mb-3">{item.emoji}</div>
-                                    <p className="text-foreground">
-                                        {item.text}
-                                    </p>
-                                </motion.div>
-                            ))}
+                                    <motion.div
+                                        key={item.text}
+                                        className="glass-card p-6 text-center"
+                                        variants={{
+                                            hidden: { opacity: 0, scale: 0.8 },
+                                            visible: { opacity: 1, scale: 1 },
+                                        }}
+                                    >
+                                        <div className="text-4xl mb-3">{item.emoji}</div>
+                                        <p className="text-foreground">
+                                            {item.text}
+                                        </p>
+                                    </motion.div>
+                                ))}
                         </motion.div>
                     </div>
 
