@@ -33,9 +33,9 @@
   --muted: #c8c7bc;
   --muted-foreground: #323232;
 
-  /* Accent (green-based) */
-  --accent: #1f6e3a; /* forest green for light mode */
-  --accent-foreground: #ffffff;
+  /* Accent (follow primary token) */
+  --accent: var(--primary);
+  --accent-foreground: var(--primary-foreground);
 
   /* Destructive (Error/Warning) */
   --destructive: #8c2e29;
@@ -135,9 +135,9 @@
   --muted: #444440;
   --muted-foreground: #e6e6e1;
 
-  /* Accent (green-based) - darker, higher luminance for contrast */
-  --accent: #2a8d4a; /* brighter green for dark mode */
-  --accent-foreground: #08140b;
+  /* Accent (follow primary token) */
+  --accent: var(--primary);
+  --accent-foreground: var(--primary-foreground);
 
   /* Destructive (Error/Warning) */
   --destructive: #ef9992;

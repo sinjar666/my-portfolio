@@ -11,7 +11,7 @@ const highlightIconMap = {
 export function AboutDetails() {
     return (
         <>
-            <section id="about-details" className="relative px-6 py-3 md:py-20">
+            <section id="about-details" className="relative px-6 pt-8 pb-12 md:py-40">
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-primary">{aboutDetailsContent.leadershipPhilosophy.heading}</h2>
                     <div className="glass-card-soft p-8 mb-12">
@@ -70,7 +70,7 @@ export function AboutDetails() {
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-primary">{aboutDetailsContent.areasOfInterest.heading}</h2>
-                    <div className="mt-12">
+                    <div className="mt-12 mb-12 md:mb-0">
                         <div className="grid md:grid-cols-3 gap-4">
                             {aboutDetailsContent.areasOfInterest.items.map((item) => (
                                 <div key={item} className="interest-card">
