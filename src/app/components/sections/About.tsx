@@ -3,7 +3,7 @@ import { aboutContent } from "../../../content";
 
 export function About() {
   return (
-    <section id="about" className="relative px-6 py-16 md:py-20">
+    <section id="about" className="relative px-6 py-6 md:py-20">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
