@@ -71,6 +71,9 @@
 
   /* Page / Decorations */
   --page-background: #fbf7f0;
+  /* Subtle page texture (light) */
+  --bg-texture-dot: rgba(0, 0, 0, 0.03);
+  --bg-texture-size: 6px;
   --hero-ring: linear-gradient(135deg, #6366f1, #a855f7);
   --button-primary-background: linear-gradient(135deg, #6366f1, #a855f7);
   --button-primary-hover: linear-gradient(135deg, #4f46e5, #7c3aed);
@@ -162,6 +165,9 @@
 
   /* Page / Decorations */
   --page-background: linear-gradient(135deg, oklch(0.145 0 0), oklch(0.205 0 0));
+  /* Subtle page texture (dark) */
+  --bg-texture-dot: rgba(255, 255, 255, 0.02);
+  --bg-texture-size: 7px;
   --hero-ring: linear-gradient(135deg, oklch(0.488 0.243 264.376), oklch(0.269 0 0));
   --button-primary-background: linear-gradient(135deg, oklch(0.488 0.243 264.376), oklch(0.269 0 0));
   --button-primary-hover: linear-gradient(135deg, oklch(0.645 0.246 16.439), oklch(0.769 0.188 70.08));
