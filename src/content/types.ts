@@ -56,11 +56,14 @@ export type AboutDetailsContent = {
       text: string;
     }>;
   };
-  highlights: Array<{
-    icon: "target" | "users" | "zap";
-    title: string;
-    description: string;
-  }>;
+  highlights: {
+    highlightsHeading: string;
+    items: Array<{
+      icon: "target" | "users" | "zap";
+      title: string;
+      description: string;
+    }>;
+  };
   areasOfInterest: {
     heading: string;
     items: string[];
