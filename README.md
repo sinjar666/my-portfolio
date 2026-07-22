@@ -1,3 +1,4 @@
+[![Build and Deploy to GitHub Pages](https://github.com/sinjar666/my-portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/sinjar666/my-portfolio/actions/workflows/deploy.yml)
 
   # Portfolio Website Design
 
