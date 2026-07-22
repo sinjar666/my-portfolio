@@ -88,6 +88,18 @@ export type ExperienceContent = {
   }>;
 };
 
+export type EducationContent = {
+  heading: string;
+  entries: Array<{
+    program: string;
+    institution: string;
+    period: string;
+    location: string;
+    description: string;
+    highlights: string[];
+  }>;
+};
+
 export type ProjectsContent = {
   heading: string;
   items: Array<{
