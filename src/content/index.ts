@@ -4,6 +4,7 @@ import aboutData from "./about.json";
 import aboutDetailsData from "./about-details.json";
 import additionalHighlightsData from "./additional-highlights.json";
 import experienceData from "./experience.json";
+import educationData from "./education.json";
 import projectsData from "./projects.json";
 import skillsData from "./skills.json";
 import contactData from "./contact.json";
@@ -16,6 +17,7 @@ import type {
   AboutDetailsContent,
   AdditionalHighlightsContent,
   ExperienceContent,
+  EducationContent,
   ProjectsContent,
   SkillsContent,
   ContactContent,
@@ -28,6 +30,7 @@ export const aboutContent: AboutContent = aboutData;
 export const aboutDetailsContent: AboutDetailsContent = aboutDetailsData;
 export const additionalHighlightsContent: AdditionalHighlightsContent = additionalHighlightsData;
 export const experienceContent: ExperienceContent = experienceData;
+export const educationContent: EducationContent = educationData;
 export const projectsContent: ProjectsContent = projectsData;
 export const skillsContent: SkillsContent = skillsData;
 export const contactContent: ContactContent = contactData;

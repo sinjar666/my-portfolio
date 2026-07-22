@@ -16,6 +16,6 @@ export const config = {
   siteTitle: import.meta.env.VITE_SITE_TITLE || "Srijan Mukherjee - Portfolio",
   resumeUrl:
     import.meta.env.VITE_RESUME_URL ||
-    "https://github.com/sinjar666/my-resume/releases/download/v20260416-175407/resume.pdf",
+    "https://github.com/sinjar666/my-resume/releases/download/v20260722-173635/resume.pdf",
   // Add more config as needed
 };

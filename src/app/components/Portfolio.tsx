@@ -4,6 +4,7 @@ import { Experience } from "./sections/Experience";
 import { Projects } from "./sections/Projects";
 import { Skills } from "./sections/Skills";
 import { Contact } from "./sections/Contact";
+import { Education } from "./sections/Education";
 import { Navigation } from "./Navigation";
 import { useEffect, useState } from "react";
 import { AboutDetails } from "./sections/AboutDetails";
@@ -39,6 +40,7 @@ export function Portfolio() {
         <About />
         <Projects />
         <Experience />
+        <Education />
         <AboutDetails />
         <Skills />
         <Contact />
